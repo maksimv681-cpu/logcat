@@ -1297,7 +1297,7 @@ class GameConnection(threading.Thread):
             self.state.log(
                 f"TCP {self.port} {self.remote} packet 206 answered with synthetic "
                 f"UserCarProto id={TUTORIAL_USER_CAR_ID} base_id={base_id} "
-                "car_number={car_id:1,country:RU,region:1,number:1} "
+                "car_number=(car_id=1,country=RU,region=1,number=1) "
                 f"(length-prefixed body={response_body.hex(' ')})"
             )
             return
