@@ -1,0 +1,126 @@
+11-02 16:22:20.780  1438  1438 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
+11-02 16:22:21.628  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
+11-02 16:22:23.266  1896  1936 D RilRequest: [3650]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+11-02 16:22:23.266  1896  1936 D RilRequest: [3651]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+11-02 16:22:23.266  1896  1936 D RilRequest: [3649]< GET_HARDWARE_CONFIG error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret= 
+11-02 16:22:23.290  1896  1936 D RilRequest: [3652]< RIL_REQUEST_START_LCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=[0, 0]
+11-02 16:22:23.604  1896  1936 D RilRequest: [3653]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=SignalStrength: 0 0 0 0 0 0 0 0 0 0 0 0 0 2147483647 99 2147483647 2147483527 gsm|lte use_rsrp_and_rssnr_for_lte_level  [-128, -118, -108, -98] [-115, -105, -95, -85]
+11-02 16:22:23.805  1896  1936 D RilRequest: [3654]< RIL_REQUEST_SET_TTY_MODE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+11-02 16:22:23.836  1896  1896 E RadioConfig: getRadioConfigProxy: RadioConfigProxy getService/setResponseFunctions: java.util.NoSuchElementException
+11-02 16:22:23.836  1896  1896 D Phone   : config LCE service failed: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+11-02 16:22:23.852  1896  1936 D RilRequest: [3656]< BASEBAND_VERSION error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+11-02 16:22:23.861  1896  1936 D RilRequest: [3657]< RIL_REQUEST_DEVICE_IDENTITY error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret={, , , }
+11-02 16:22:23.873  1896  1936 D RilRequest: [3658]< RIL_REQUEST_GET_RADIO_CAPABILITY error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret={mPhoneId = 0 mVersion=1 mSession=0 mPhase=0 mRadioAccessFamily=0 mLogicModemId= mStatus=0}
+11-02 16:22:23.900  1896  1936 D RilRequest: [3659]< RIL_REQUEST_START_LCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=[0, 0]
+11-02 16:22:23.962  1896  1896 D SST     : [0] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+11-02 16:22:24.918  1896  1936 D RilRequest: [3665]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
+11-02 16:22:24.934  1896  1936 D RilRequest: [3667]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
+11-02 16:22:24.941  1896  1936 D RilRequest: [3668]< RIL_REQUEST_SET_UNSOLICITED_RESPONSE_FILTER error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
+11-02 16:22:24.957  1896  1936 D RilRequest: [3669]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
+11-02 16:22:24.962  1896  1936 D RilRequest: [3671]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
+11-02 16:22:24.966  1896  1936 D RilRequest: [3672]< RIL_REQUEST_SET_UNSOLICITED_RESPONSE_FILTER error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
+11-02 16:22:24.967  1896  1896 D DebugService: DebugService DebugService:
+11-02 16:22:25.000  1896  1896 E UiccController: Unexpected error getting slot status: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+11-02 16:22:25.000  1896  1896 D Phone   : config LCE service failed: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+11-02 16:22:25.065  1896  1936 D RilRequest: [3682]< RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret={-1}
+11-02 16:22:25.198  1896  1896 W CdmaSSM : Unable to get CDMA Subscription Source, Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE, result: [I@8d22297
+11-02 16:22:26.016  1896  1936 D RilRequest: [3704]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
+11-02 16:22:26.018  1896  1936 D RilRequest: [3705]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
+11-02 16:22:26.022  1896  1936 D RilRequest: [3706]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
+11-02 16:22:26.027  1896  1936 D RilRequest: [3707]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
+11-02 16:22:26.035  1896  1936 D RilRequest: [3708]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
+11-02 16:22:26.047  1896  1936 D RilRequest: [3709]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
+11-02 16:22:26.263  1896  1896 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Exception in fetching EF_CSP data com.android.internal.telephony.uicc.IccFileNotFound
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Exception in get GID1 com.android.internal.telephony.uicc.IccFileNotFound
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Exception in get GID2 com.android.internal.telephony.CommandException: GENERIC_FAILURE
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Failed getting User PLMN with Access Tech Records: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Failed getting Operator PLMN with Access Tech Records: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Failed getting Home PLMN with Access Tech Records: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Failed getting Equivalent Home PLMNs: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+11-02 16:22:26.454  1896  1896 E SIMRecords: [SIMRecords] Failed getting Forbidden PLMNs: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+11-02 16:22:34.008  1600  2278 I ntp_failure: [time.android.com/216.239.35.0,java.net.SocketTimeoutException: Poll timed out]
+11-02 16:23:32.266  1600  2359 I am_crash: [3868,0,com.dragstreets.game,949501508,java.lang.NullPointerException,class mobi.square.sr.android.hk: Provide by key: 1, object is null,SourceFile,28]
+11-02 16:25:28.824  4226  4226 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-02 16:25:29.018  4226  4248 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-02 16:25:31.023  4226  4226 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-02 16:25:31.758  4226  4260 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-02 16:25:37.048  4226  4260 I SRLAB-PERF: screen=pj1 frames=954 gapMaxMs=50 workMaxMs=44 slow33=4 slow100=0 assetMs=7 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: Scene action failed
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: java.lang.NullPointerException: class mobi.square.sr.android.hk: Provide by key: 1, object is null
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.rO1.a(SourceFile:28)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.jO1.b(SourceFile:11)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.hk.a(SourceFile:1)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.F92.E5(SourceFile:16)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.F92.u5(SourceFile:8)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.D92.a(SourceFile:1)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.g0.l(SourceFile:4)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.F92.<init>(SourceFile:142)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.F92.D5(SourceFile:18)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.ST0.<init>(SourceFile:68)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.zp.<init>(SourceFile:87)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.iH0.<init>(SourceFile:88)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.Jz0.<init>(SourceFile:2)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.Hz0.init(SourceFile:7)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.Gh1$a$a.a(SourceFile:4)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.zf2.W(SourceFile:2)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.yf2.run(SourceFile:1)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.run(SourceFile:10)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.act(SourceFile:7)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.scenes.scene2d.actions.SequenceAction.act(SourceFile:28)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:34)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.scenes.scene2d.Group.act(SourceFile:20)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.scenes.scene2d.Stage.act(SourceFile:11)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.c42.act(SourceFile:35)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.Hh1.act(SourceFile:1)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.Gh1.act(SourceFile:1)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.X52.render(SourceFile:5)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.R32.render(SourceFile:29)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.QF0.j(SourceFile:4)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.z32.j(SourceFile:60)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at mobi.square.sr.android.QF0.render(SourceFile:13)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:220)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
+11-02 16:25:38.551  4226  4260 E SRLAB-SCENE: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: FATAL EXCEPTION: GLThread 197
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: Process: com.dragstreets.game, PID: 4226
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: java.lang.RuntimeException: Actor: Image: TextureRegionDrawable
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:115)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Group.act(SourceFile:20)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Stage.act(SourceFile:11)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.c42.act(SourceFile:35)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.Hh1.act(SourceFile:1)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.Gh1.act(SourceFile:1)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.X52.render(SourceFile:5)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.R32.render(SourceFile:29)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.QF0.j(SourceFile:4)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.z32.j(SourceFile:60)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.QF0.render(SourceFile:13)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:220)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: Caused by: java.lang.NullPointerException: class mobi.square.sr.android.hk: Provide by key: 1, object is null
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.rO1.a(SourceFile:28)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.jO1.a(SourceFile:12)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.hk.e(SourceFile:1)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.F92.E5(SourceFile:36)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.F92.u5(SourceFile:8)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.D92.a(SourceFile:1)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.g0.l(SourceFile:4)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.F92.<init>(SourceFile:142)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.F92.D5(SourceFile:18)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.ST0.<init>(SourceFile:68)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.zp.<init>(SourceFile:87)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.iH0.<init>(SourceFile:88)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.Jz0.<init>(SourceFile:2)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.Hz0.init(SourceFile:7)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.Gh1$a$a.a(SourceFile:4)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.zf2.W(SourceFile:2)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at mobi.square.sr.android.yf2.run(SourceFile:1)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.run(SourceFile:10)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.act(SourceFile:7)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.SequenceAction.act(SourceFile:28)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:34)
+11-02 16:25:38.558  4226  4260 E AndroidRuntime: 	... 13 more
+11-02 16:25:38.559  4226  4260 E DS-MODULE: Recorded startup exception for module 7
+11-02 16:25:38.560  1600  1975 I am_crash: [4226,0,com.dragstreets.game,949501508,java.lang.NullPointerException,class mobi.square.sr.android.hk: Provide by key: 1, object is null,SourceFile,28]
