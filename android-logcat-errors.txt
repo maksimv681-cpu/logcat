@@ -1,16 +1,5 @@
 11-02 16:22:20.780  1438  1438 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-02 16:22:21.628  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
-11-02 16:22:24.918  1896  1936 D RilRequest: [3665]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-11-02 16:22:24.934  1896  1936 D RilRequest: [3667]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-11-02 16:22:24.941  1896  1936 D RilRequest: [3668]< RIL_REQUEST_SET_UNSOLICITED_RESPONSE_FILTER error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-11-02 16:22:24.957  1896  1936 D RilRequest: [3669]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-11-02 16:22:24.962  1896  1936 D RilRequest: [3671]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-11-02 16:22:24.966  1896  1936 D RilRequest: [3672]< RIL_REQUEST_SET_UNSOLICITED_RESPONSE_FILTER error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-11-02 16:22:24.967  1896  1896 D DebugService: DebugService DebugService:
-11-02 16:22:25.000  1896  1896 E UiccController: Unexpected error getting slot status: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
-11-02 16:22:25.000  1896  1896 D Phone   : config LCE service failed: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
-11-02 16:22:25.065  1896  1936 D RilRequest: [3682]< RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret={-1}
-11-02 16:22:25.198  1896  1896 W CdmaSSM : Unable to get CDMA Subscription Source, Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE, result: [I@8d22297
 11-02 16:22:26.016  1896  1936 D RilRequest: [3704]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
 11-02 16:22:26.018  1896  1936 D RilRequest: [3705]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
 11-02 16:22:26.022  1896  1936 D RilRequest: [3706]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=IccIoResult sw1:0x0 sw2:0x0 Payload: ******* Error: unknown
@@ -29,60 +18,47 @@
 11-02 17:12:54.861  1600  3443 I am_crash: [8534,0,com.dragstreets.game,951598660,java.lang.RuntimeException,TextureRegion is null.
 11-02 17:15:47.676  1600  3443 I am_crash: [8781,0,com.dragstreets.game,949501508,java.lang.RuntimeException,TextureRegion is null.
 11-02 17:18:55.019  1600  3443 I am_crash: [9084,0,com.dragstreets.game,949501508,java.lang.RuntimeException,TextureRegion is null.
-11-02 17:19:35.697  9268  9268 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-02 17:19:35.843  9268  9289 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-02 17:19:37.849  9268  9268 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-02 17:19:38.532  9268  9301 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-02 17:19:43.737  9268  9301 I SRLAB-PERF: screen=pj1 frames=860 gapMaxMs=78 workMaxMs=35 slow33=3 slow100=0 assetMs=4 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: FATAL EXCEPTION: GLThread 325
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: Process: com.dragstreets.game, PID: 9268
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: java.lang.RuntimeException: Actor: Image: TextureRegionDrawable
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:115)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Group.act(SourceFile:20)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Stage.act(SourceFile:11)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.c42.act(SourceFile:35)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Hh1.act(SourceFile:1)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Gh1.act(SourceFile:1)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.X52.render(SourceFile:5)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.R32.render(SourceFile:29)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.QF0.j(SourceFile:4)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.z32.j(SourceFile:60)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.QF0.render(SourceFile:13)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:220)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: Caused by: java.lang.RuntimeException: TextureRegion is null.
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: atlas: atlas/Avatars.pack
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: region: avatar_frame_blue
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.QA.h(SourceFile:44)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.rZ1.V(SourceFile:2)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.ik.b(SourceFile:14)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.ik.a(SourceFile:42)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Lp.J4(SourceFile:9)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Lp.V4(SourceFile:10)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Lp.R4(SourceFile:25)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.yk.L4(SourceFile:2)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.F92.G5(SourceFile:53)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.F92.v5(SourceFile:8)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.E92.a(SourceFile:1)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.g0.l(SourceFile:4)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.F92.<init>(SourceFile:153)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.F92.D5(SourceFile:18)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.ST0.<init>(SourceFile:68)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.zp.<init>(SourceFile:87)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.iH0.<init>(SourceFile:88)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Jz0.<init>(SourceFile:2)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Hz0.init(SourceFile:7)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.Gh1$a$a.a(SourceFile:4)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.zf2.W(SourceFile:2)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at mobi.square.sr.android.yf2.run(SourceFile:1)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.run(SourceFile:10)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.act(SourceFile:7)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.SequenceAction.act(SourceFile:28)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:34)
-11-02 17:19:45.156  9268  9301 E AndroidRuntime: 	... 13 more
-11-02 17:19:45.157  9268  9301 E DS-MODULE: Recorded startup exception for module 7
 11-02 17:19:45.157  1600  3356 I am_crash: [9268,0,com.dragstreets.game,949501508,java.lang.RuntimeException,TextureRegion is null.
-11-02 17:19:45.746  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 17:24:23.424  1600  3357 I am_crash: [10792,0,com.dragstreets.game,951598660,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
+11-02 17:24:58.994 11016 11016 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-02 17:24:59.181 11016 11041 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-02 17:25:01.186 11016 11016 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-02 17:25:02.069 11016 11053 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-02 17:25:07.283 11016 11053 I SRLAB-PERF: screen=pj1 frames=918 gapMaxMs=34 workMaxMs=33 slow33=2 slow100=0 assetMs=6 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: FATAL EXCEPTION: GLThread 369
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: Process: com.dragstreets.game, PID: 11016
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: java.lang.RuntimeException: Actor: Image: TextureRegionDrawable
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:115)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Group.act(SourceFile:20)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Stage.act(SourceFile:11)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.c42.act(SourceFile:35)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.Hh1.act(SourceFile:1)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.Gh1.act(SourceFile:1)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.X52.render(SourceFile:5)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.R32.render(SourceFile:29)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.QF0.j(SourceFile:4)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.z32.j(SourceFile:60)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.QF0.render(SourceFile:13)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:220)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.VT0.<init>(SourceFile:83)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.VT0.s5(SourceFile:31)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.ST0.<init>(SourceFile:1126)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.zp.<init>(SourceFile:87)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.iH0.<init>(SourceFile:88)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.Jz0.<init>(SourceFile:2)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.Hz0.init(SourceFile:7)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.Gh1$a$a.a(SourceFile:4)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.zf2.W(SourceFile:2)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at mobi.square.sr.android.yf2.run(SourceFile:1)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.run(SourceFile:10)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.RunnableAction.act(SourceFile:7)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.actions.SequenceAction.act(SourceFile:28)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Actor.act(SourceFile:34)
+11-02 17:25:08.711 11016 11053 E AndroidRuntime: 	... 13 more
+11-02 17:25:08.711 11016 11053 E DS-MODULE: Recorded startup exception for module 7
+11-02 17:25:08.712  1600  2360 I am_crash: [11016,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
+11-02 17:25:09.217  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 17:25:09.285 11016 11173 D DS-MODULE: Background update check deferred: ConnectException
