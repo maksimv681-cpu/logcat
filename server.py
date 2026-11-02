@@ -1278,11 +1278,13 @@ class GameConnection(threading.Thread):
                 )
                 return
             response_proto = build_tutorial_user_car_proto(base_id)
-            self.send_packet(206, sequence, response_proto, encrypt=True)
+            # Client callback reads this with fB1.r(): uint32 length + protobuf.
+            response_body = struct.pack(">I", len(response_proto)) + response_proto
+            self.send_packet(206, sequence, response_body, encrypt=True)
             self.state.log(
                 f"TCP {self.port} {self.remote} packet 206 answered with synthetic "
                 f"UserCarProto id={TUTORIAL_USER_CAR_ID} base_id={base_id} "
-                f"(raw protobuf bytes={len(response_proto)})"
+                f"(length-prefixed body={response_body.hex(' ')})"
             )
             return
 
