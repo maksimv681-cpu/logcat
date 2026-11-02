@@ -696,6 +696,12 @@ EMPTY_FRIEND_REQUESTS_RESPONSE = b""
 # empty EventInfoContainerProto. No active event is represented by no instance
 # and no schedule; the client converter explicitly handles this state.
 EMPTY_EVENT_SCHEDULE_RESULT_PROTO = bytes.fromhex("1A 02 0A 00")
+# fB1.r() reads protobuf messages from a uint32-length-prefixed buffer.
+# The command callback uses the same framing as InitResponse/checkBan.
+EMPTY_EVENT_SCHEDULE_RESULT_BODY = (
+    struct.pack(">I", len(EMPTY_EVENT_SCHEDULE_RESULT_PROTO))
+    + EMPTY_EVENT_SCHEDULE_RESULT_PROTO
+)
 
 PACKET_NAMES = {
     1: "getContentVersion",
@@ -1255,10 +1261,10 @@ class GameConnection(threading.Thread):
             # Return a selected scheduleInfoResult with an empty
             # EventInfoContainerProto, meaning there is no active event.
             self.send_packet(990045, sequence,
-                             EMPTY_EVENT_SCHEDULE_RESULT_PROTO, encrypt=True)
+                             EMPTY_EVENT_SCHEDULE_RESULT_BODY, encrypt=True)
             self.state.log(
                 f"TCP {self.port} {self.remote} event schedule request answered: "
-                f"no active event (ResultProto={EMPTY_EVENT_SCHEDULE_RESULT_PROTO.hex(' ')})"
+                f"no active event (length-prefixed ResultProto={EMPTY_EVENT_SCHEDULE_RESULT_BODY.hex(' ')})"
             )
             return
 
