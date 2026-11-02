@@ -1,45 +1,44 @@
 11-02 16:22:20.780  1438  1438 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-02 16:22:21.628  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
-11-02 18:17:42.959  1600  3491 I am_crash: [14501,0,com.dragstreets.game,951598660,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
 11-02 18:22:19.754  1600  2304 I am_crash: [15391,0,com.dragstreets.game,951598660,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
 11-02 18:23:10.190  1600  2780 I am_crash: [15691,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
 11-02 18:27:01.358  1600  2396 I am_crash: [15915,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
 11-02 18:27:25.555  1600  2360 I am_crash: [16117,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
 11-02 18:30:39.593  1600  3357 I am_crash: [16377,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'int mobi.square.sr.android.Ar.d()' on a null object reference,SourceFile,83]
-11-02 18:43:47.306 17361 17412 I SRLAB-PERF: screen=pj1 frames=1138 gapMaxMs=93 workMaxMs=5 slow33=1 slow100=0 assetMs=8 previews=0 previewMs=0 previewMaxMs=0 javaMB=12
-11-02 18:43:49.982 17552 17552 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-02 18:43:50.195 17552 17572 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-02 18:43:52.200 17552 17552 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-02 18:43:53.052 17552 17586 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-02 18:43:58.335 17552 17586 I SRLAB-PERF: screen=pj1 frames=875 gapMaxMs=204 workMaxMs=37 slow33=2 slow100=1 assetMs=17 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
-11-02 18:43:58.906 17552 17665 E SRLAB-CRC-ACTUAL: 2adb56e6
-11-02 18:43:58.906 17552 17665 E SRLAB-CRC-EXPECTED: a17c4d2b
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: Client exception
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: mobi.square.sr.android.HG0: INIT_ERROR
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.AU.a(SourceFile:83)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.zU.invoke(SourceFile:1)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.x80$a.h(SourceFile:77)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.eY0.a(SourceFile:2)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.iB1.l(SourceFile:1)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.K00.g(SourceFile:42)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.K00.c(SourceFile:30)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.fb0.M(SourceFile:66)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.fb0.n(SourceFile:10)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.n1(SourceFile:12)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.p1(SourceFile:10)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.s(SourceFile:5)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.DefaultChannelPipeline$HeadContext.n(SourceFile:1)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.n1(SourceFile:12)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.p1(SourceFile:10)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.DefaultChannelPipeline.s(SourceFile:2)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(SourceFile:86)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.p3(SourceFile:64)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.s3(SourceFile:24)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.r3(SourceFile:4)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.run(SourceFile:72)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SourceFile:40)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(SourceFile:2)
-11-02 18:43:58.907 17552 17665 E SRLAB-EXCEPTION: 	at java.lang.Thread.run(Thread.java:764)
-11-02 18:43:58.911 17552 17665 E DS-NETWORK: java.lang.RuntimeException: INIT_ERROR
-11-02 18:44:00.001  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
-11-02 18:44:00.344 17552 17704 D DS-MODULE: Background update check deferred: ConnectException
+11-02 18:50:44.131 17867 17897 I SRLAB-PERF: screen=pj1 frames=1203 gapMaxMs=7 workMaxMs=1 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=12
+11-02 18:50:45.166  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 18:50:46.323 18068 18068 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-02 18:50:46.501 18068 18087 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-02 18:50:48.506 18068 18068 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-02 18:50:49.215 18068 18110 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-02 18:50:54.427 18068 18110 I SRLAB-PERF: screen=pj1 frames=988 gapMaxMs=34 workMaxMs=34 slow33=1 slow100=0 assetMs=8 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
+11-02 18:50:54.923 18068 18190 E SRLAB-CRC-ACTUAL: a17c4d2b
+11-02 18:50:54.923 18068 18190 E SRLAB-CRC-EXPECTED: 2adb56e6
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: Client exception
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: mobi.square.sr.android.HG0: INIT_ERROR
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.AU.a(SourceFile:83)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.zU.invoke(SourceFile:1)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.x80$a.h(SourceFile:77)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.eY0.a(SourceFile:2)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.iB1.l(SourceFile:1)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.K00.g(SourceFile:42)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.K00.c(SourceFile:30)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.fb0.M(SourceFile:66)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.fb0.n(SourceFile:10)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.n1(SourceFile:12)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.p1(SourceFile:10)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.s(SourceFile:5)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.DefaultChannelPipeline$HeadContext.n(SourceFile:1)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.n1(SourceFile:12)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.p1(SourceFile:10)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.DefaultChannelPipeline.s(SourceFile:2)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(SourceFile:86)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.p3(SourceFile:64)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.s3(SourceFile:24)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.r3(SourceFile:4)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.run(SourceFile:72)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SourceFile:40)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(SourceFile:2)
+11-02 18:50:54.924 18068 18190 E SRLAB-EXCEPTION: 	at java.lang.Thread.run(Thread.java:764)
+11-02 18:50:54.927 18068 18190 E DS-NETWORK: java.lang.RuntimeException: INIT_ERROR
+11-02 18:50:56.432 18068 18230 D DS-MODULE: Background update check deferred: ConnectException
