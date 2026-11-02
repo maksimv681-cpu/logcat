@@ -1,32 +1,27 @@
 11-02 16:22:20.780  1438  1438 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-02 16:22:21.628  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
-11-02 23:06:24.741 32587 32587 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-02 23:06:24.901 32587 32609 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-02 23:06:26.906 32587 32587 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-02 23:06:27.937 32587 32621 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-02 23:06:32.029  2069  3441 W AlarmManager: java.lang.IllegalArgumentException: alarm "NetworkLocationActivityDetection" has short window length
-11-02 23:06:33.123 32587 32621 I SRLAB-PERF: screen=pj1 frames=920 gapMaxMs=38 workMaxMs=38 slow33=2 slow100=0 assetMs=7 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
-11-02 23:06:33.605  2069  3441 W AlarmManager: java.lang.IllegalArgumentException: alarm "NetworkLocationActivityDetection" has short window length
-11-02 23:06:35.134 32587 32742 D DS-MODULE: Background update check deferred: ConnectException
-11-02 23:06:36.841  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
-11-02 23:06:38.175 32587 32621 I SRLAB-PERF: screen=Hz0 frames=278 gapMaxMs=512 workMaxMs=503 slow33=33 slow100=6 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=15
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: Client exception
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: java.lang.ArrayIndexOutOfBoundsException: length=99; index=-1
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.r22.d(SourceFile:4)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.r22.c(SourceFile:4)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.uI1.g(SourceFile:5)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.uI1.c(SourceFile:1)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.uI1.d(SourceFile:1)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.ME.d(SourceFile:74)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.r1(SourceFile:19)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.L(SourceFile:2)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.j8(SourceFile:7)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.Q8(SourceFile:9)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.aG0.G6(SourceFile:5)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.Jz0$a.f(SourceFile:9)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.kK0.k(SourceFile:20)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.mK0$a.run(SourceFile:17)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:191)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
-11-02 23:06:40.654 32587 32621 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
-11-02 23:06:43.177 32587 32621 I SRLAB-PERF: screen=pj1 frames=200 gapMaxMs=318 workMaxMs=317 slow33=41 slow100=15 assetMs=0 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
+11-02 23:17:54.899   719   719 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-02 23:17:55.062   719   739 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-02 23:17:57.065   719   719 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-02 23:17:57.914   719   757 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-02 23:18:03.121   719   757 I SRLAB-PERF: screen=pj1 frames=979 gapMaxMs=34 workMaxMs=33 slow33=1 slow100=0 assetMs=7 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-02 23:18:05.126   719   907 D DS-MODULE: Background update check deferred: ConnectException
+11-02 23:18:07.007  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 23:18:08.124   719   757 I SRLAB-PERF: screen=Hz0 frames=295 gapMaxMs=511 workMaxMs=503 slow33=34 slow100=11 assetMs=3 previews=0 previewMs=0 previewMaxMs=0 javaMB=15
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: Client exception
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: java.nio.BufferUnderflowException
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at java.nio.Buffer.nextGetIndex(Buffer.java:521)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at java.nio.HeapByteBuffer.getFloat(HeapByteBuffer.java:442)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.jG.q7(SourceFile:13)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.r1(SourceFile:28)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.L(SourceFile:2)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.j8(SourceFile:7)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.Q8(SourceFile:9)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.aG0.G6(SourceFile:5)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.Jz0$a.f(SourceFile:9)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.kK0.k(SourceFile:20)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.mK0$a.run(SourceFile:17)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:191)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
+11-02 23:18:08.663   719   757 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
+11-02 23:18:13.124   719   757 I SRLAB-PERF: screen=pj1 frames=461 gapMaxMs=394 workMaxMs=392 slow33=39 slow100=4 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
