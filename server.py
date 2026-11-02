@@ -706,6 +706,8 @@ PACKET_NAMES = {
     6: "ping",
     7: "connect",
     100: "reserved",
+    206: "tutorialCar",
+    535: "serverTime",
     1803: "checkBan",
     1910: "initRequest",
     50015: "database",
@@ -1222,6 +1224,32 @@ class GameConnection(threading.Thread):
                 f"avatars_proto_bytes={len(AVATARS_DATABASE_PROTO)}, "
                 f"vinyl_market_blocks_proto_bytes={len(VINYL_MARKET_BLOCKS_DATABASE_PROTO)} "
                 f"(avatar_base={AVATAR_BASE_ID}, frame={AVATAR_FRAME_ID})"
+            )
+            return
+
+        if packet_id == 535:  # server time sync -> signed int64 Unix time in milliseconds
+            # ct2 stores System.currentTimeMillis() before sending the request and
+            # reads the response with fB1.u() (ByteBuf.readLong). The client
+            # computes its clock offset from this millisecond timestamp.
+            server_time_ms = int(time.time() * 1000)
+            response_body = struct.pack(">q", server_time_ms)
+            self.send_packet(535, sequence, response_body, encrypt=True)
+            self.state.log(
+                f"TCP {self.port} {self.remote} serverTime answered: "
+                f"{server_time_ms} ms (wire body={response_body.hex(' ')})"
+            )
+            return
+
+        if packet_id == 206:
+            # Jz0.FirstStartGarageStage requests the tutorial car (argument 147)
+            # and parses the raw response as UserCarProto. Do not fabricate a
+            # protobuf here: OG2.Q8() resolves UserCarProto.baseId through the
+            # client's BaseCar database and initializes the car from its parts.
+            requested_id = struct.unpack(">i", body[:4])[0] if len(body) >= 4 else None
+            self.state.log(
+                f"TCP {self.port} {self.remote} tutorialCar request "
+                f"argument={requested_id!r}; no response sent because a valid "
+                "UserCarProto and matching BaseCar/parts database records are not configured"
             )
             return
 
