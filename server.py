@@ -1256,10 +1256,9 @@ class GameConnection(threading.Thread):
             return
 
         if packet_id == 990045:  # EventCommandProto.scheduleInfo
-            # The command callback parses the *raw* protobuf body as
-            # EventCommandProto.ResultProto. Do not prepend a length prefix.
-            # Return a selected scheduleInfoResult with an empty
-            # EventInfoContainerProto, meaning there is no active event.
+            # The client callback uses fB1.r(), which first reads a 4-byte
+            # big-endian protobuf length. Prefix the selected ResultProto;
+            # its scheduleInfoResult contains an empty EventInfoContainerProto.
             self.send_packet(990045, sequence,
                              EMPTY_EVENT_SCHEDULE_RESULT_BODY, encrypt=True)
             self.state.log(
