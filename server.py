@@ -292,10 +292,23 @@ TUTORIAL_CAR_DATABASE_PROTO = build_tutorial_car_database_proto()
 
 
 def build_tutorial_user_car_proto(base_id: int) -> bytes:
-    # UserCarProto: id=field 1 (int64), base_id=field 2 (int32).
+    # UserCarProto: id=field 1 (int64), base_id=field 2 (int32),
+    # number=field 34 (CarNumberProto).
+    #
+    # Do not omit CarNumberProto: OG2.r1() always passes getNumber() to ME.f6().
+    # An absent message defaults to RU/region=0/number=0; ME.f6() then calls
+    # C1797uI1.d(...), and r22.d(0) indexes its region array at -1.
+    # RU country enum=0; region=1 resolves to the first supported RU region ("01").
+    car_number = b"".join((
+        _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),  # car_id (int64)
+        _protobuf_int32_field(2, 1),                     # region
+        _protobuf_int32_field(3, 1),                     # number
+        _protobuf_int32_field(5, 0),                     # country=RU
+    ))
     return b"".join((
         _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),
         _protobuf_int32_field(2, base_id),
+        _protobuf_bytes_field(34, car_number),
     ))
 
 
@@ -1284,6 +1297,7 @@ class GameConnection(threading.Thread):
             self.state.log(
                 f"TCP {self.port} {self.remote} packet 206 answered with synthetic "
                 f"UserCarProto id={TUTORIAL_USER_CAR_ID} base_id={base_id} "
+                "car_number={car_id:1,country:RU,region:1,number:1} "
                 f"(length-prefixed body={response_body.hex(' ')})"
             )
             return
