@@ -1,37 +1,54 @@
 11-02 16:22:20.780  1438  1438 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-02 16:22:21.628  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
-11-02 19:13:24.717 19651 19651 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-02 19:13:24.886 19651 19670 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-02 19:13:26.891 19651 19651 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-02 19:13:28.108 19651 19682 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-02 19:13:33.320 19651 19682 I SRLAB-PERF: screen=pj1 frames=879 gapMaxMs=33 workMaxMs=32 slow33=1 slow100=0 assetMs=8 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
-11-02 19:13:33.829 19651 19761 E SRLAB-CRC-ACTUAL: a17c4d2b
-11-02 19:13:33.829 19651 19761 E SRLAB-CRC-EXPECTED: 2adb56e6
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: Client exception
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: mobi.square.sr.android.HG0: INIT_ERROR
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.AU.a(SourceFile:83)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.zU.invoke(SourceFile:1)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.x80$a.h(SourceFile:77)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.eY0.a(SourceFile:2)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.iB1.l(SourceFile:1)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.K00.g(SourceFile:42)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.K00.c(SourceFile:30)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.fb0.M(SourceFile:66)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.fb0.n(SourceFile:10)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.n1(SourceFile:12)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.p1(SourceFile:10)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.s(SourceFile:5)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.DefaultChannelPipeline$HeadContext.n(SourceFile:1)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.n1(SourceFile:12)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.AbstractChannelHandlerContext.p1(SourceFile:10)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.DefaultChannelPipeline.s(SourceFile:2)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(SourceFile:86)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.p3(SourceFile:64)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.s3(SourceFile:24)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.r3(SourceFile:4)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.channel.nio.NioEventLoop.run(SourceFile:72)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SourceFile:40)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(SourceFile:2)
-11-02 19:13:33.832 19651 19761 E SRLAB-EXCEPTION: 	at java.lang.Thread.run(Thread.java:764)
-11-02 19:13:33.835 19651 19761 E DS-NETWORK: java.lang.RuntimeException: INIT_ERROR
-11-02 19:13:35.323 19651 19800 D DS-MODULE: Background update check deferred: ConnectException
+11-02 19:16:52.251 19972 19972 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-02 19:16:55.055 19972 20012 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-02 19:17:00.467 19972 20057 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-02 19:17:02.317  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 19:17:07.353  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 19:17:10.331 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1188 gapMaxMs=27 workMaxMs=7 slow33=0 slow100=0 assetMs=5 previews=0 previewMs=0 previewMaxMs=0 javaMB=8
+11-02 19:17:15.331 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1200 gapMaxMs=10 workMaxMs=7 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=6
+11-02 19:17:20.332 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1193 gapMaxMs=30 workMaxMs=4 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=7
+11-02 19:17:22.258  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 19:17:25.335 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1192 gapMaxMs=15 workMaxMs=9 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=7
+11-02 19:17:30.336 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1187 gapMaxMs=23 workMaxMs=2 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-02 19:17:35.338 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1200 gapMaxMs=9 workMaxMs=9 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=12
+11-02 19:17:40.338 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1199 gapMaxMs=12 workMaxMs=1 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=6
+11-02 19:17:45.343 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1202 gapMaxMs=6 workMaxMs=1 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-02 19:17:50.344 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1199 gapMaxMs=12 workMaxMs=2 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-02 19:17:55.346 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1198 gapMaxMs=12 workMaxMs=3 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=7
+11-02 19:18:00.350 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1199 gapMaxMs=11 workMaxMs=2 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-02 19:18:05.350 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1199 gapMaxMs=9 workMaxMs=3 slow33=0 slow100=0 assetMs=3 previews=0 previewMs=0 previewMaxMs=0 javaMB=9
+11-02 19:18:10.351 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1199 gapMaxMs=10 workMaxMs=1 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=9
+11-02 19:18:13.887  2069  3441 W AlarmManager: java.lang.IllegalArgumentException: alarm "NetworkLocationActivityDetection" has short window length
+11-02 19:18:15.352 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1200 gapMaxMs=8 workMaxMs=1 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
+11-02 19:18:20.356 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1193 gapMaxMs=19 workMaxMs=6 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=8
+11-02 19:18:22.758  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 19:18:25.357 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1199 gapMaxMs=12 workMaxMs=1 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=14
+11-02 19:18:30.359 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1189 gapMaxMs=17 workMaxMs=7 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=8
+11-02 19:18:35.365 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1187 gapMaxMs=20 workMaxMs=12 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=10
+11-02 19:18:40.368 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1198 gapMaxMs=18 workMaxMs=10 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=8
+11-02 19:18:45.368 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1195 gapMaxMs=16 workMaxMs=2 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=15
+11-02 19:18:50.369 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1193 gapMaxMs=16 workMaxMs=11 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=12
+11-02 19:18:55.371 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1182 gapMaxMs=19 workMaxMs=9 slow33=0 slow100=0 assetMs=3 previews=0 previewMs=0 previewMaxMs=0 javaMB=9
+11-02 19:19:00.372 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1192 gapMaxMs=18 workMaxMs=4 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-02 19:19:05.377 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1187 gapMaxMs=19 workMaxMs=5 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=16
+11-02 19:19:10.382 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1189 gapMaxMs=18 workMaxMs=11 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=15
+11-02 19:19:15.386 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1197 gapMaxMs=17 workMaxMs=5 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=12
+11-02 19:19:20.386 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1187 gapMaxMs=15 workMaxMs=11 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=9
+11-02 19:19:25.399 19972 20057 I SRLAB-PERF: screen=Fh1 frames=1136 gapMaxMs=25 workMaxMs=23 slow33=0 slow100=0 assetMs=8 previews=0 previewMs=0 previewMaxMs=0 javaMB=14
+11-02 19:19:30.401 19972 20057 I SRLAB-PERF: screen=pj1 frames=1017 gapMaxMs=57 workMaxMs=57 slow33=1 slow100=0 assetMs=4 previews=0 previewMs=0 previewMaxMs=0 javaMB=16
+11-02 19:19:35.404 19972 20057 I SRLAB-PERF: screen=pj1 frames=1199 gapMaxMs=9 workMaxMs=9 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=17
+11-02 19:19:40.402 19972 20057 I SRLAB-PERF: screen=pj1 frames=1179 gapMaxMs=17 workMaxMs=10 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
+11-02 19:19:45.414 19972 20057 I SRLAB-PERF: screen=pj1 frames=1157 gapMaxMs=17 workMaxMs=13 slow33=0 slow100=0 assetMs=4 previews=0 previewMs=0 previewMaxMs=0 javaMB=14
+11-02 19:19:47.931 19972 20214 E SRLAB-CRC-ACTUAL: c0f869c7
+11-02 19:19:47.931 19972 20214 E SRLAB-CRC-EXPECTED: c0f869c7
+11-02 19:19:47.931 19972 20214 E SRLAB-DB: Applying database
+11-02 19:19:48.194 19972 20214 E SRLAB-DB: Database applied
+11-02 19:19:50.418 19972 20057 I SRLAB-PERF: screen=Hz0 frames=869 gapMaxMs=516 workMaxMs=505 slow33=13 slow100=2 assetMs=4 previews=0 previewMs=0 previewMaxMs=0 javaMB=72
+11-02 19:19:52.874  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-02 19:19:55.485 19972 20057 I SRLAB-PERF: screen=Hz0 frames=156 gapMaxMs=244 workMaxMs=244 slow33=53 slow100=9 assetMs=0 previews=0 previewMs=0 previewMaxMs=0 javaMB=73
+11-02 19:20:00.488 19972 20057 I SRLAB-PERF: screen=fS1 frames=461 gapMaxMs=483 workMaxMs=479 slow33=30 slow100=9 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=53
+11-02 19:20:05.488 19972 20057 I SRLAB-PERF: screen=fS1 frames=1194 gapMaxMs=13 workMaxMs=10 slow33=0 slow100=0 assetMs=3 previews=0 previewMs=0 previewMaxMs=0 javaMB=57
+11-02 19:20:10.489 19972 20057 I SRLAB-PERF: screen=mG frames=947 gapMaxMs=512 workMaxMs=504 slow33=5 slow100=2 assetMs=5 previews=0 previewMs=0 previewMaxMs=0 javaMB=46
+11-02 19:20:15.490 19972 20057 I SRLAB-PERF: screen=FI0 frames=594 gapMaxMs=511 workMaxMs=504 slow33=8 slow100=7 assetMs=5 previews=0 previewMs=0 previewMaxMs=0 javaMB=58
+11-02 19:20:20.493 19972 20057 I SRLAB-PERF: screen=FI0 frames=1173 gapMaxMs=63 workMaxMs=4 slow33=1 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=64
