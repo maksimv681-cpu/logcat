@@ -276,6 +276,32 @@ def build_vinyl_market_blocks_database_proto() -> bytes:
 
 VINYL_MARKET_BLOCKS_DATABASE_PROTO = build_vinyl_market_blocks_database_proto()
 
+# Packet 206 requests a tutorial car by BaseCarProto.base_id. The repository
+# contains schemas but no extracted runtime car rows, so provide one minimal
+# synthetic entry for the observed request (base_id=147). This is a probe:
+# further fields may be needed once the client advances past tutorial setup.
+TUTORIAL_CAR_BASE_ID = 147
+TUTORIAL_USER_CAR_ID = 1
+
+
+def build_tutorial_car_database_proto() -> bytes:
+    # BaseCarProto.base_id is protobuf field 27; CarDatabaseProto.items is field 1.
+    base_car = _protobuf_int32_field(27, TUTORIAL_CAR_BASE_ID)
+    return _protobuf_bytes_field(1, base_car)
+
+
+TUTORIAL_CAR_DATABASE_PROTO = build_tutorial_car_database_proto()
+
+
+def build_tutorial_user_car_proto(base_id: int) -> bytes:
+    # UserCarProto: id=field 1 (int64), base_id=field 2 (int32).
+    return b"".join((
+        _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),
+        _protobuf_int32_field(2, base_id),
+    ))
+
+
+
 
 def _build_database_proto_with_crc(target_crc32: int) -> tuple[bytes, bytes, bytes]:
     """Add a harmless unknown protobuf field to AvatarsDatabaseProto so the
@@ -295,6 +321,8 @@ def _build_database_proto_with_crc(target_crc32: int) -> tuple[bytes, bytes, byt
                 value = VINYL_MARKET_BLOCKS_DATABASE_PROTO
             elif field_id == AVATARS_DATABASE_FIELD_ID:
                 value = avatar_proto
+            elif field_id == 1:
+                value = TUTORIAL_CAR_DATABASE_PROTO
             else:
                 value = b""
             chunks.append(_protobuf_bytes_field(field_id, value))
@@ -358,6 +386,8 @@ def build_bootstrap_database_proto() -> bytes:
             value = VINYL_MARKET_BLOCKS_DATABASE_PROTO
         elif field_id == AVATARS_DATABASE_FIELD_ID:
             value = AVATARS_DATABASE_PROTO
+        elif field_id == 1:
+            value = TUTORIAL_CAR_DATABASE_PROTO
         else:
             value = b""
         out.extend(_protobuf_bytes_field(field_id, value))
@@ -658,6 +688,7 @@ def build_bootstrap_database_response() -> bytes:
     settings_zip = _zip_database_proto(SETTINGS_DATABASE_PROTO)
     championship_zip = _zip_database_proto(CHAMPIONSHIP_DATABASE_PROTO)
     avatars_zip = _zip_database_proto(AVATARS_DATABASE_PROTO)
+    car_database_zip = _zip_database_proto(TUTORIAL_CAR_DATABASE_PROTO)
     # QN2.e() rebuilds its TreeMap from items; an empty proto leaves QN2.c()
     # null and crashes VT0. Supply both normal and bestsellers blocks.
     vinyl_market_blocks_zip = _zip_database_proto(VINYL_MARKET_BLOCKS_DATABASE_PROTO)
@@ -670,6 +701,8 @@ def build_bootstrap_database_response() -> bytes:
             payload = championship_zip
         elif type_id == AVATARS_DATABASE_TYPE_ID:
             payload = avatars_zip
+        elif type_id == 1:
+            payload = car_database_zip
         elif type_id == VINYL_MARKET_BLOCK_DATABASE_TYPE_ID:
             payload = vinyl_market_blocks_zip
         else:
@@ -709,6 +742,7 @@ PACKET_NAMES = {
     1803: "checkBan",
     1910: "initRequest",
     50015: "database",
+    206: "getTutorialUserCar",
     9003: "oneWayStartupCommand",
     9011: "getFriendRequests",
     990045: "eventCommand.scheduleInfo",
@@ -1225,6 +1259,29 @@ class GameConnection(threading.Thread):
             )
             return
 
+        if packet_id == 206:  # get tutorial UserCarProto by base car ID
+            if len(body) != 4:
+                self.state.log(
+                    f"TCP {self.port} {self.remote} packet 206 invalid request "
+                    f"length={len(body)}; expected 4-byte base_id"
+                )
+                return
+            base_id = struct.unpack(">i", body)[0]
+            if base_id != TUTORIAL_CAR_BASE_ID:
+                self.state.log(
+                    f"TCP {self.port} {self.remote} packet 206 unsupported base_id={base_id}; "
+                    f"only synthetic tutorial car {TUTORIAL_CAR_BASE_ID} is available"
+                )
+                return
+            response_proto = build_tutorial_user_car_proto(base_id)
+            self.send_packet(206, sequence, response_proto, encrypt=True)
+            self.state.log(
+                f"TCP {self.port} {self.remote} packet 206 answered with synthetic "
+                f"UserCarProto id={TUTORIAL_USER_CAR_ID} base_id={base_id} "
+                f"(raw protobuf bytes={len(response_proto)})"
+            )
+            return
+
         if packet_id == 6:  # ping -> plaintext empty body
             self.send_packet(6, sequence, b"", encrypt=False)
             return
@@ -1404,7 +1461,7 @@ def main() -> int:
     state.log(
         "database bootstrap: packet 50015 -> 85 sections; map types settings=41, "
         "championship=64, vinyl_market_blocks=65, avatars=86; protobuf fields championship=64, vinyl_market_blocks=65, avatars=86; "
-        "settings currentHoliday/currentSeason; championship leagues 1..8; vinyl blocks default+bestsellers; avatars base/frame id=1 "
+        "settings currentHoliday/currentSeason; championship leagues 1..8; tutorial car base_id=147; vinyl blocks default+bestsellers; avatars base/frame id=1 "
         f"(response_bytes={len(BOOTSTRAP_DATABASE_MAP_RESPONSE)}; "
         f"settings_proto_bytes={len(SETTINGS_DATABASE_PROTO)}, "
         f"championship_proto_bytes={len(CHAMPIONSHIP_DATABASE_PROTO)}, "
