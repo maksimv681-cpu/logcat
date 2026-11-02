@@ -1,0 +1,469 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Database";
+
+message AchievementsDatabaseProto {
+  repeated BaseAchievementProto achievements = 1;
+  repeated BaseAchievementsCategoryProto categories = 2;
+}
+
+message AvatarsDatabaseProto {
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_database$_avatars_database_proto; = 1;
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_avatars$_abstract_base_entity_proto; = 2;
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_avatars$_avatar_predicate_base_proto; = 3;
+}
+
+message BlueprintDatabaseProto {
+  repeated BaseBlueprintProto items = 1;
+}
+
+message BlueprintGenericDatabaseProto {
+  repeated BaseBlueprintGenericProto items = 1;
+}
+
+message BrakeDatabaseProto {
+  repeated BaseBrakeProto items = 1;
+}
+
+message BrakePadDatabaseProto {
+  repeated BaseBrakePadProto items = 1;
+}
+
+message CamshaftDatabaseProto {
+  repeated BaseCamshaftProto items = 1;
+}
+
+message CarDatabaseProto {
+  repeated BaseCarProto items = 1;
+  repeated FoundPlacesProto found_places = 2;
+}
+
+message ChallengeDatabaseProto {
+  repeated BaseChallengeProto items = 1;
+}
+
+message ChallengeTrackDatabaseProto {
+  repeated BaseChallengeTrackProto items = 1;
+}
+
+message ChampionshipDatabaseProto {
+  repeated BaseChampLeagueProto leagues = 1;
+  repeated BaseChampRewardProto rewards = 2;
+  repeated BaseChampSeasonRewardProto seasons = 3;
+}
+
+message ClanTournamentDatabaseProto {
+  repeated BaseClanTournamentProto items = 1;
+}
+
+message ColorDatabaseProto {
+  repeated BaseColorProto items = 1;
+}
+
+message ContractDatabaseProto {
+  repeated BaseContractProto items = 1;
+}
+
+message ContractTaskDatabaseProto {
+  repeated BaseContractTaskProto items = 1;
+}
+
+message CouponDatabaseProto {
+  repeated BaseCouponProto items = 1;
+}
+
+message CraftFilterDatabaseProto {
+  repeated BaseCraftFilterProto items = 1;
+}
+
+message CraftItemGroupDatabaseProto {
+  repeated CraftBaseItemsGroupProto items = 1;
+}
+
+message CraftRecipeDatabaseProto {
+  repeated int32 ids = 1;
+  repeated CraftBaseRecipeProto recipes = 2;
+}
+
+message CraftSchemeDatabaseProto {
+  repeated CraftBaseSchemeProto items = 1;
+}
+
+message DailyqDatabaseProto {
+  repeated DailyqProto items = 1;
+}
+
+message DatabaseProto {
+  optional CarDatabaseProto car_database = 1;
+  optional DiskDatabaseProto disk_database = 2;
+  optional TiresDatabaseProto tires_database = 3;
+  optional SpringDatabaseProto spring_database = 4;
+  optional SuspensionDatabaseProto suspension_database = 5;
+  optional PneumoDatabaseProto pneumo_database = 6;
+  optional BrakeDatabaseProto brake_database = 7;
+  optional BrakePadDatabaseProto brake_pad_database = 8;
+  optional PartsDatabaseProto parts_database = 9;
+  optional TuningDatabaseProto tuning_database = 10;
+  optional Turbo1DatabaseProto turbo1_database = 11;
+  optional Turbo2DatabaseProto turbo2_database = 12;
+  optional DecalDatabaseProto decal_database = 13;
+  optional QuestDatabaseProto quest_database = 14;
+  optional TransmissionDatabaseProto transmission_database = 15;
+  optional ColorDatabaseProto color_database = 16;
+  optional TournamentDatabaseProto tournament_database = 17;
+  optional LootDatabaseProto loot_database = 18;
+  optional DifferentialDatabaseProto differential_database = 19;
+  optional ChallengeDatabaseProto challenge_database = 20;
+  optional ChallengeTrackDatabaseProto challenge_track_database = 21;
+  optional TrackDatabaseProto track_database = 23;
+  optional BlueprintDatabaseProto blueprint_database = 24;
+  optional ToolsDatabaseProto tools_database = 25;
+  optional EngineDatabaseProto engine_database = 26;
+  optional IntakeDatabaseProto intake_database = 27;
+  optional ExhaustDatabaseProto exhaust_database = 28;
+  optional TimingGearDatabaseProto timing_gear_database = 29;
+  optional CamshaftDatabaseProto camshaft_database = 30;
+  optional EcuDatabaseProto ecu_database = 31;
+  optional OilCoolerDatabaseProto oil_cooler_database = 32;
+  optional OilInjectorsDatabaseProto oil_injectors_database = 33;
+  optional RadiatorDatabaseProto radiator_database = 34;
+  optional PneumoShifterDatabaseProto pneumo_shifter_database = 35;
+  optional VillyBarDatabaseProto villy_bar_database = 36;
+  optional SafetyCageDatabaseProto safety_cage_database = 37;
+  optional SwapPartsDatabaseProto swap_parts_database = 38;
+  optional DailyqDatabaseProto dailyq_database = 39;
+  optional MassBalanceDatabaseProto mass_balance_database = 40;
+  optional SettingsDatabaseProto settings_database = 41;
+  optional LimitZonesDatabaseProto limit_zones_database = 42;
+  optional TrafficLightDatabaseProto traffic_light_database_proto = 43;
+  optional ClanTournamentDatabaseProto clan_tournament_database = 44;
+  optional ItemSetDatabaseProto item_set_database_proto = 46;
+  optional LootboxDatabaseProto loot_box_database_proto = 47;
+  optional LootboxLootDatabaseProto loot_box_loot_database_proto = 48;
+  optional CouponDatabaseProto coupon_database_proto = 49;
+  optional TrailerChallengesDatabaseProto trailer_challenges_database_proto = 50;
+  optional MarketDatabaseProto market_database_proto = 51;
+  optional MarketSlotDatabaseProto market_slot_database_proto = 52;
+  optional MarketFilterDatabaseProto market_filter_database_proto = 53;
+  optional CraftSchemeDatabaseProto craft_scheme_database_proto = 54;
+  optional CraftFilterDatabaseProto craft_filter_database_proto = 55;
+  optional CraftItemGroupDatabaseProto craft_item_group_database_proto = 56;
+  optional CraftRecipeDatabaseProto craft_recipe_database_proto = 57;
+  optional BlueprintGenericDatabaseProto blueprint_generic_database = 58;
+  optional UpgradeSlotSettingsDatabaseProto upgrade_slot_settings_database = 59;
+  optional TrailerChallengesZonesDatabaseProto trailer_challenges_zones_database = 60;
+  optional ContractDatabaseProto contract_database_proto = 61;
+  optional ContractTaskDatabaseProto contract_task_database_proto = 62;
+  optional TicketDatabaseProto ticket_database_proto = 63;
+  optional ChampionshipDatabaseProto championship_database_proto = 64;
+  optional VinylMarketBlockDatabaseProto vinyl_market_block_database_proto = 65;
+  optional VinylTagDatabaseProto vinyl_tag_database_proto = 66;
+  optional VinylFilterCategoriesDatabaseProto vinyl_filter_categories_database_proto = 67;
+  optional VinylMarketStrikesDatabaseProto vinyl_market_strikes_database_proto = 68;
+  optional SameHullsDatabaseProto same_hulls_database_proto = 69;
+  optional StylingDatabaseProto styling_database_proto = 71;
+  optional FlashersDatabaseProto flashers_database_proto = 72;
+  optional StroboscopeDatabaseProto stroboscope_database_proto = 73;
+  optional ProjectorDatabaseProto projector_database_proto = 74;
+  optional TakeApartTicketDatabaseProto take_apart_ticket_database_proto = 75;
+  optional StageDatabaseProto stage_database_proto = 76;
+  optional EnginePartsSetsDatabaseProto engine_parts_sets_database_proto = 77;
+  optional NitroDatabaseProto nitro_database_proto = 78;
+  optional DiskImagesDatabaseProto disk_images_database_proto = 79;
+  optional TeamCompetitionRewardsDatabaseProto team_competition_rewards_database_proto = 80;
+  optional RaceStrategySettingsDatabaseProto race_strategy_settings_database_proto = 81;
+  optional PremiumTokenDatabaseProto premium_token_database_proto = 82;
+  optional PremiumsDatabaseProto premiums_database_proto = 83;
+  optional PremiumPrivilegesDatabaseProto premium_privileges_database_proto = 84;
+  optional AchievementsDatabaseProto base_achievements_proto = 85;
+  optional AvatarsDatabaseProto avatars_database_proto = 86;
+  optional HolidayGiftsDatabaseProto holiday_database_proto = 87;
+  optional UserStyleDatabseProto user_style_proto = 88;
+  optional NewsDatabaseProto news_database_proto = 89;
+  optional EventsDatabaseProto events_database_proto = 90;
+}
+
+message DecalDatabaseProto {
+  repeated BaseDecalProto items = 1;
+}
+
+message DifferentialDatabaseProto {
+  repeated BaseDifferentialProto items = 1;
+}
+
+message DiskDatabaseProto {
+  repeated BaseDiskProto items = 1;
+}
+
+message DiskImagesDatabaseProto {
+  repeated BaseDiskImageProto items = 1;
+}
+
+message EcuDatabaseProto {
+  repeated BaseECUProto items = 1;
+}
+
+message EngineDatabaseProto {
+  repeated BaseEngineProto items = 1;
+}
+
+message EnginePartsSetsDatabaseProto {
+  repeated EnginePartsSetProto items = 1;
+}
+
+message ExhaustDatabaseProto {
+  repeated BaseExhaustProto items = 1;
+}
+
+message FlashersDatabaseProto {
+  repeated BaseFlashersProto items = 1;
+}
+
+message FoundPlacesProto {
+  optional int32 id = 1;
+  optional string str_res = 2;
+}
+
+message HashDataProto {
+  repeated int32 /* enum */ type = 1;
+  repeated int64 hash = 2;
+}
+
+message HolidayGiftsDatabaseProto {
+  repeated BaseHolidayGiftProto base_holiday_gift_proto = 1;
+}
+
+message IntakeDatabaseProto {
+  repeated BaseIntakeProto items = 1;
+}
+
+message ItemSetDatabaseProto {
+  repeated BaseItemSetProto items = 1;
+}
+
+message LimitZonesDatabaseProto {
+  repeated BaseLimitZoneProto zones = 1;
+}
+
+message LootDatabaseProto {
+  repeated LootListProto items = 1;
+}
+
+message LootboxDatabaseProto {
+  repeated BaseLootboxProto items = 1;
+}
+
+message LootboxLootDatabaseProto {
+  repeated BaseLootboxLootListProto items = 1;
+}
+
+message MarketDatabaseProto {
+  repeated BaseMarketProto items = 1;
+}
+
+message MarketFilterDatabaseProto {
+  repeated BaseMarketFilterProto items = 1;
+}
+
+message MarketSlotDatabaseProto {
+  repeated BaseMarketSlotProto items = 1;
+}
+
+message MassBalanceDatabaseProto {
+  repeated BaseMassBalance items = 1;
+}
+
+message NewsDatabaseProto {
+  repeated NewsProto items = 1;
+}
+
+message NitroDatabaseProto {
+  repeated BaseNitroProto items = 1;
+}
+
+message OilCoolerDatabaseProto {
+  repeated BaseOilCooler items = 1;
+}
+
+message OilInjectorsDatabaseProto {
+  repeated BaseOilInjectors items = 1;
+}
+
+message PartsDatabaseProto {
+  repeated BasePartsProto items = 1;
+}
+
+message PneumoDatabaseProto {
+  repeated BasePneumoProto items = 1;
+}
+
+message PneumoShifterDatabaseProto {
+  repeated BasePneumoShifter items = 1;
+}
+
+message PremiumConvertCoefProto {
+  optional int32 premium_lvl = 1;
+  optional int32 coef = 2;
+}
+
+message PremiumPrivilegesDatabaseProto {
+  repeated BasePremiumPrivilegeProto items = 1;
+}
+
+message PremiumTokenDatabaseProto {
+  repeated BasePremiumTokenProto items = 1;
+}
+
+message PremiumsDatabaseProto {
+  repeated BasePremiumProto items = 1;
+  repeated PremiumConvertCoefProto convert_prices = 2;
+}
+
+message ProjectorDatabaseProto {
+  repeated BaseProjectorProto items = 1;
+}
+
+message QuestDatabaseProto {
+  repeated BaseQuestProto items = 1;
+}
+
+message RaceStrategySettingsDatabaseProto {
+  repeated RaceStrategySettingProto items = 1;
+}
+
+message RadiatorDatabaseProto {
+  repeated BaseRadiator items = 1;
+}
+
+message SafetyCageDatabaseProto {
+  repeated BaseSafetyCage items = 1;
+}
+
+message SameHullsDatabaseProto {
+  repeated BaseSameHullsProto items = 1;
+}
+
+message SettingsDatabaseProto {
+  repeated BaseSettingProto setting = 1;
+}
+
+message SpringDatabaseProto {
+  repeated BaseSpringProto items = 1;
+}
+
+message StageDatabaseProto {
+  repeated BaseStageProto items = 1;
+}
+
+message StroboscopeDatabaseProto {
+  repeated BaseStroboscopeProto items = 1;
+}
+
+message StylingDatabaseProto {
+  repeated BaseStylingProto items = 1;
+  repeated BaseUpgradePositionParametersProto parameters = 2;
+}
+
+message SuspensionDatabaseProto {
+  repeated BaseSuspensionProto items = 1;
+}
+
+message SwapPartsDatabaseProto {
+  repeated BaseSwapParts items = 1;
+}
+
+message TakeApartTicketDatabaseProto {
+  repeated BaseTakeApartTicketProto items = 1;
+}
+
+message TeamCompetitionRewardsDatabaseProto {
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_database$_team_competition_rewards_database_proto; = 1;
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_team$_a_base_team_competition_reward_proto; = 2;
+  repeated BaseRankProto ranks = 3;
+  repeated string config_key = 4;
+  repeated string config_value = 5;
+}
+
+message TicketDatabaseProto {
+  repeated BaseTicketProto items = 1;
+}
+
+message TimingGearDatabaseProto {
+  repeated BaseTimingGearProto items = 1;
+}
+
+message TiresDatabaseProto {
+  repeated BaseTiresProto items = 1;
+}
+
+message ToolsDatabaseProto {
+  repeated BaseToolsProto items = 1;
+}
+
+message TournamentDatabaseProto {
+  repeated BaseTournamentProto items = 1;
+  repeated BaseSeriesOfWinProto series_of_wins = 2;
+}
+
+message TrackDatabaseProto {
+  repeated BaseTrackProto items = 1;
+}
+
+message TrafficLightDatabaseProto {
+  repeated BaseTrafficLightSettings settings = 1;
+}
+
+message TrailerChallengesDatabaseProto {
+  repeated BaseTrailerChallengeItemProto items = 1;
+}
+
+message TrailerChallengesZonesDatabaseProto {
+  repeated int32 ids = 1;
+  repeated ChallengeZoneProto zones = 2;
+}
+
+message TransmissionDatabaseProto {
+  repeated BaseTransmissionProto items = 1;
+}
+
+message TuningDatabaseProto {
+  repeated BaseTuningProto items = 1;
+}
+
+message Turbo1DatabaseProto {
+  repeated BaseTurbo1Proto items = 1;
+}
+
+message Turbo2DatabaseProto {
+  repeated BaseTurbo2Proto items = 1;
+}
+
+message UpgradeSlotSettingsDatabaseProto {
+  repeated BaseUpgradeSlotSettingProto upgrade_slot_setting = 1;
+}
+
+message UserStyleDatabseProto {
+  repeated BaseDashboardProto base_dashboards = 1;
+}
+
+message VillyBarDatabaseProto {
+  repeated BaseVillyBar items = 1;
+}
+
+message VinylFilterCategoriesDatabaseProto {
+  repeated BaseVinylFilterCategoryProto items = 1;
+}
+
+message VinylMarketBlockDatabaseProto {
+  repeated BaseVinylBlockProto items = 1;
+}
+
+message VinylMarketStrikesDatabaseProto {
+  repeated BaseStrikesSettingsProto items = 1;
+}
+
+message VinylTagDatabaseProto {
+  repeated BaseVinylTagProto items = 1;
+}

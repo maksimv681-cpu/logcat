@@ -1,0 +1,76 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "ProtocolProtoContainer";
+
+message CheckBanResponseProto {
+  optional CheckBanResponseProtoEnum status = 1;
+  optional int64 user_id = 2;
+  optional string reason = 3;
+  optional bytes encrypted_params = 4;
+  optional string avatar_url = 5;
+  optional string social_type = 6;
+  optional string social_id = 7;
+  optional string social_user_name = 8;
+  enum CheckBanResponseProtoEnum {
+    OK = 1;
+    BANNED = 2;
+    EDIT_MODE = 3;
+    ACCESS_DENIED = 4;
+    BRUTE_FORCE_PREVENT = 5;
+    BAD_ACCESS_TOKEN = 6;
+    OUTDATED_ACCESS_TOKEN = 7;
+  }
+}
+
+message InitParamsProto {
+  optional string social_type = 1;
+  optional string social_id = 2;
+  optional bytes encrypted_params = 3;
+  optional string device_id = 4;
+  optional string avatar_url = 5;
+  optional string access_token = 6;
+  optional string token = 7;
+  optional string secret = 8;
+  optional string app_id = 9;
+}
+
+message InitRequest {
+  optional string time_zone_id = 1;
+  optional string lang = 2;
+  optional int64 client_time = 3;
+  optional bool is_wi_fi = 4;
+  optional string client_platform = 5;
+}
+
+message InitResponse {
+  optional UserProto user = 1;
+  optional bool team_comp_lobby_exist = 2;
+  optional int64 delta_time = 3;
+  optional string time_zone_id = 4;
+  optional bool bank_discount = 5;
+  optional int32 unread_news_count = 6;
+  optional ClanProto clan = 7;
+  optional string request_hash = 8;
+}
+
+message PercentelProto {
+  optional int64 p50 = 1;
+  optional int64 p95 = 2;
+  optional int64 p99 = 3;
+  optional int64 max = 4;
+}
+
+message ServerStatProto {
+  optional int32 request_count = 1;
+  optional int64 connection_count = 2;
+  optional int64 controller_count = 3;
+  optional int64 controllers_cache_size = 4;
+  optional int64 commands_in_progress = 5;
+  optional string max_command_name = 6;
+  optional int32 max_command_count = 7;
+  optional int32 max_command_size = 8;
+  optional PercentelProto queue_latency = 9;
+  optional PercentelProto run_latency = 10;
+}

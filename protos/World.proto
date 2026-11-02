@@ -1,0 +1,12 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "World";
+
+message WorldProto {
+  optional int64 time = 1;
+  optional string zone_id = 2;
+  optional int64 time_delta = 3;
+  optional int64 zone_sync_timer = 4;
+}

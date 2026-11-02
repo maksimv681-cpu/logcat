@@ -1,0 +1,193 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "EventCommands";
+
+message BuyFuelProto {
+  message ResultProto {
+  }
+}
+
+message BuyInEventShopCommandProto {
+  optional int32 item_id = 1;
+  message ResultProto {
+    optional DropboxProto drop_box = 1;
+  }
+}
+
+message BuyUpgradeCommandProto {
+  optional int32 base_upgrade_id = 2;
+  optional int32 upgrade_type = 3;
+  message ResultProto {
+    optional CarUpgradeProto upgrade = 3;
+  }
+}
+
+message ChangeEventCarProto {
+  optional int32 base_car_id = 1;
+  message ResultProto {
+  }
+}
+
+message EventCommandProto {
+  oneof oneof_0 {
+    GetEventCarsProto field_1 = 1;
+    JoinEventProto field_2 = 2;
+    GetEventScheduleInfoProto field_3 = 3;
+    GetEventStageEnemyProto field_4 = 4;
+    RequestObtainEventLevelRewardProto field_5 = 5;
+    UpgradeEventCarCommandProto field_6 = 6;
+    BuyUpgradeCommandProto field_7 = 7;
+    EventUpgradeSlotCommandProto field_8 = 8;
+    GetTopsProto field_9 = 9;
+    BuyFuelProto field_10 = 10;
+    ChangeEventCarProto field_11 = 11;
+    BuyInEventShopCommandProto field_12 = 12;
+    RequestObtainEventSecretRewardProto field_13 = 13;
+    ResetPaintProto field_14 = 14;
+    GetUserCardCommandProto field_15 = 15;
+    GDCommandProto field_16 = 16;
+  }
+  message ResultProto {
+    oneof oneof_0 {
+      GetEventCarsProto.ResultProto field_1 = 1;
+      JoinEventProto.ResultProto field_2 = 2;
+      GetEventScheduleInfoProto.ResultProto field_3 = 3;
+      GetEventStageEnemyProto.ResultProto field_4 = 4;
+      RequestObtainEventLevelRewardProto.ResultProto field_5 = 5;
+      UpgradeEventCarCommandProto.ResultProto field_6 = 6;
+      BuyUpgradeCommandProto.ResultProto field_7 = 7;
+      EventUpgradeSlotCommandProto.ResultProto field_8 = 8;
+      GetTopsProto.ResultProto field_9 = 9;
+      BuyFuelProto.ResultProto field_10 = 10;
+      ChangeEventCarProto.ResultProto field_11 = 11;
+      BuyInEventShopCommandProto.ResultProto field_12 = 12;
+      RequestObtainEventSecretRewardProto.ResultProto field_13 = 13;
+      ResetPaintProto.ResultProto field_14 = 14;
+      GetUserCardCommandProto.ResultProto field_15 = 15;
+      GDCommandProto.ResultProto field_16 = 16;
+    }
+    enum ResultProtoEnum {
+      EVENTCARSRESULT = 1;
+      JOINEVENTRESULT = 2;
+      SCHEDULEINFORESULT = 3;
+      GETEVENTSTAGEENEMYRESULT = 4;
+      REQUESTOBTAINEVENTLEVELREWARDRESULT = 5;
+      UPGRADEEVENTCARRESULT = 6;
+      BUYUPGRADERESULT = 7;
+      EVENTUPGRADESLOTRESULT = 8;
+      GETTOPSRESULT = 9;
+      BUYFUELRESULT = 10;
+      CHANGEEVENTCARRESULT = 11;
+      BUYINEVENTSHOPRESULT = 12;
+      REQUESTOBTAINSECRETREWARDSRESULT = 13;
+      RESETPAINTRESULT = 14;
+      GETUSERCARDINFORESULT = 15;
+      GDCOMMANDRESULT = 16;
+    }
+  }
+  enum EventCommandProtoEnum {
+    GETEVENTCARS = 1;
+    JOINEVENT = 2;
+    SCHEDULEINFO = 3;
+    GETEVENTSTAGEENEMY = 4;
+    REQUESTOBTAINEVENTLEVELREWARD = 5;
+    UPGRADEEVENTCAR = 6;
+    BUYUPGRADE = 7;
+    EVENTUPGRADESLOT = 8;
+    GETTOPS = 9;
+    BUYFUEL = 10;
+    CHANGEEVENTCAR = 11;
+    BUYINEVENTSHOP = 12;
+    REQUESTOBTAINSECRETREWARDS = 13;
+    RESETPAINT = 14;
+    GETUSERCARDINFO = 15;
+    GGCOMMAND = 16;
+  }
+}
+
+message EventUpgradeSlotCommandProto {
+  optional EventUpgradeSlotTypeProto slot_type = 1;
+  optional int32 command = 2;
+  optional int32 base_detail_id = 3;
+  optional int64 detail_id = 4;
+  message ResultProto {
+    optional SlotDetailProto created_slot_detail = 1;
+  }
+}
+
+message GDCommandProto {
+  optional int32 action = 1;
+  repeated int32 payload_int = 2;
+  repeated int64 payload_long = 3;
+  optional EnemyProto enemy = 4;
+  message ResultProto {
+    repeated EnemyMetadataProto enemies = 1;
+  }
+}
+
+message GetEventCarsProto {
+  message ResultProto {
+    repeated UserCarProto cars = 1;
+  }
+}
+
+message GetEventScheduleInfoProto {
+  message ResultProto {
+    optional EventInfoContainerProto event_info_container = 1;
+  }
+}
+
+message GetEventStageEnemyProto {
+  optional int32 base_stage_id = 1;
+  message ResultProto {
+    optional EnemyProto enemy = 1;
+  }
+}
+
+message GetTopsProto {
+  optional bool include_uids = 1;
+  message ResultProto {
+    repeated TopItemProto tops = 1;
+  }
+}
+
+message GetUserCardCommandProto {
+  optional int64 uid = 1;
+  message ResultProto {
+    optional UserCardInfoProto card_info = 1;
+  }
+}
+
+message JoinEventProto {
+  optional int32 base_car_id = 1;
+  message ResultProto {
+    optional EventUserDataProto event_user_data = 1;
+  }
+}
+
+message RequestObtainEventLevelRewardProto {
+  optional int32 base_event_level_reward_id = 1;
+  message ResultProto {
+    optional DropboxProto dropbox = 1;
+  }
+}
+
+message RequestObtainEventSecretRewardProto {
+  optional int32 reward_id = 1;
+  message ResultProto {
+    optional DropboxProto dropbox = 1;
+  }
+}
+
+message ResetPaintProto {
+  message ResultProto {
+  }
+}
+
+message UpgradeEventCarCommandProto {
+  optional UpgradeCommandProto upgrade_command = 1;
+  message ResultProto {
+  }
+}

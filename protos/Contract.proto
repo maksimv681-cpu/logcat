@@ -1,0 +1,53 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Contract";
+
+message ContractProto {
+  optional int32 lmobi/sr/common/proto/compiled/_contract$_contract_proto; = 1;
+  optional int32 bit_field0 = 2;
+  optional int32 id = 3;
+  optional int32 level_cap = 4;
+  optional int64 level = 5;
+  optional int64 current_car_bonus = 6;
+  optional int64 start_date = 7;
+  optional int64 end_date = 8;
+  optional int64 next_day_task_refresh = 9;
+  optional bool next_week_task_refresh = 10;
+  optional int32 next_month_task_refresh = 11;
+  optional bool finished = 12;
+  repeated bytes /* message type unresolved */ completed_car_id = 13;
+  repeated ContractRewardProto rewards = 14;
+  repeated ContractTaskProto day_tasks = 15;
+  repeated bytes /* message type unresolved */ week_tasks = 16;
+  optional int64 daily_restriction_time = 17;
+  optional int64 weekly_restriction_time = 18;
+  optional int64 monthly_restriction_time = 19;
+  repeated int32 early_update_counter_key = 20;
+  repeated int32 early_update_counter_value = 21;
+}
+
+message ContractRewardItemProto {
+  optional int32 id = 1;
+  optional MoneyProto money = 2;
+  optional BaseThingKeyProto base_thing_key = 3;
+  optional int32 count = 4;
+  optional bool premium = 5;
+  optional bool consumed = 6;
+}
+
+message ContractRewardProto {
+  optional int32 level = 1;
+  optional int32 grade = 2;
+  repeated ContractRewardItemProto items = 3;
+}
+
+message ContractTaskProto {
+  optional int32 id = 1;
+  optional int32 current_stage = 2;
+  optional int32 max_progress = 3;
+  optional int32 current_progress = 4;
+  optional BaseParamProto param2 = 5;
+  optional BaseParamProto param3 = 6;
+}

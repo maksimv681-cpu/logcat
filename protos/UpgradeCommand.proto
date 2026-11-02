@@ -1,0 +1,52 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "UpgradeCommand";
+
+message DropUpgradeProto {
+  optional int32 slot_type = 1;
+}
+
+message InstallProto {
+  optional ThingKeyProto upgrade_id = 1;
+  optional int32 slot_type = 2;
+  optional bool force = 3;
+}
+
+message PaintUpdateProto {
+  optional PaintCommandsProto paint_commands = 1;
+}
+
+message SetVisibleSpoilerProto {
+  optional bool visible = 2;
+}
+
+message UninstallProto {
+  optional int32 slot_type = 1;
+}
+
+message UpdateUpgradePositionOffsetsProto {
+  repeated UpgradePositionOffsetProto position_offsets = 1;
+}
+
+message UpgradeCommandProto {
+  optional int32 command_type_id = 1;
+  optional int64 car_id = 2;
+  oneof oneof_0 {
+    InstallProto field_3 = 3;
+    UninstallProto field_4 = 4;
+    DropUpgradeProto field_5 = 5;
+    SetVisibleSpoilerProto field_6 = 6;
+    UpdateUpgradePositionOffsetsProto field_7 = 7;
+    PaintUpdateProto field_8 = 8;
+  }
+  enum UpgradeCommandProtoEnum {
+    INSTALL = 3;
+    UNINSTALL = 4;
+    DROPUPGRADE = 5;
+    SETVISIBLESPOILER = 6;
+    POSITIONOFFSETS = 7;
+    PAINTUPDATE = 8;
+  }
+}

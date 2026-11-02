@@ -1,0 +1,197 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Clan";
+
+message BoxesEntityProto {
+  optional int64 id = 1;
+  optional int64 user_id = 2;
+  optional UserCarProto user_car = 3;
+  optional int32 type = 4;
+  optional MoneyProto cost = 5;
+  optional string comment = 6;
+  optional bool is_completed = 7;
+  optional bool is_accepted = 8;
+}
+
+message BoxesProto {
+  optional int64 id = 1;
+  optional int32 type = 2;
+  optional MoneyProto price = 3;
+  optional bool locked = 4;
+  optional BoxesEntityProto current_entity = 5;
+  repeated BoxesEntityProto start_queue = 6;
+}
+
+message ClanFilterProto {
+  optional int32 /* enum */ open_state = 1;
+  optional int32 lang = 2;
+  optional int32 flags_count = 3;
+  optional int64 cid = 4;
+  optional int32 /* enum */ sorting = 5;
+  optional string clan_name = 6;
+  optional int32 page_number = 7;
+  optional float min_reputation = 8;
+  optional float max_reputation = 9;
+}
+
+message ClanInfoProto {
+  optional string name = 1;
+  optional string label = 2;
+  optional int64 clan_id = 3;
+  optional int32 /* enum */ open_state = 4;
+  optional int32 lang = 5;
+  optional string description = 6;
+}
+
+message ClanLogItemProto {
+  optional int64 id = 1;
+  optional int32 type = 2;
+  optional int64 date = 3;
+  optional UserInfoProto executor = 4;
+  optional UserInfoProto info = 5;
+  optional MoneyProto money = 6;
+  optional ClanUpgradeProto clan_upgrade = 7;
+  optional int32 command = 8;
+  optional int32 region_id = 9;
+}
+
+message ClanMemberProto {
+  optional int64 id = 1;
+  optional int32 type = 2;
+  optional UserInfoProto info = 3;
+  optional int64 last_action_time = 4;
+  optional UserCarProto user_car = 5;
+  optional bool can_config_cars = 6;
+  optional bool can_paint_cars = 7;
+  optional int64 lock_time = 8;
+  optional MoneyProto penalty_money = 9;
+  optional CarSafeProto safe_car = 10;
+}
+
+message ClanMemberStatsDataProto {
+  optional int64 uid = 1;
+  optional string name = 2;
+  optional int32 region = 3;
+  optional int32 activity = 4;
+  optional int64 time = 5;
+}
+
+message ClanProto {
+  optional int64 id = 1;
+  optional ClanInfoProto info = 2;
+  optional ClanMemberProto clan_leader = 3;
+  repeated ClanMemberProto clan_members = 4;
+  optional MoneyProto money = 5;
+  repeated ClanUpgradeProto clan_upgrades = 6;
+  optional BoxesProto tuning_boxes = 7;
+  optional BoxesProto paint_boxes = 8;
+  repeated ClanUserStatisticsItemProto user_statistics = 9;
+  optional bool locked = 10;
+  optional string lock_reason = 11;
+  optional MoneyProto blocked_money = 12;
+  optional int32 region_id = 13;
+  optional int32 lang = 14;
+  optional int32 rename_counter = 15;
+}
+
+message ClanRegionChangeEventProto {
+  optional int32 rid = 1;
+  optional int64 cid = 2;
+}
+
+message ClanSearchInfoPageProto {
+  repeated ClanSearchInfoProto collection = 1;
+  optional int32 pages_count = 2;
+}
+
+message ClanSearchInfoProto {
+  optional string label = 1;
+  optional string name = 2;
+  optional int32 lang = 3;
+  optional int32 /* enum */ open_state = 4;
+  optional int32 flags_count = 5;
+  optional int64 weekly_reputation = 6;
+  optional int32 members_count = 7;
+  optional int64 cid = 8;
+  optional int64 last_activity = 9;
+  optional int32 max_member = 10;
+}
+
+message ClanStatsDataProto {
+  optional int64 clan_id = 1;
+  repeated ClanMemberStatsDataProto data = 2;
+}
+
+message ClanUpgradeProto {
+  optional int32 type = 1;
+  optional int64 expiries_time = 2;
+  optional int32 level = 3;
+}
+
+message ClanUserStatisticsItemProto {
+  optional int64 uid = 1;
+  optional int64 date = 2;
+  optional MoneyProto money = 3;
+  optional UserInfoProto info = 4;
+}
+
+message CommandResultProto {
+  optional int32 /* enum */ action = 1;
+  optional bool is_done = 2;
+  optional EntryRequestProto entry_request = 3;
+  optional int32 /* enum */ request_error = 4;
+}
+
+message EntryRequestProto {
+  optional int32 /* enum */ request_type = 1;
+  optional int64 user_id = 2;
+  optional int64 clan_id = 3;
+  optional int64 car_for_entry_id = 4;
+  optional int64 request_creator_id = 5;
+  optional int64 ttl = 6;
+  optional string clan_name = 7;
+  optional string clan_label = 8;
+  optional int32 max_member = 9;
+  optional int32 members_count = 10;
+  optional UserInfoProto user_info = 11;
+}
+
+message GlobalClanStatisticProto {
+  optional int64 clan_id = 1;
+  optional int64 max_weekly_reputation = 2;
+  optional int32 max_weekly_regions_held = 3;
+  optional int32 regions_grip = 4;
+  optional int32 bosses_wins = 5;
+  repeated int64 region_id = 6;
+  repeated int64 region_reputation = 7;
+}
+
+message InviteClanAnswerEventProto {
+  optional int64 inviter_id = 1;
+  optional bool can_join = 2;
+}
+
+message InviteClanEventProto {
+  optional int64 user_id = 1;
+  optional int64 clan_id = 2;
+  optional ClanInfoProto info = 3;
+  optional UserInfoProto user_info = 4;
+  optional int64 inviter_id = 5;
+}
+
+message RegionInfoProto {
+  optional int32 rid = 1;
+  optional ClanInfoProto info = 2;
+  optional ClanTournamentProto clan_tournament = 3;
+  optional ClanUserTournamentProto clan_user_tournament = 4;
+  optional ClanBossRaidInstanceProto boss_raid_instance = 5;
+}
+
+message RegionTopItemProto {
+  optional ClanInfoProto info = 1;
+  optional int32 points = 2;
+  repeated int32 regions = 3;
+  optional int32 place = 4;
+}

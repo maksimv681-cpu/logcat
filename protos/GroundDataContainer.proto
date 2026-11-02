@@ -1,0 +1,40 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "GroundDataContainer";
+
+message BiomeProto {
+  optional float start = 1;
+  optional float end = 2;
+  optional TrackProto track = 3;
+  repeated double surface = 4;
+  repeated double irregularities = 5;
+  repeated BaseLimitZoneProto zones = 6;
+}
+
+message GroundDataProto {
+  repeated BiomeProto biomes = 1;
+  optional int32 current_biome = 2;
+  optional float start_line = 3;
+  optional float finish_line = 4;
+  optional float ready_line = 5;
+  optional float stop_line = 6;
+  optional float back_start_line = 7;
+  optional bytes sig = 8;
+  optional float preferred_camera_height = 9;
+  optional float min_camera_x = 10;
+  optional float max_camera_x = 11;
+  optional float min_camera_y = 12;
+  optional float max_camera_y = 13;
+}
+
+message GroundParamsProto {
+  optional int32 /* enum */ type = 1;
+  optional TrackProto track = 2;
+  optional float preferred_camera_height = 3;
+  optional float min_camera_x = 4;
+  optional float max_camera_x = 5;
+  optional float min_camera_y = 6;
+  optional float max_camera_y = 7;
+}

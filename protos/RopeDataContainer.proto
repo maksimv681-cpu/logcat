@@ -1,0 +1,20 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "RopeDataContainer";
+
+message RopeDataProto {
+  repeated RopePart parts = 1;
+}
+
+message RopeParamsProto {
+  optional int64 carid1 = 1;
+  optional int64 carid2 = 2;
+}
+
+message RopePart {
+  optional float x = 1;
+  optional float y = 2;
+  optional float angle = 3;
+}

@@ -1,0 +1,21 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Dailyq";
+
+message DailyqItemProto {
+  optional string award_type = 1;
+  optional int32 award_id = 2;
+  optional int32 quantity = 3;
+  optional int32 day = 4;
+}
+
+message DailyqProto {
+  repeated DailyqItemProto item = 1;
+}
+
+message DailyqStateProto {
+  optional int32 id = 1;
+  optional int32 last_day = 2;
+}

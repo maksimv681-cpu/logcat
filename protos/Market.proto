@@ -1,0 +1,51 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Market";
+
+message MarketHistoryProto {
+  repeated MarketHistorySliceProto market_history_slices = 1;
+}
+
+message MarketHistorySliceProto {
+  optional int32 purchases = 1;
+  optional int32 sales = 2;
+  optional int32 count = 3;
+  optional MoneyProto price = 4;
+  optional int32 deficit_count = 5;
+  optional int32 recall_count = 6;
+  optional int32 increase_factor = 7;
+  optional int32 decrease_factor = 8;
+}
+
+message MarketProductProto {
+  optional MarketSlotIdProto id = 1;
+  optional int64 seller_id = 2;
+  optional MoneyProto price = 3;
+  optional int64 product_id = 4;
+  optional int64 sell_time = 5;
+}
+
+message MarketProto {
+  optional int32 market_index = 1;
+  repeated MarketSlotProto slots = 2;
+}
+
+message MarketSlotIdProto {
+  optional int32 market_index = 1;
+  optional int32 /* enum */ type = 2;
+  optional int32 base_id = 3;
+}
+
+message MarketSlotProto {
+  optional MarketSlotIdProto id = 1;
+  optional MoneyProto current_price = 2;
+  optional double rating = 3;
+  optional int32 count = 4;
+  optional bool favourites = 5;
+}
+
+message MarketSlotSetProto {
+  repeated MarketSlotProto slots = 3;
+}

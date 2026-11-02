@@ -1,0 +1,12 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "NgWalletSnippet";
+
+message NgWalletSnippetProto {
+  optional string wallet_id = 1;
+  optional int64 account_id = 2;
+  optional string crystal_amount = 3;
+  optional int32 type = 4;
+}

@@ -1,0 +1,40 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "News";
+
+message NewsItem {
+  optional int32 id = 1;
+  optional int32 like_count = 2;
+  optional int32 dislike_count = 3;
+  optional int64 publication_time = 4;
+  optional int64 end_time = 5;
+}
+
+message NewsProto {
+  optional int32 id = 1;
+  optional string sender_name = 2;
+  optional int64 time = 4;
+  optional string title = 5;
+  optional string prologue = 6;
+  optional string message = 7;
+  optional string icon_name = 8;
+  optional string attachment_image_name = 9;
+  optional bool is_readed = 10;
+  optional int32 loot_id = 11;
+  optional string url_link = 12;
+  optional int64 end_time = 13;
+}
+
+message NewsStatus {
+  optional int32 news_id = 1;
+  optional NewsStatusEnum news_state = 2;
+  optional bool reward_is_received = 3;
+  enum NewsStatusEnum {
+    UNREAD = 1;
+    READ = 2;
+    LIKE = 3;
+    DISLIKE = 4;
+  }
+}

@@ -1,0 +1,167 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Online";
+
+message BetProto {
+  optional MoneyProto value = 1;
+  optional BetProtoEnum type = 2;
+  enum BetProtoEnum {
+    BUCKS = 0;
+    COINS = 1;
+  }
+}
+
+message HandshakeProto {
+  optional OnlineServerInfoProto info = 1;
+  optional DatabaseProto database = 2;
+}
+
+message LobbyConfigProto {
+  optional int32 /* enum */ race_type = 1;
+  optional int32 max_members = 2;
+  optional int32 track_id = 3;
+  optional int32 distance = 4;
+  optional int32 brake_distance = 5;
+  optional int64 car_event_delay = 6;
+  optional int64 car_data_delay = 7;
+  optional int64 prepare_to_go_delay = 8;
+  optional string time_of_day = 9;
+  optional int32 ready_members = 10;
+  optional int32 wait_on_finish_delay = 11;
+}
+
+message LobbyInfoProto {
+  optional int64 lobby_id = 1;
+  optional LobbyConfigProto config = 2;
+  repeated LobbyUserProto members = 3;
+}
+
+message LobbyProto {
+  optional int64 id = 1;
+  optional LobbyProtoEnum status = 2;
+  optional LobbyProtoEnum type = 3;
+  optional MoneyProto max_bet = 4;
+  optional MoneyProto min_bet = 5;
+  optional BetProto bet = 6;
+  repeated OnlineMemberProto members = 7;
+  enum LobbyProtoEnum {
+    OPEN = 0;
+    CLOSED = 1;
+    FULL = 2;
+  }
+  enum LobbyProtoEnum {
+    SINGLE_RACE = 0;
+    MULTI_RACE = 1;
+    TOURNAMENT = 2;
+    TUG_OF_WAR = 3;
+  }
+}
+
+message LobbyUserProto {
+  optional UserInfoProto user_info = 1;
+  optional UserCarProto user_car = 2;
+}
+
+message OnlineFinishParamsProto {
+  optional int64 lobby_id = 1;
+  optional int64 user_id = 2;
+  optional int64 car_id = 3;
+  optional bool finished = 4;
+  optional bool broken = 5;
+  optional bool disqualified = 6;
+  optional RaceStatisticProto statistic = 7;
+  optional int32 distance = 8;
+  optional string track_type = 9;
+  optional int32 user_detonation_count = 10;
+  optional float max_psi = 11;
+  optional float nitro_quantity = 12;
+  optional float max_chassis_body_rotation = 13;
+}
+
+message OnlineMemberProto {
+  optional int64 id = 1;
+  optional OnlineMemberProtoEnum type = 2;
+  optional OnlineMemberProtoEnum lobby_status = 3;
+  optional OnlineMemberProtoEnum race_status = 4;
+  optional int64 race_id = 5;
+  optional UserInfoProto user_info = 6;
+  optional UserCarProto user_car = 7;
+  repeated BetProto bets = 8;
+  enum OnlineMemberProtoEnum {
+    MLS_JOINING = 0;
+    MLS_ONLINE = 2;
+    MLS_OFFLINE = 3;
+    MLS_READY = 4;
+    MLS_IN_RACE = 5;
+    MLS_WAIT = 6;
+    MLS_PENDING = 7;
+    MLS_FINISHED = 8;
+  }
+  enum OnlineMemberProtoEnum {
+    LOADING = 0;
+    LOADED = 1;
+    HEATING = 2;
+    READY_TO_RACE = 3;
+    RACE = 4;
+    FINISHED = 5;
+    DISQUALIFICATION = 6;
+    DISCONNECTED = 7;
+  }
+  enum OnlineMemberProtoEnum {
+    CLIENT = 0;
+    HOST = 1;
+    TEST = 2;
+    SPECTATOR = 3;
+  }
+}
+
+message OnlineRaceAwardProto {
+  optional int32 exp = 1;
+  optional int32 /* enum */ result = 2;
+  optional int32 /* enum */ type = 3;
+  repeated OnlineFinishParamsProto finish_params = 4;
+  optional float award_multi = 5;
+  optional int32 clan_points = 6;
+  optional ChampionshipResultProto new_championship_result = 7;
+  optional ChampionshipResultProto old_championship_result = 8;
+  optional DropboxProto drop_box = 9;
+  optional int32 withdraw_fuel_count = 10;
+}
+
+message OnlineRaceEventProto {
+  optional int64 lobby_id = 1;
+  optional OnlineRaceEventProtoEnum type = 2;
+  optional TrackProto track = 3;
+  repeated OnlineMemberProto members = 4;
+  optional float value = 5;
+  optional RaceAwardProto award = 6;
+  enum OnlineRaceEventProtoEnum {
+    LOADING = 0;
+    HEATING = 1;
+    COUNTDOWN = 2;
+    COUNTDOWN_START = 3;
+    RACE = 4;
+    FINISH = 5;
+    RESULT = 6;
+    BRAKE = 7;
+  }
+}
+
+message OnlineServerInfoListProto {
+  repeated OnlineServerInfoProto servers = 1;
+}
+
+message OnlineServerInfoProto {
+  optional int32 id = 1;
+  optional int32 mode = 2;
+  optional string host = 3;
+  optional string local = 4;
+  optional int32 tcp_port = 5;
+  optional int32 udp_port = 6;
+  optional int32 /* enum */ status = 7;
+  optional int32 free_slots = 8;
+  optional int32 max_slots = 9;
+  optional int32 queue_size = 10;
+}

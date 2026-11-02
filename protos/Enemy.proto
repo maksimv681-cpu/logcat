@@ -1,0 +1,68 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Enemy";
+
+message ChampionshipEnemiesProto {
+  repeated EnemyProto list = 1;
+  optional bool is_need_update = 2;
+}
+
+message EnemyAdditionalInfoProto {
+  optional bytes finish_params = 1;
+}
+
+message EnemyMetadataProto {
+  optional int64 uid = 1;
+  optional int64 cid = 2;
+  optional int32 hp = 3;
+  optional float time = 4;
+  optional int32 track_id = 5;
+  optional float distance = 6;
+  optional EnemyProto enemy = 7;
+}
+
+message EnemyProto {
+  optional int64 id = 1;
+  optional UserInfoProto info = 2;
+  optional UserCarProto car = 3;
+  optional int32 /* enum */ type = 4;
+  optional EnemyTypeProto enemy_type = 5;
+  optional BehaviorProto behavior = 6;
+  optional EnemyAdditionalInfoProto additional_info = 7;
+  optional TCIdProto c_id = 8;
+  optional bool event_car = 9;
+}
+
+message EnemyTypeProto {
+  optional int32 race_count = 1;
+  repeated int32 /* enum */ races = 2;
+  repeated CarUpgradeProto loot = 3;
+  optional int32 place_in_top = 4;
+}
+
+message TeamCompetitionEnemyMetadataProto {
+  optional float race_time = 1;
+  optional float hpt = 2;
+  optional int64 user_id = 3;
+  optional int64 car_id = 4;
+  optional int32 rang_points = 5;
+  optional string locale = 6;
+  optional int32 track_base_id = 7;
+  optional int32 version = 8;
+  optional int64 create_time = 9;
+  optional int32 platform_id = 10;
+  optional string record_name = 11;
+}
+
+message TeamCompetitionEnemyProto {
+  optional EnemyProto enemy = 1;
+  optional TeamCompetitionEnemyMetadataProto metadata = 2;
+  optional TCIdProto c_id = 3;
+}
+
+message UserEnemiesProto {
+  optional int64 car_id = 1;
+  repeated EnemyProto list = 2;
+}

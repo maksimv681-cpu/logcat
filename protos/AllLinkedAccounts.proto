@@ -1,0 +1,15 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "AllLinkedAccounts";
+
+message AllLinkedAccountsProto {
+  repeated LinkedAccountProto all_linked_accounts = 1;
+}
+
+message LinkedAccountProto {
+  optional string social_type_name = 1;
+  optional int64 create_date = 2;
+  optional bool is_current = 3;
+}

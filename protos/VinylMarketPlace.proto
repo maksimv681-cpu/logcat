@@ -1,0 +1,92 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "VinylMarketPlace";
+
+message UserPaintWalletProto {
+  optional MoneyProto capacity = 1;
+  optional MoneyProto deposit_money = 2;
+}
+
+message UserRateProto {
+  optional int64 vinyl_id = 1;
+  optional float rating = 2;
+}
+
+message UserRatesProto {
+  repeated UserRateProto items = 1;
+}
+
+message VinylFavouritesProto {
+  repeated int64 items = 1;
+}
+
+message VinylFilter {
+  optional int32 id = 1;
+  optional int32 filter_id = 2;
+  optional string value = 3;
+}
+
+message VinylFilterContainerProto {
+  repeated VinylFilterDataProto filters = 1;
+}
+
+message VinylFilterDataProto {
+  optional int32 filter_type = 1;
+  repeated int64 values = 2;
+}
+
+message VinylItemProto {
+  optional UserInfoProto user_info = 1;
+  optional int64 user_car_paint = 2;
+  optional int32 download_count = 3;
+  optional double rating = 4;
+  optional int32 rate_count = 5;
+  optional int64 last_change = 6;
+  optional int32 block_id = 7;
+  optional VinylTagsProto vinyl_tags_proto = 8;
+  optional bool editors_choice = 9;
+  optional string car_class = 10;
+  optional int32 car_base_id = 11;
+}
+
+message VinylMarketBlockProto {
+  optional int32 base_id = 1;
+  repeated VinylItemProto items = 2;
+}
+
+message VinylMarketFastRatingBlockProto {
+  repeated PaintItemProto paint_items = 1;
+  repeated VinylItemProto vinyl_items = 2;
+}
+
+message VinylMarketOperationResultProto {
+  optional bool success = 1;
+  optional PaintItemProto paint_item = 2;
+  optional VinylItemProto vinyl_item = 3;
+  optional MoneyProto price = 4;
+  optional int64 author_id = 5;
+}
+
+message VinylMarketPageProto {
+  repeated PaintItemProto paint_items = 1;
+  repeated VinylItemProto vinyl_items = 2;
+  optional int32 page_min = 3;
+  optional int32 page_max = 4;
+  optional int32 page_num = 5;
+}
+
+message VinylMarketProto {
+  repeated VinylMarketBlockProto blocks = 1;
+}
+
+message VinylParamsProto {
+  optional int64 vinyl_id = 1;
+  optional VinylTagsProto vinyl_tags = 2;
+}
+
+message VinylTagsProto {
+  repeated BaseVinylTagProto tags = 1;
+  optional int32 depth = 2;
+}

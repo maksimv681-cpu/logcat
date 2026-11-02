@@ -1,0 +1,39 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "UserInfo";
+
+message UserInfoProto {
+  optional string name = 1;
+  optional string avatar = 2;
+  optional int64 id = 3;
+  optional string lang = 4;
+  optional UserInfoProtoEnum type = 5;
+  optional int64 telegramm_id = 6;
+  optional int32 /* enum */ qualification = 7;
+  optional string alternative_name = 8;
+  optional int64 clan_id = 9;
+  optional string clan_tag = 10;
+  repeated int32 regions = 11;
+  optional int32 level = 12;
+  optional int32 reset_counter = 13;
+  optional ChampionshipResultProto champ_current_season = 14;
+  optional int64 last_login_time = 15;
+  optional bool receive_team_challenge_invites = 16;
+  optional TeamCompetitionSeasonDataProto team_competition_season_data_proto = 17;
+  optional int64 profile_car_id = 18;
+  optional int32 garage_access_id = 19;
+  optional int32 avatar_base_entity_id = 20;
+  optional int32 avatar_frame_id = 21;
+  enum UserInfoProtoEnum {
+    USER = 1;
+    ADMIN = 2;
+    CHAT_ADMIN = 3;
+    CHAT_MODERATOR = 4;
+    TESTER = 5;
+    DEVELOPER = 6;
+    GAME_DESIGNER = 7;
+    SENIOR_MODERATOR = 8;
+  }
+}

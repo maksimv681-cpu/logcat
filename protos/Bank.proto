@@ -1,0 +1,75 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Bank";
+
+message AdminCarBankProto {
+  repeated CarBankItemProto items = 1;
+}
+
+message AndroidBankItemProto {
+  optional string item_id = 1;
+  optional string price = 2;
+}
+
+message BankItemProto {
+  optional string item_id = 1;
+  optional int32 money = 2;
+  optional int32 gold = 3;
+  optional int32 bonus = 4;
+  optional int32 fuel = 5;
+  optional int32 loot_id = 6;
+  optional int32 car_id = 7;
+  optional string price = 8;
+  optional int32 /* enum */ category = 9;
+  optional string date = 10;
+  optional int32 duration = 11;
+  optional float revenue = 12;
+  optional bool holiday_discount = 13;
+  optional int64 start_time = 14;
+  optional int64 end_time = 15;
+  optional string price_web = 16;
+  optional string price_ton = 17;
+  optional int32 max_purchase_count = 18;
+  optional int32 diamonds = 19;
+}
+
+message BankMadePurchasesProto {
+  repeated string bank_items = 1;
+}
+
+message BankProto {
+  repeated BankItemProto items = 1;
+  repeated ExchangeItemProto exchange_items = 2;
+}
+
+message BankPurchaseResultProto {
+  optional DropboxProto dropbox = 1;
+  optional int32 fuel = 2;
+  optional string purchase_type = 3;
+  optional string purchase_id = 4;
+  optional float revenue = 5;
+  optional string purchase_token = 6;
+  optional PremiumStateContainerProto new_premium_state_container = 7;
+  optional PremiumStateContainerProto old_premium_state_container = 8;
+  optional BasePremiumTokenProto premium = 9;
+  optional bool vip_added = 10;
+}
+
+message CarBankItemProto {
+  optional int32 car_id = 1;
+  optional int32 index = 2;
+  optional int32 duration = 3;
+  optional string date = 4;
+  optional int64 bought_count = 5;
+  optional bool active = 6;
+}
+
+message ExchangeItemProto {
+  optional string item_id = 1;
+  optional MoneyProto from_money = 2;
+  optional MoneyProto to_money = 3;
+  optional int32 order = 4;
+  optional int32 coupon_id = 5;
+}

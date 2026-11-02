@@ -1,0 +1,36 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "BrickDataContainer";
+
+message BrickDataParams {
+  optional float x = 1;
+  optional float y = 2;
+  optional float width = 3;
+  optional float height = 4;
+  optional float density = 5;
+  optional float ttl = 6;
+  optional float friction = 7;
+  optional float restitution = 8;
+  optional int32 /* enum */ render_type = 9;
+  optional int32 /* enum */ type = 10;
+  optional float health = 11;
+  optional int32 /* enum */ destruct_type = 12;
+  optional bool no_collide_if_on_ground = 13;
+  optional bool is_physics = 14;
+  optional int32 /* enum */ world_data_object_type = 15;
+  optional string render_region = 16;
+  optional bool is_add_mode = 17;
+}
+
+message BrickDataProto {
+  optional float x = 1;
+  optional float y = 2;
+  optional float width = 3;
+  optional float height = 4;
+  optional float angle = 5;
+  optional bool broken = 6;
+  optional float health = 7;
+  optional bool on_ground = 8;
+}

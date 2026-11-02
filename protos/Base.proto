@@ -1,0 +1,503 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Base";
+
+message BaseBlueprintGenericProto {
+  optional BaseItemProto base = 1;
+  optional int32 /* enum */ grade = 2;
+}
+
+message BaseBlueprintProto {
+  optional BaseItemProto base = 1;
+  optional int32 /* enum */ upgrade_type = 2;
+  optional int32 /* enum */ grade = 3;
+}
+
+message BaseChallengeProto {
+  optional int32 base_id = 1;
+  optional int32 day = 2;
+  repeated string classes = 3;
+  optional int32 /* enum */ drive_type = 4;
+  optional string image = 5;
+}
+
+message BaseChallengeTrackProto {
+  optional int32 base_id = 1;
+  optional int32 challenge_id = 2;
+  optional int32 track_id = 3;
+  optional float time = 4;
+  optional int32 level = 5;
+  optional MoneyProto award = 6;
+  optional int32 loot_id = 7;
+  optional int32 distance = 8;
+  optional string image = 9;
+}
+
+message BaseClanTournamentProto {
+  optional int32 id = 1;
+  optional MoneyProto first_place_award = 2;
+  optional MoneyProto second_place_award = 3;
+  optional MoneyProto third_place_award = 4;
+  optional MoneyProto top_place_award = 5;
+  optional int32 summer_track_id = 6;
+  optional int32 winter_track_id = 7;
+  optional int32 first_place_lootbox_id = 8;
+  optional int32 clan_car_lootbox_id = 9;
+  optional int32 clan_lootbox_id = 10;
+  optional int32 clan_superlootbox_id = 11;
+  optional int32 car_id_on_create = 12;
+  optional int32 car_id_on_boss_win = 13;
+  optional int32 additional_loot_id = 14;
+  optional int32 second_place_lootbox_id = 15;
+  optional int32 third_place_lootbox_id = 16;
+}
+
+message BaseContractEarlyUpdateProto {
+  optional int32 quantity_updates = 1;
+  optional MoneyProto money = 2;
+  optional float coefficient = 3;
+  optional int32 type_set_index = 4;
+}
+
+message BaseContractProto {
+  optional int32 id = 1;
+  optional string type = 2;
+  repeated int32 task_pool = 3;
+  optional int64 start_date = 4;
+  optional int64 end_date = 5;
+  repeated int32 bonus_cars = 6;
+  optional int32 level_tasks_in_day = 7;
+  optional int32 level_tasks_in_week = 8;
+  optional int32 level_tasks_in_month = 9;
+  optional int32 exp_tasks_in_day = 10;
+  optional int32 exp_tasks_in_week = 11;
+  optional int32 exp_tasks_in_month = 12;
+  optional int32 level_cap = 13;
+  optional int32 min_access_level = 14;
+  optional int32 max_access_level = 15;
+  repeated BaseContractRewardProto rewards = 16;
+  repeated BaseContractEarlyUpdateProto early_update = 17;
+}
+
+message BaseContractRewardItemProto {
+  optional MoneyProto money = 1;
+  optional BaseThingKeyProto base_thing_key = 2;
+  optional int32 count = 3;
+  optional bool premium = 4;
+}
+
+message BaseContractRewardProto {
+  optional int32 level = 1;
+  optional int32 grade = 2;
+  repeated BaseContractRewardItemProto rewards = 3;
+}
+
+message BaseContractTaskParamProto {
+  optional string type = 1;
+  optional int32 is_discret = 2;
+  optional int32 int_min_value = 3;
+  optional int32 int_max_value = 4;
+  repeated int32 int_values = 5;
+  repeated string str_values = 6;
+}
+
+message BaseContractTaskProto {
+  optional int32 id = 1;
+  optional string type = 2;
+  optional string period = 3;
+  repeated int32 task_pool = 4;
+  repeated BaseContractTaskParamProto params = 5;
+  optional int32 stage_count = 6;
+  optional int32 mandatory = 7;
+  optional int32 level_promotion = 8;
+  optional int32 exp_promotion = 9;
+  optional int32 changeable = 10;
+  optional string icon_name = 11;
+  optional int32 min_user_lvl = 12;
+}
+
+message BaseCountedThingKeyProto {
+  optional int32 /* enum */ type = 1;
+  optional int32 base_id = 2;
+  optional int32 count = 3;
+}
+
+message BaseCouponProto {
+  optional int32 id = 1;
+  optional MoneyProto money = 2;
+  optional int32 experience = 3;
+  optional int32 fuel = 4;
+  optional int32 level = 5;
+  optional int32 nitro = 6;
+}
+
+message BaseCraftFilterProto {
+}
+
+message BaseItemProto {
+  optional int32 base_id = 1;
+  optional int32 /* enum */ type = 2;
+  optional MoneyProto price = 3;
+  optional string icon = 4;
+  optional int32 shop_index = 5;
+}
+
+message BaseItemSetBonusProto {
+  optional int32 id = 1;
+  optional double weight = 2;
+  optional double friction = 3;
+  optional double psi = 4;
+  optional double start_rpm = 5;
+  optional double cx = 6;
+  optional double volume = 7;
+}
+
+message BaseItemSetProto {
+  optional int32 id = 1;
+  repeated ItemSetElementProto items = 3;
+  repeated BaseItemSetBonusProto bonuses = 4;
+}
+
+message BaseLimitZoneProto {
+  optional int32 id = 1;
+  optional int32 track_i_d = 2;
+  optional BaseLimitZoneProtoEnum type = 3;
+  optional float start = 4;
+  optional float end = 5;
+  optional float min_speed = 6;
+  optional float max_speed = 7;
+  optional float recommended_speed = 8;
+  enum BaseLimitZoneProtoEnum {
+    SPEED = 0;
+    TRAFFIC_LIGHT = 1;
+    STOP = 2;
+  }
+}
+
+message BaseLootProto {
+  optional int32 base_id = 1;
+  optional int32 /* enum */ type = 2;
+  optional float chance = 3;
+  optional int32 min_count = 4;
+  optional int32 max_count = 5;
+  optional int32 inventory_limit = 6;
+  optional int32 group_i_d = 7;
+}
+
+message BaseLootboxItemProto {
+  optional int32 loot_list_id = 1;
+  optional int32 min_roll_count = 2;
+  optional int32 max_roll_count = 3;
+}
+
+message BaseLootboxLootListProto {
+  optional int64 id = 1;
+  repeated BaseLootboxLootProto loot = 2;
+}
+
+message BaseLootboxLootProto {
+  optional int64 id = 1;
+  optional int64 item_id = 2;
+  optional float weight = 3;
+  optional string loot_box_item_type = 4;
+  optional string upgrade_type = 5;
+  optional string item_type = 6;
+}
+
+message BaseLootboxProto {
+  optional int32 id = 1;
+  optional int32 level = 2;
+  optional string type = 3;
+  optional string icon = 4;
+  optional int64 open_date = 5;
+  repeated BaseLootboxItemProto items = 6;
+  optional double min_rating = 7;
+}
+
+message BaseMarketFilterProto {
+  optional int32 id = 1;
+  repeated int32 markets = 2;
+  optional MoneyProto money = 3;
+  repeated int32 /* enum */ types = 4;
+  optional bool favourites = 5;
+  optional int32 group_id = 6;
+  optional string image = 7;
+}
+
+message BaseMarketProto {
+  optional int32 id = 1;
+  optional MoneyProto currency = 2;
+  optional float max_volatility = 3;
+  optional int32 memory_depth = 4;
+  optional float tax_rate = 5;
+  optional MoneyProto minimum_tax = 6;
+  optional MoneyProto commission = 7;
+  optional int32 update_frequency = 8;
+  optional float minimum_rating = 9;
+  optional MoneyProto recall_commission = 10;
+}
+
+message BaseMarketSlotProto {
+  optional MarketSlotIdProto market_slot_id = 1;
+  optional int32 inner_order = 2;
+  optional int32 base_price_value = 3;
+  optional int32 min_price = 4;
+  optional int32 max_price = 5;
+  optional MoneyProto commission = 6;
+  optional float max_volatility = 7;
+  optional float tax_rate = 8;
+  optional int32 global_order = 9;
+  optional MoneyProto recall_commission = 10;
+  optional int64 start_time = 11;
+  optional int64 end_time = 12;
+}
+
+message BaseParamEnumProto {
+  optional string values = 1;
+  optional string current_value = 2;
+}
+
+message BaseParamProto {
+  optional string type = 1;
+  optional int32 int_value = 2;
+  optional float float_value = 3;
+  optional string string_value = 4;
+  repeated int32 int_list = 5;
+  optional MoneyProto money_value = 6;
+  optional BaseParamEnumProto enum_value = 7;
+  optional bool bool_value = 9;
+  optional int64 long_value = 10;
+  repeated int64 long_list = 11;
+}
+
+message BasePremiumPrivilegeProto {
+  optional int32 base_i_d = 1;
+  optional int32 /* enum */ type = 2;
+  optional BonusParamProto param = 3;
+}
+
+message BasePremiumProto {
+  optional int32 level = 1;
+  repeated int32 privilege_i_ds = 2;
+  optional string text_color = 3;
+  optional MoneyProto price = 4;
+}
+
+message BasePremiumTokenProto {
+  optional int32 base_i_d = 1;
+  optional int32 level = 2;
+  optional int32 days_duration = 3;
+}
+
+message BaseSameHullsProto {
+  optional int32 base_id = 1;
+  repeated int32 ids = 2;
+}
+
+message BaseSeriesOfWinProto {
+  optional int32 base_id = 1;
+  repeated BaseSeriesOfWinProto.RewardProto reward = 2;
+  message RewardProto {
+    optional int32 series_len = 1;
+    optional MoneyProto money = 2;
+    optional int32 loot_id = 3;
+  }
+}
+
+message BaseSettingEnums {
+  enum BaseSettingEnumsEnum {
+    NONE = 0;
+    NEW_YEAR = 1;
+    HALLOWEEN = 2;
+  }
+  enum BaseSettingEnumsEnum {
+    SUMMER = 0;
+    AUTUMN = 1;
+    WINTER = 2;
+    SPRING = 3;
+  }
+}
+
+message BaseSettingProto {
+  optional string key = 1;
+  optional BaseParamProto param = 2;
+  optional string description = 3;
+}
+
+message BaseStrikesSettingsProto {
+  optional int32 base_id = 1;
+  optional int32 strikes = 2;
+}
+
+message BaseTakeApartTicketProto {
+  optional BaseItemProto base = 1;
+}
+
+message BaseThingKeyProto {
+  optional int32 /* enum */ type = 1;
+  optional int32 base_id = 2;
+}
+
+message BaseTicketProto {
+  optional BaseItemProto base = 1;
+}
+
+message BaseToolsProto {
+  optional BaseItemProto base = 1;
+  optional float bonus = 2;
+}
+
+message BaseTournamentProto {
+  optional int32 id = 1;
+  optional int32 /* enum */ type = 2;
+  optional int32 month_number = 3;
+  optional int32 day_of_month = 4;
+  optional int32 day_of_week = 5;
+  optional int32 hour_of_day = 6;
+  optional int32 minutes = 7;
+  optional int32 duration = 8;
+  optional int32 tryes_count = 9;
+  optional int32 trye_cost = 10;
+  repeated string car_class = 11;
+  optional MoneyProto first_place_award = 12;
+  optional MoneyProto second_place_award = 13;
+  optional MoneyProto third_place_award = 14;
+  optional MoneyProto top_place_award = 15;
+  optional int32 first_place_items = 16;
+  optional int32 second_place_items = 17;
+  optional int32 third_place_items = 18;
+  optional int32 fuel_to_race = 19;
+  optional int32 track_size = 20;
+  optional int32 hpt = 21;
+  optional int32 sub_class = 22;
+  optional int32 traction = 23;
+  optional int32 /* enum */ tournament_type = 24;
+  optional bool is_swap = 25;
+  optional int32 series_of_win_base_id = 26;
+}
+
+message BaseTrackProto {
+  optional int32 base_id = 1;
+  optional string ground = 2;
+  optional float ground_width = 3;
+  optional float ground_height = 4;
+  optional float ground_offset = 5;
+  optional float ground_friction = 6;
+  optional float ground_step = 7;
+  optional BaseTrackProtoEnum type = 8;
+  repeated BaseTrackProto.BaseTrackBackgroundProto backgrounds = 9;
+  optional float frequency = 10;
+  optional int32 octave_count = 11;
+  optional float lacunarity = 12;
+  optional float persistence = 13;
+  optional bool auto_times_of_day = 14;
+  optional float finish_line_y1 = 15;
+  optional float finish_line_y2 = 16;
+  optional float bump_min_density = 18;
+  optional float bump_max_density = 19;
+  optional float bump_min_radius = 20;
+  optional float bump_max_radius = 21;
+  optional float bump_min_deep = 22;
+  optional float bump_max_deep = 23;
+  optional float pothole_min_density = 24;
+  optional float pothole_max_density = 25;
+  optional float pothole_min_radius = 26;
+  optional float pothole_max_radius = 27;
+  optional float pothole_min_deep = 28;
+  optional float pothole_max_deep = 29;
+  optional int32 weather = 30;
+  optional float weather_frequency = 31;
+  optional int32 billboards = 32;
+  optional float billboard_x = 33;
+  optional float billboard_height = 34;
+  optional int64 ads_i_d = 35;
+  optional float billboard_gap = 36;
+  optional bool flipped = 37;
+  optional bool is_custom_built = 38;
+  optional string string_track_polyline = 39;
+  message BaseTrackBackgroundProto {
+    optional string name = 1;
+    optional float offset_factor = 2;
+    optional float width = 3;
+    optional float height = 4;
+    optional float offset = 5;
+    optional bool on_front = 6;
+  }
+  enum BaseTrackProtoEnum {
+    ASPHALT = 0;
+    DIRT = 1;
+    DUST = 2;
+    SNOW = 3;
+  }
+}
+
+message BaseTrafficLightSettings {
+  optional float red_phase = 1;
+  optional float red_yellow_phase = 2;
+  optional float green_phase = 3;
+  optional float green_blink_phase = 4;
+  optional float yellow_phase = 5;
+  optional float yellow_blink_phase = 6;
+}
+
+message BaseUpgradeSlotSettingProto {
+  optional int32 /* enum */ upgrade_slot_type = 1;
+  optional int32 /* enum */ grade = 2;
+}
+
+message BaseVinylBlockProto {
+  optional int32 base_id = 1;
+  optional string name = 2;
+  optional bool is_bestsellers = 3;
+  optional int32 depth = 4;
+  optional MoneyProto price = 5;
+  optional float tax = 6;
+  optional MoneyProto upload_tax = 7;
+  optional int32 max_vinyl_per_user = 8;
+  optional int32 min_sales_count = 9;
+}
+
+message BaseVinylFilterCategoryProto {
+  optional int32 base_id = 1;
+  optional int32 /* enum */ type = 2;
+}
+
+message BaseVinylTagProto {
+  optional int32 base_id = 1;
+  optional string name_key = 2;
+}
+
+message BonusParamProto {
+  optional int32 /* enum */ type = 1;
+  optional float float_value = 2;
+  optional int64 long_value = 3;
+}
+
+message CraftBaseItemsGroupProto {
+  optional int32 id = 1;
+  repeated string types = 2;
+  repeated int32 ids = 3;
+}
+
+message CraftBaseRecipeProto {
+  optional int32 id = 1;
+  optional int32 scheme_id = 2;
+  optional string item_type = 3;
+  optional int32 item_id = 4;
+  repeated int32 group_ids = 5;
+}
+
+message CraftBaseSchemeProto {
+  optional int32 id = 1;
+  optional MoneyProto money = 2;
+  optional string icon = 3;
+  optional int32 slots_count = 4;
+  repeated int32 items_count = 5;
+}
+
+message ItemSetElementProto {
+  optional int32 item_id = 1;
+  optional int32 item_type = 2;
+}

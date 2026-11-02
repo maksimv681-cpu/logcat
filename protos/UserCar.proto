@@ -1,0 +1,240 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "UserCar";
+
+message CarNumberProto {
+  optional int64 car_id = 1;
+  optional int32 region = 2;
+  optional int32 number = 3;
+  optional bool is_transit = 4;
+  optional int32 /* enum */ country = 5;
+  optional string individual_number = 6;
+  optional int64 registration_time = 7;
+}
+
+message CarSafeProto {
+  optional UserCarProto user_car = 1;
+  optional float hpt = 2;
+}
+
+message CarSettingsProto {
+  repeated SuspensionSettingProto settings = 1;
+  repeated GearSettingProto gear_settings = 2;
+  optional float muffler_offset_x = 3;
+  optional float muffler_offset_y = 4;
+  optional int32 yellow_zone_rpm = 5;
+  optional int32 green_zone_rpm = 6;
+  optional int32 red_zone_rpm = 7;
+  optional GearSetManagerProto gear_set_manager = 9;
+  optional int32 timing_gear_value = 10;
+  optional bool is_launch_control = 11;
+  optional float rear_tires_psi = 12;
+  optional float front_tires_psi = 13;
+  optional float shifter_first_clutch = 14;
+  optional float shifter_second_clutch = 15;
+  optional IgnitionTimeSetManagerProto ignition_time_set_manager = 16;
+  optional float nitro_valve_open = 17;
+  optional bool is_nitro_enabled = 18;
+  optional int32 blue_zone_rpm = 19;
+  optional bool visible_spoiler = 20;
+  optional UpgradePositionRepositoryProto upgrade_position_repository = 21;
+  optional SuspensionSetManagerProto suspension_set_manager = 22;
+  optional TiresPSISetManagerProto tires_p_s_i_set_manager = 23;
+  optional bytes data = 24;
+}
+
+message EngineUpgradeProto {
+  optional int32 /* enum */ type = 1;
+  optional int32 level = 2;
+}
+
+message GearProto {
+  optional int32 gear_number = 1;
+  optional float gear_value = 2;
+}
+
+message GearSetManagerProto {
+  optional int32 gear_set_number = 1;
+  repeated GearSetProto gear_set = 2;
+}
+
+message GearSetProto {
+  repeated GearProto gear_settings = 1;
+  optional bool is_configured = 2;
+}
+
+message GearSettingProto {
+  optional int32 gear_number = 1;
+  optional float gear_value = 2;
+}
+
+message IgnitionTimeSetManagerProto {
+  optional int32 current_page = 1;
+  repeated IgnitionTimeSetProto page = 2;
+}
+
+message IgnitionTimeSetProto {
+  optional float ignition_time_in_minutes = 1;
+  optional int32 ignition_start_r_p_m = 2;
+}
+
+message SoldCarProto {
+  optional UserCarProto car = 1;
+  optional int64 sell_time = 2;
+  optional MoneyProto sell_price = 3;
+}
+
+message SoldCarsModelProto {
+  repeated SoldCarProto sold_cars = 1;
+}
+
+message SuspensionSetManagerProto {
+  optional int32 set_page = 1;
+  repeated SuspensionSettingProto suspension_sets = 2;
+}
+
+message SuspensionSettingProto {
+  optional int32 id = 1;
+  optional bool is_active = 2;
+  optional float front_spring = 3;
+  optional float front_suspension = 4;
+  optional float rear_spring = 5;
+  optional float rear_suspension = 6;
+  optional float clirence = 7;
+  optional float front_tires_psi = 8;
+  optional float rear_tires_psi = 9;
+}
+
+message TiresPSISetManagerProto {
+  optional int32 set_page = 1;
+  repeated TiresPSISetProto tires_p_s_i_sets = 2;
+}
+
+message TiresPSISetProto {
+  optional float rear_tires_psi = 1;
+  optional float front_tires_psi = 2;
+}
+
+message UpgradeSlotProto {
+  optional int64 car_id = 1;
+  optional int32 /* enum */ type = 2;
+  optional CarUpgradeProto upgrade = 3;
+  optional int32 /* enum */ grade = 4;
+}
+
+message UserCarBonusesProto {
+  optional float torque = 1;
+  optional float friction = 2;
+  optional float mass = 3;
+}
+
+message UserCarProto {
+  optional int64 id = 1;
+  optional int32 base_id = 2;
+  optional int32 odometr = 3;
+  optional int32 accumulator_distance = 4;
+  optional int32 oil_distance = 5;
+  optional int32 brake_distance = 6;
+  optional int32 engine_distance = 7;
+  optional float accumulator_bonus = 8;
+  optional float oil_bonus = 9;
+  optional float brake_bonus = 10;
+  optional float engine_bonus = 11;
+  optional UpgradeSlotProto hood_slot = 12;
+  optional UpgradeSlotProto trunk_slot = 13;
+  optional UpgradeSlotProto roof_slot = 14;
+  optional UpgradeSlotProto wheel_slot = 15;
+  optional UpgradeSlotProto frame_slot = 16;
+  optional UpgradeSlotProto pneumo_slot = 17;
+  optional UpgradeSlotProto disk_slot = 18;
+  optional UpgradeSlotProto tires_slot = 19;
+  optional UpgradeSlotProto front_suspension_slot = 20;
+  optional UpgradeSlotProto front_spring_slot = 21;
+  optional UpgradeSlotProto front_brake_slot = 22;
+  optional UpgradeSlotProto front_brake_pad_slot = 23;
+  optional UpgradeSlotProto rear_suspension_slot = 24;
+  optional UpgradeSlotProto rear_spring_slot = 25;
+  optional UpgradeSlotProto rear_brake_slot = 26;
+  optional UpgradeSlotProto rear_brake_pad_slot = 27;
+  repeated EngineUpgradeProto engine_upgrades = 28;
+  optional PaintProto paint = 29;
+  optional UpgradeSlotProto front_bumper_slot = 30;
+  optional UpgradeSlotProto rear_bumper_slot = 31;
+  optional UpgradeSlotProto center_bumper_slot = 32;
+  optional float dirtiness = 33;
+  optional CarNumberProto number = 34;
+  optional CarSettingsProto settings = 35;
+  optional UpgradeSlotProto spoiler_slot = 36;
+  optional UpgradeSlotProto turbo1_slot = 37;
+  optional UpgradeSlotProto turbo2_slot = 38;
+  optional UpgradeSlotProto headlight_slot = 39;
+  optional UpgradeSlotProto neon_slot = 40;
+  optional UpgradeSlotProto neon_disk_slot = 41;
+  optional UpgradeSlotProto transmission_slot = 42;
+  optional float front_wheel_x = 43;
+  optional float front_wheel_y = 44;
+  optional float rear_wheel_x = 45;
+  optional float rear_wheel_y = 46;
+  optional UpgradeSlotProto differential_slot = 47;
+  optional UpgradeSlotProto engine_slot = 48;
+  optional UpgradeSlotProto front_disk_slot = 49;
+  optional UpgradeSlotProto front_tires_slot = 50;
+  optional float time402 = 51;
+  optional UpgradeSlotProto front_wheel_slot = 52;
+  optional UpgradeSlotProto air_filter_slot = 53;
+  optional UpgradeSlotProto intercooler_slot = 54;
+  optional UpgradeSlotProto pipe_slot = 55;
+  optional UpgradeSlotProto intake_mainfold_slot = 56;
+  optional UpgradeSlotProto exhaust_mainfold_slot = 57;
+  optional UpgradeSlotProto exhaust_outlet_slot = 58;
+  optional UpgradeSlotProto exhaust_muffler_slot = 59;
+  optional UpgradeSlotProto westgate_slot = 60;
+  optional UpgradeSlotProto timing_gear_slot = 61;
+  optional UpgradeSlotProto camshaft_slot = 62;
+  optional UpgradeSlotProto ecu_slot = 63;
+  optional UpgradeSlotProto oil_cooler_slot = 64;
+  optional UpgradeSlotProto oil_injectors_slot = 65;
+  optional UpgradeSlotProto radiator_slot = 66;
+  optional UpgradeSlotProto pneumo_shifter_slot = 67;
+  optional UpgradeSlotProto vally_bar_slot = 68;
+  optional bool is_swap = 69;
+  optional UpgradeSlotProto safety_cage_slot = 70;
+  optional UpgradeSlotProto front_hub_slot1 = 71;
+  optional UpgradeSlotProto front_hub_slot2 = 72;
+  optional UpgradeSlotProto rear_hub_slot1 = 73;
+  optional UpgradeSlotProto rear_hub_slot2 = 74;
+  optional UpgradeSlotProto front_shaft_slot1 = 75;
+  optional UpgradeSlotProto front_shaft_slot2 = 76;
+  optional UpgradeSlotProto rear_shaft_slot1 = 77;
+  optional UpgradeSlotProto rear_shaft_slot2 = 78;
+  optional UpgradeSlotProto front_suspension_support_slot1 = 79;
+  optional UpgradeSlotProto front_suspension_support_slot2 = 80;
+  optional UpgradeSlotProto rear_suspension_support_slot1 = 81;
+  optional UpgradeSlotProto rear_suspension_support_slot2 = 82;
+  optional UpgradeSlotProto chip_slot1 = 83;
+  optional UpgradeSlotProto chip_slot2 = 84;
+  optional UpgradeSlotProto chip_slot3 = 85;
+  optional UpgradeSlotProto chip_slot4 = 86;
+  optional UpgradeSlotProto chip_slot5 = 87;
+  optional UpgradeSlotProto chip_slot6 = 88;
+  optional UpgradeSlotProto cardan_shaft = 89;
+  optional UpgradeSlotProto drive_traction = 90;
+  optional float dustiness = 91;
+  optional UpgradeSlotProto mass_balance_slot = 92;
+  optional UserCarBonusesProto car_bonuses = 93;
+  optional UpgradeSlotProto gears_slot = 94;
+  optional UpgradeSlotProto rotor_slot = 95;
+  optional float power_output = 96;
+  optional UpgradeSlotProto flashers_slot = 97;
+  optional UpgradeSlotProto projector_slot = 98;
+  optional UpgradeSlotProto stroboscope_slot = 99;
+  optional EnginePartsSetProto engine_parts_set_block = 100;
+  optional float psi_effective_value = 101;
+  optional UpgradeSlotProto nitro_slot = 102;
+  optional UpgradeSlotProto disk_image_slot = 103;
+  optional UpgradeSlotProto front_disk_image_slot = 104;
+  optional bool favourite_in_collection = 105;
+  optional bytes payload = 106;
+}

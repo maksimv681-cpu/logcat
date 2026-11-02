@@ -1,0 +1,14 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "ComplaintContainer";
+
+message ComplaintProto {
+  optional int64 from = 1;
+  optional int64 to = 2;
+  optional int32 /* enum */ subject = 3;
+  optional int32 /* enum */ target = 4;
+  optional bytes image = 5;
+  optional string message = 6;
+}

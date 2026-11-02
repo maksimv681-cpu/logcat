@@ -1,0 +1,54 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Avatars";
+
+message AbstractBaseEntityProto {
+  optional int32 id = 1;
+  optional string icon = 2;
+  repeated int32 predicate_id = 3;
+  optional string condition = 4;
+  optional bool hide_unavailable = 5;
+  optional int32 type = 6;
+  optional MoneyProto price = 7;
+  optional bytes external_data = 8;
+  optional AvatarFeatureGroupProto group = 9;
+  optional AnimationDataProto animation_data = 10;
+}
+
+message AnimationDataProto {
+  optional string animation = 1;
+  optional string skin = 2;
+  optional float time_scale = 3;
+}
+
+message AvatarFeatureGroupProto {
+  optional int32 group_id = 1;
+  optional int32 position_in_group = 2;
+}
+
+message AvatarModelProto {
+  optional int32 avatar_entity_id = 1;
+  optional bool unlocked = 2;
+}
+
+message AvatarPredicateBaseProto {
+  optional int32 id = 1;
+  optional int32 type = 2;
+  optional BaseParamProto arg = 3;
+  optional string desc_key = 4;
+}
+
+message AvatarUnlockedProto {
+  repeated int32 avatar_base_entity_id = 1;
+  repeated int32 new_unlocked_base_entity_id = 2;
+  optional ItemsStateProto avatars_state = 4;
+  optional ItemsStateProto frames_state = 5;
+}
+
+message ItemsStateProto {
+  repeated int32 unlocked_ids = 1;
+  repeated int32 new_unlocked_ids = 2;
+  repeated int32 purchased_ids = 3;
+}

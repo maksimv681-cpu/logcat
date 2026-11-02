@@ -1,0 +1,28 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "TimersAndCounters";
+
+message TimersAndCountersProto {
+  optional int64 reset_time = 1;
+  optional int32 time_count = 2;
+  optional int64 time_timer = 3;
+  optional int32 rating_count = 4;
+  optional int64 rating_timer = 5;
+  optional int32 challenge_count = 6;
+  optional int64 challenge_timer = 7;
+  optional int32 refuel_count = 8;
+  optional int32 exchange_count = 9;
+  optional int64 exchange_timer = 10;
+  optional int64 qualification_timer = 11;
+  optional int32 change_name = 12;
+  optional int32 dailyq_counter = 13;
+  optional int32 time_race_bonus = 14;
+  optional int32 show_new_clan_tournaments = 15;
+  optional int64 buy_swap_detail_timer = 16;
+  optional int64 sell_swap_detail_timer = 17;
+  optional int64 clan_leave_penalty = 18;
+  optional int32 days_online_in_row = 19;
+  optional int64 vinyl_revoke_cooldown = 20;
+}

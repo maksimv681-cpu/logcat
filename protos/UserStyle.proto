@@ -1,0 +1,25 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "UserStyle";
+
+message BaseDashboardProto {
+  optional int32 id = 1;
+  optional string name = 2;
+  optional string folder = 3;
+  optional MoneyProto price = 4;
+  optional int32 max_speed = 5;
+  optional int32 max_rpm = 6;
+  optional float max_psi = 7;
+  optional bool sensors_under_panel = 8;
+  optional string skin = 9;
+  optional string icon = 10;
+  optional bool markers_under_tachometer = 11;
+  optional MoneyProto alt_price = 12;
+}
+
+message DashboardRepositoryProto {
+  optional int32 current_dashboard_id = 1;
+  repeated int32 collection_dashboards_ids = 2;
+}

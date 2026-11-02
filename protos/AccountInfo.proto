@@ -1,0 +1,17 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "AccountInfo";
+
+message AccountInfoProto {
+  optional string name = 1;
+  optional int64 id = 2;
+  optional int32 level = 3;
+  optional int32 avatar_id = 4;
+  optional int32 money = 5;
+  optional int32 gold = 6;
+  optional int32 tournament_points = 7;
+  optional int32 top_points = 8;
+  optional int32 laurel_points = 9;
+}

@@ -1,0 +1,83 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "LobbyEventContainer";
+
+message LobbyEventProto {
+  optional int64 lobby_id = 1;
+  optional LobbyEventProtoEnum type = 2;
+  optional TrackProto track = 3;
+  optional int64 time = 4;
+  optional LobbyRaceResultProto result = 5;
+  optional OnlineServerInfoProto server = 6;
+  optional int64 target_user_id = 7;
+  optional UserInfoProto author = 8;
+  optional int32 /* enum */ race_type = 9;
+  optional LobbyInfoProto lobby_info = 10;
+  repeated LobbyMemberInfoProto members = 11;
+  enum LobbyEventProtoEnum {
+    INVITE = 0;
+    INTERRUPT = 1;
+    JOINED = 2;
+    JOIN_TO_HOST = 3;
+    FINISH_RACE = 4;
+    FOUND = 5;
+    SERVER_NOT_FOUND = 6;
+    REJECT_INVITATION = 7;
+  }
+}
+
+message LobbyLogProto {
+  optional int64 timestamp = 1;
+  optional LobbyLogProtoEnum level = 2;
+  optional LobbyLogProtoEnum type = 3;
+  optional string message = 4;
+  enum LobbyLogProtoEnum {
+    COMPACT = 0;
+    DETAIL = 1;
+    DEBUG = 2;
+  }
+  enum LobbyLogProtoEnum {
+    COMMON = 0;
+    JOIN = 1;
+    EXIT = 2;
+    READY = 3;
+    RACE = 4;
+  }
+}
+
+message LobbyMemberInfoProto {
+  optional UserInfoProto user_info = 1;
+  optional UserCarProto user_car = 2;
+  optional LobbyMemberInfoProtoEnum status = 3;
+  optional bool host = 4;
+  enum LobbyMemberInfoProtoEnum {
+    NOT_READY = 0;
+    READY = 1;
+    PAUSE = 2;
+    READY_TO_RACE = 3;
+    READY_TO_GO = 4;
+    RACE = 5;
+  }
+}
+
+message LobbyRaceResultEntryProto {
+  optional LobbyMemberInfoProto info = 1;
+  optional MemberResultProto result = 2;
+}
+
+message LobbyRaceResultProto {
+  repeated LobbyRaceResultEntryProto results = 1;
+}
+
+message MemberResultProto {
+  optional float time = 1;
+  optional MemberResultProtoEnum status = 2;
+  enum MemberResultProtoEnum {
+    DISQUALIFIED = 0;
+    BROKEN = 1;
+    FINISH = 2;
+    WINNER = 3;
+  }
+}

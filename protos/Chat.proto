@@ -1,0 +1,31 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Chat";
+
+message ChatMessageProto {
+  optional int64 id = 1;
+  optional int64 time = 2;
+  optional int64 from_uid = 3;
+  optional string message = 4;
+  optional UserInfoProto user_info = 5;
+  optional int64 to_uid = 6;
+  optional UserInfoProto to_user_info = 7;
+  optional bool registered = 8;
+  optional int32 premium_lvl = 9;
+}
+
+message ChatProto {
+  repeated ChatRoomProto rooms = 1;
+}
+
+message ChatRoomProto {
+  optional string id = 1;
+  optional int32 /* enum */ type = 2;
+  repeated ChatMessageProto messages = 3;
+  optional bool is_loaded = 4;
+  optional bool is_locked = 5;
+  optional bool is_banned = 6;
+  optional string name = 7;
+}

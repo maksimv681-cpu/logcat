@@ -1,0 +1,43 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "TrailerChallenges";
+
+message BaseTrailerChallengeItemProto {
+  optional int32 base_id = 1;
+  optional int32 summer_track_id = 2;
+  optional int32 winter_track_id = 3;
+  optional string award = 4;
+  optional int32 loot_id = 5;
+  optional int32 car_id = 6;
+  optional string image = 7;
+  optional float time = 8;
+  optional int32 items_count = 9;
+  optional string items_type = 10;
+  optional int32 track_length = 11;
+  repeated string car_class_limits = 12;
+  repeated string car_sub_class_limits = 13;
+  optional int32 hp_limits = 14;
+  optional int32 bonus_loot_id = 15;
+}
+
+message ChallengeZoneProto {
+  repeated float from = 1;
+  repeated float to = 2;
+  repeated int32 count = 3;
+  repeated string type = 4;
+  optional int32 track_id = 5;
+}
+
+message TrailerChallengeItemProto {
+  optional BaseTrailerChallengeItemProto base_item = 1;
+  optional int64 time = 2;
+  optional int64 next_reset_time = 3;
+  optional int64 best_time = 4;
+  optional int32 base_id = 5;
+}
+
+message TrailerChallengesProto {
+  repeated TrailerChallengeItemProto challenge_items = 1;
+}

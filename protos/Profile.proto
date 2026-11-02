@@ -1,0 +1,26 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Profile";
+
+message CarsModelProto {
+  repeated CarSafeProto car_safe_proto = 1;
+}
+
+message ProfileModelProto {
+  optional UserInfoProto user_info = 1;
+  optional CarSafeProto car_safe_proto = 2;
+  optional TeamCompetitionSeasonHistoryProto team_competition_history = 3;
+  optional ChampionshipHistoryProto championship_history = 4;
+  optional bool vip = 6;
+  optional bool has_next_qualification = 7;
+  optional PremiumStateContainerProto premium_state = 8;
+  optional int32 cars_in_garage = 9;
+  optional int32 unlocked_achievements_count = 10;
+}
+
+message RemoteGarageModelProto {
+  optional CarsModelProto cars_model = 1;
+  optional int64 main_car_id = 2;
+}

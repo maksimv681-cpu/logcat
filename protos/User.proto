@@ -1,0 +1,137 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "User";
+
+message FavouriteCarsProto {
+  repeated int64 cars_ids = 1;
+}
+
+message LevelUpAwardProto {
+  optional int32 level = 1;
+  optional MoneyProto money = 2;
+  optional int32 fuel = 3;
+  repeated CarUpgradeProto upgrdes = 4;
+}
+
+message SavedUserChatRoomProto {
+  optional string id = 1;
+  optional string name = 2;
+  optional int32 /* enum */ type = 3;
+}
+
+message UserFavouritesProto {
+  repeated MarketSlotIdProto slot_id = 1;
+}
+
+message UserProto {
+  optional int64 id = 1;
+  optional int32 level = 2;
+  optional int32 exp = 3;
+  optional MoneyProto money = 4;
+  optional FuelProto fuel = 5;
+  optional UserInfoProto info = 6;
+  optional GarageProto garage = 7;
+  optional InventoryProto inventory = 8;
+  optional UserEnemiesProto enemies = 9;
+  optional UserQuestsProto quests = 10;
+  optional WorldProto world = 11;
+  optional MailBoxProto mail = 12;
+  optional ChatProto chat = 13;
+  optional UserTournamentsProto tournaments = 14;
+  optional TopProto top = 15;
+  optional int64 daily_bonus_time = 16;
+  optional ChampionshipEnemiesProto championship_enemies = 17;
+  optional TimersAndCountersProto timers_and_counters = 18;
+  optional ChallengesProto challenges = 19;
+  optional int32 /* enum */ social_type = 20;
+  optional DynoProto dyno = 21;
+  optional UserPaintsProto paints = 22;
+  optional UserStatisticProto statistic = 23;
+  optional int32 /* enum */ qualification = 24;
+  optional bool is_legal = 25;
+  optional UserTopicsProto topics = 26;
+  optional int32 version = 27;
+  repeated SavedUserChatRoomProto saved_chat_rooms = 28;
+  optional string last_room_id = 29;
+  optional int32 reset_counter = 30;
+  optional DailyqStateProto dailyq_state = 31;
+  optional int32 /* enum */ current_race_type = 32;
+  optional int64 current_tournament_id = 33;
+  optional int32 region_id = 34;
+  optional MoneyProto blocked_money = 35;
+  repeated ClanUserTournamentProto user_clan_tournaments = 36;
+  optional bool has_new_clan_tournament = 37;
+  repeated int32 tutorial_ids = 38;
+  optional bool vip = 39;
+  optional int64 last_donate_date = 40;
+  optional TrailerChallengesProto trailer_challenges_proto = 41;
+  optional UserEnemiesProto auto_race_enemies = 42;
+  optional UserWalletProto user_wallet = 43;
+  optional int64 last_login_date = 44;
+  repeated ContractProto contracts = 45;
+  optional int32 fraction = 46;
+  repeated int32 finished_contracts = 47;
+  optional int64 create_date = 48;
+  optional ChampionshipHistoryProto champ_history = 49;
+  optional UserCarPaintsProto user_car_paints = 50;
+  optional UserPaintWalletProto user_paint_wallet = 51;
+  optional UserVinylMarketInfoProto user_vinyl_market_info_proto = 52;
+  optional PaintArchiveProto paint_archive_proto = 53;
+  optional BankMadePurchasesProto bank_made_purchases_proto = 54;
+  optional BankProto last_requested_bank = 55;
+  optional NgWalletSnippetProto ng_wallet_snippet_proto = 57;
+  repeated string permanent_gifts = 58;
+  optional bool receive_clans_invites = 59;
+  optional TeamCompetitionSeasonHistoryProto team_competition_history = 60;
+  optional PremiumStateContainerProto premiums_state = 61;
+  optional FavouriteCarsProto favourite_cars = 62;
+  optional AchievementsProto achievements = 63;
+  optional AvatarUnlockedProto unlock_avatars = 64;
+  optional DashboardRepositoryProto dashboard_repository = 65;
+  optional EventContainerProto event_container = 66;
+}
+
+message UserStatisticProto {
+  optional int32 total_race = 1;
+  optional int32 total_win = 2;
+  optional int32 total_lost = 3;
+  optional int32 total_quests_complete = 4;
+  optional int32 total_purchases = 5;
+  optional int32 total_time_top = 6;
+  optional int32 total_tournament_top = 7;
+  optional int32 total_tournament_first_place = 8;
+  optional int32 total_tournament_win = 9;
+  optional int32 total_tournament_race = 10;
+  optional int32 total_upgrade_improved = 11;
+  optional int32 total_upgrade_improved_to_red = 12;
+  optional int32 qualification_race = 13;
+  optional int32 qualification_win = 14;
+  optional int32 qualification_lost = 15;
+  optional int32 qualification_quests_complete = 16;
+  optional int32 qualification_purchases = 17;
+  optional int32 qualification_time_top = 18;
+  optional int32 qualification_tournament_top = 19;
+  optional int32 qualification_tournament_first_place = 20;
+  optional int32 qualification_tournament_win = 21;
+  optional int32 qualification_tournament_race = 22;
+  optional int32 qualification_upgrade_improved = 23;
+  optional int32 qualification_upgrade_improved_to_red = 24;
+}
+
+message UserTopicsProto {
+  repeated string topics = 1;
+}
+
+message UserVinylMarketInfoProto {
+  optional VinylFavouritesProto favourites_proto = 1;
+  optional UserRatesProto user_rates_proto = 2;
+  optional int32 vinyls_in_common_block = 3;
+  optional int32 strikes = 4;
+}
+
+message UserWalletProto {
+  optional MoneyProto money = 1;
+  optional MoneyProto blocked_money = 2;
+}

@@ -1,0 +1,23 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "ViewportDataContainer";
+
+message ViewportDataProto {
+  optional float x = 1;
+  optional float y = 2;
+  optional float width = 3;
+  optional float height = 4;
+  optional int64 user_id = 5;
+  optional int64 target_id = 6;
+}
+
+message ViewportParamsProto {
+  optional float x = 1;
+  optional float y = 2;
+  optional float width = 3;
+  optional float height = 4;
+  optional int64 user_id = 5;
+  optional int64 target_id = 6;
+}

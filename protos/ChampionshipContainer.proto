@@ -1,0 +1,60 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "ChampionshipContainer";
+
+message BaseChampLeagueProto {
+  optional int32 level = 1;
+  optional int32 rank_count = 2;
+  optional int32 stars_count = 3;
+  optional string icon = 4;
+  optional string name_key = 5;
+}
+
+message BaseChampRewardItemProto {
+  optional BaseThingKeyProto key = 1;
+  optional int32 count = 2;
+}
+
+message BaseChampRewardProto {
+  optional int32 id = 1;
+  optional MoneyProto money = 2;
+  repeated BaseChampRewardItemProto items = 3;
+}
+
+message BaseChampSeasonRewardProto {
+  optional ChampSeasonProto season = 1;
+  optional int32 black_reward_id = 2;
+  optional int32 red_reward_id = 3;
+  optional int32 orange_reward_id = 4;
+  optional int32 yellow_reward_id = 5;
+  optional int32 violet_reward_id = 6;
+  optional int32 blue_reward_id = 7;
+  optional int32 green_reward_id = 8;
+  optional int32 white_reward_id = 9;
+}
+
+message ChampSeasonProto {
+  optional int32 year = 1;
+  optional int32 month = 2;
+}
+
+message ChampionshipHistoryProto {
+  repeated ChampionshipResultProto history = 1;
+}
+
+message ChampionshipResultProto {
+  optional ChampSeasonProto season = 1;
+  optional int32 league = 2;
+  optional int32 max_league = 3;
+  optional int32 rank = 4;
+  optional int32 stars = 5;
+  optional int32 win_count = 6;
+  optional int32 loose_count = 7;
+  optional bool is_reward_obtained = 8;
+  optional int32 stars_bonus = 9;
+  optional int32 rating = 10;
+  optional int32 bot_win_count = 11;
+  optional int32 bot_loose_count = 12;
+}

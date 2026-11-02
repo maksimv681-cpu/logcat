@@ -1,0 +1,32 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Behavior";
+
+message BehaviorProto {
+  optional float bit_field0 = 1;
+  optional int32 tires_heat = 2;
+  repeated bytes /* message type unresolved */ transmission_type = 3;
+  optional float lmobi/sr/common/proto/compiled/_behavior$_race_event_item_proto; = 4;
+  optional float front_tires_heat = 5;
+  optional int32 rear_tires_heat = 6;
+  optional float start_rpm = 7;
+  optional float psi1 = 8;
+  optional float psi2 = 9;
+  repeated bytes /* message type unresolved */ charger_psi = 10;
+  optional bool flashers_on = 11;
+  optional bool strobo_on = 12;
+  optional float start_pos_x = 13;
+  optional int64 seed = 14;
+  optional float nitro_quantity = 15;
+  optional bool is_nitro_enabled = 16;
+}
+
+message RaceEventItemProto {
+  optional int32 /* enum */ event = 1;
+  optional double time = 2;
+  optional int32 rpm = 3;
+  optional float speed = 4;
+  optional float pos = 5;
+}

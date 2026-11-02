@@ -1,0 +1,15 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Premium";
+
+message PremiumStateContainerProto {
+  repeated PremiumStateProto premiums = 1;
+}
+
+message PremiumStateProto {
+  optional int32 level = 1;
+  optional int64 start_time = 2;
+  optional int64 end_time = 3;
+}

@@ -1,0 +1,17 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "CarPhysicsPoints";
+
+message CarPhysicsPointsProto {
+  optional Vector2Proto smoke_point = 1;
+  optional Vector2Proto front_arc_point = 2;
+  optional Vector2Proto rear_arc_point = 3;
+  repeated Vector2Proto border = 4;
+}
+
+message Vector2Proto {
+  optional float x = 1;
+  optional float y = 2;
+}

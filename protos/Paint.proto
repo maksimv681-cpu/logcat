@@ -1,0 +1,96 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Paint";
+
+message CommandProto {
+  optional CommandProtoEnum type = 1;
+  repeated int32 int_args = 2;
+  repeated float float_args = 3;
+  optional bytes data = 4;
+  repeated string str_args = 5;
+  enum CommandProtoEnum {
+    NONE = 0;
+    FULL = 1;
+    PAINT_CHASSIS = 2;
+    PAINT_FRONT_BUMPER = 3;
+    PAINT_CENTER_BUMPER = 4;
+    PAINT_REAR_BUMPER = 5;
+    INSTALL_TINT = 6;
+    PAINT_DISK = 7;
+    ADD_DECAL = 8;
+    REMOVE_DECAL = 9;
+    PAINT_DECAL = 10;
+    UPDATE_DECAL = 11;
+    PAINT_RIM = 12;
+    ADD_USER_DECAL = 13;
+    PAINT_DISK_FRONT = 14;
+    PAINT_RIM_FRONT = 15;
+    CHANGE_DECAL_LAYER = 16;
+    GROUP_UPDATE_DECAL = 17;
+  }
+}
+
+message DecalProto {
+  optional int32 id = 1;
+  optional int32 base_id = 2;
+  optional int32 color = 3;
+  optional float scale = 4;
+  optional float x = 5;
+  optional float y = 6;
+  optional float rotation = 7;
+  optional float scale_x = 10;
+  optional float scale_y = 11;
+}
+
+message PaintCommandsProto {
+  repeated CommandProto commands = 1;
+  optional int32 decal_counter = 2;
+}
+
+message PaintItemProto {
+  optional int64 id = 1;
+  optional int32 base_car_id = 2;
+  optional string name = 3;
+  optional PaintProto paint = 4;
+  optional bool shared = 5;
+  optional bool on_market = 6;
+  optional int32 front_bumper_base_id = 7;
+  optional int32 rear_bumper_base_id = 8;
+  optional int32 center_bumper_base_id = 9;
+  optional int32 rear_disk_base_id = 10;
+  optional int32 front_disk_base_id = 11;
+  optional int32 rear_rim_base_id = 12;
+  optional int32 front_rim_base_id = 13;
+  optional int32 spoiler_base_id = 14;
+  optional int32 rear_tires_base_id = 15;
+  optional int32 front_tires_base_id = 16;
+  optional int32 flasher_base_id = 17;
+  optional int32 disk_image_base_id = 18;
+  optional int32 front_disk_image_base_id = 19;
+}
+
+message PaintProto {
+  optional int32 car_color = 1;
+  optional int32 front_bumper_color = 2;
+  optional int32 center_bumper_color = 3;
+  optional int32 rear_bumper_color = 4;
+  optional int32 decal_counter = 5;
+  repeated DecalProto decals = 6;
+  optional int32 disk_color = 7;
+  optional int32 tinting_color = 9;
+  optional int32 rim_color = 10;
+  optional bool is_rim_painted = 11;
+  optional bool buyed = 12;
+  optional int32 disk_color_front = 13;
+  optional int32 rim_color_front = 15;
+  optional bool is_rim_painted_front = 16;
+  optional int64 author_id = 17;
+  optional bool modified = 18;
+  optional float group_scale_multiplex = 19;
+}
+
+message UserPaintsProto {
+  repeated PaintItemProto items = 1;
+}

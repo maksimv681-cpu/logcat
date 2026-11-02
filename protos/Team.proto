@@ -1,0 +1,126 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Team";
+
+message ABaseTeamCompetitionRewardProto {
+  optional MoneyProto money = 1;
+  repeated BaseThingKeyProto key = 2;
+  repeated int32 count = 3;
+  optional bytes payload = 4;
+}
+
+message AchievementDataProto {
+  optional int32 points_type_id = 1;
+  optional int32 counter = 2;
+  optional int32 points = 3;
+}
+
+message BaseRankProto {
+  optional int32 rank_id = 1;
+  optional int32 points = 2;
+  optional string icon_name = 3;
+}
+
+message BaseTeamCompetitionRankRewardProto {
+  optional int32 rank_id = 1;
+}
+
+message BaseTeamCompetitionRewardProto {
+  optional int32 id = 1;
+  optional int32 points = 2;
+}
+
+message CompetitionLobbyMemberProto {
+  optional TCIdProto t_c_id = 1;
+  optional bool ready = 2;
+  optional int64 time_add = 3;
+  optional float hpt = 4;
+  optional bytes races_result = 6;
+  optional int64 registered_car_id = 8;
+  optional ResultCompetitionInfoProto summary_info = 9;
+}
+
+message CompetitionLobbyProto {
+  optional int64 lobby_id = 1;
+  optional TCIdProto owner_id = 2;
+  optional int32 max_members = 3;
+  repeated CompetitionLobbyMemberProto members = 4;
+  optional int32 lobby_state = 5;
+  optional int64 battle_time = 6;
+  optional int64 pre_battle_time = 7;
+  optional int64 end_battle_time = 8;
+  optional int64 battle_id = 9;
+}
+
+message ControlTeamLobbyCommandProto {
+  optional int32 type_id = 1;
+  optional bytes additional_data = 2;
+}
+
+message EndSeasonRewardsProto {
+  repeated ChampSeasonProto season = 1;
+  repeated DropboxProto rank_rewards = 2;
+  repeated int32 rank_id = 3;
+}
+
+message PayloadContainerProto {
+  optional int32 type = 1;
+  optional bytes payload_data = 2;
+}
+
+message ResultCompetitionInfoProto {
+  optional int32 rang_delta = 1;
+  optional int32 points = 2;
+  optional int32 place = 3;
+  optional int32 wins = 4;
+  optional int32 looses = 5;
+  optional int32 competition_result = 6;
+  repeated AchievementDataProto achievement = 7;
+  optional int32 previous_rank_points = 8;
+}
+
+message TCIdProto {
+  optional int64 user_id = 1;
+  optional int32 platform_id = 2;
+  optional bool record = 3;
+}
+
+message TeamCompetitionCommandResultProto {
+  optional int32 command = 1;
+  optional int32 status = 2;
+  optional TCIdProto executor_id = 3;
+  optional string executor_name = 4;
+  optional string target_name = 6;
+  optional TCIdProto target_member_id = 7;
+}
+
+message TeamCompetitionRankBaseProto {
+  optional int32 rank_points = 1;
+  optional string icon_name = 2;
+}
+
+message TeamCompetitionRewardBoxProto {
+  repeated int32 obtained_reward_ids = 1;
+  optional DropboxProto dropbox = 2;
+}
+
+message TeamCompetitionSeasonDataProto {
+  optional int64 user_id = 1;
+  optional int32 season_points = 2;
+  repeated int32 obtained_rewards = 3;
+  optional int32 rank_points = 4;
+  optional ChampSeasonProto season = 5;
+  optional int64 last_car_id = 6;
+  optional int32 himsef_wins = 7;
+  optional int32 himsef_looses = 8;
+  optional int32 bot_wins = 9;
+  optional int32 bot_looses = 10;
+  optional bool obtained_all_rewards = 11;
+  optional int32 history_rank_id = 12;
+}
+
+message TeamCompetitionSeasonHistoryProto {
+  repeated TeamCompetitionSeasonDataProto history = 1;
+}

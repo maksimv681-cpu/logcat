@@ -1,0 +1,28 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "RollersDataContainer";
+
+message RollersControlProto {
+  optional RollersControlProtoEnum type = 1;
+  enum RollersControlProtoEnum {
+    BLOCK_DYNO_ROLLERS = 0;
+    RELEASE_DYNO_ROLLERS = 1;
+  }
+}
+
+message RollersDataParams {
+  optional float x = 1;
+  optional float y = 2;
+  optional float radius = 3;
+  optional float distance = 4;
+  optional float carcass_width = 5;
+}
+
+message RollersDataProto {
+  optional int64 id = 1;
+  optional float x = 2;
+  optional float y = 3;
+  optional float carcass_width = 4;
+}

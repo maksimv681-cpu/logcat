@@ -1,0 +1,71 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Track";
+
+message GroundSurfaceConfigurationProto {
+  optional float start_x = 1;
+  optional float width = 2;
+  optional float depth = 3;
+  optional float friction = 4;
+  optional float hardness = 5;
+  optional float column = 6;
+}
+
+message TrackProto {
+  optional float distance = 1;
+  optional float brake_distance = 2;
+  optional string ground = 3;
+  optional float ground_width = 4;
+  optional float ground_height = 5;
+  optional float ground_offset = 6;
+  optional float ground_friction = 7;
+  optional float ground_step = 8;
+  optional TrackProtoEnum type = 9;
+  repeated TrackProto.BackgroundTrackProto backgrounds = 10;
+  optional float frequency = 11;
+  optional int32 octave_count = 12;
+  optional float lacunarity = 13;
+  optional float persistence = 14;
+  optional float finish_line_y1 = 15;
+  optional float finish_line_y2 = 16;
+  optional int32 base_id = 17;
+  optional float bump_min_density = 18;
+  optional float bump_max_density = 19;
+  optional float bump_min_radius = 20;
+  optional float bump_max_radius = 21;
+  optional float bump_min_deep = 22;
+  optional float bump_max_deep = 23;
+  optional float pothole_min_density = 24;
+  optional float pothole_max_density = 25;
+  optional float pothole_min_radius = 26;
+  optional float pothole_max_radius = 27;
+  optional float pothole_min_deep = 28;
+  optional float pothole_max_deep = 29;
+  repeated GroundSurfaceConfigurationProto surfaces = 30;
+  optional string front_ground = 31;
+  optional int32 weather = 32;
+  optional float weatherfrequency = 33;
+  optional int32 billboards = 34;
+  optional float billboard_x = 35;
+  optional float billboard_height = 36;
+  optional int64 ads_i_d = 37;
+  optional float billboard_gap = 38;
+  optional int32 flipped = 39;
+  repeated BaseLimitZoneProto limit_zones = 40;
+  message BackgroundTrackProto {
+    optional string name = 1;
+    optional float offset_factor = 2;
+    optional float width = 3;
+    optional float height = 4;
+    optional float offset = 5;
+    optional bool on_front = 6;
+  }
+  enum TrackProtoEnum {
+    ASPHALT = 0;
+    DIRT = 1;
+    DUST = 2;
+    SNOW = 3;
+  }
+}

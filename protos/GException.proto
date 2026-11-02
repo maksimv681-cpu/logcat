@@ -1,0 +1,18 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "GException";
+
+message GameExceptionProto {
+  optional string error_message = 1;
+  optional string error_description = 2;
+  optional int32 error = 3;
+  optional GameExceptionProtoEnum error_level = 4;
+  enum GameExceptionProtoEnum {
+    INFO = 1;
+    WARNING = 2;
+    ERROR = 3;
+    CRITICAL = 4;
+  }
+}

@@ -1,0 +1,26 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "ObjectDataContainer";
+
+message OverpassControlProto {
+  optional OverpassControlProtoEnum type = 1;
+  enum OverpassControlProtoEnum {
+    BLOCK_ROLLERS = 0;
+    RELEASE_ROLLERS = 1;
+  }
+}
+
+message OverpassDataProto {
+  optional float pos_x = 1;
+  optional float pos_y = 2;
+  optional float front_x = 3;
+  optional float rear_x = 4;
+}
+
+message OverpassParamsProto {
+  optional float pos_x = 1;
+  optional float pos_y = 2;
+  optional float distance = 3;
+}

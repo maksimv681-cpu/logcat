@@ -1,0 +1,33 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "WebBank";
+
+message SubWebBankItem {
+  optional string item_name = 1;
+  optional int32 item_count = 2;
+}
+
+message WebBankItemProto {
+  optional string item_id = 1;
+  optional int32 gold = 2;
+  optional int32 bonus = 3;
+  optional int32 car_id = 4;
+  repeated SubWebBankItem items = 5;
+  optional string price_web = 6;
+  optional string price_ton = 7;
+  optional string icon_name = 8;
+  optional string lot_name = 9;
+  optional string date = 10;
+  optional int32 duration = 11;
+  optional int64 start_time = 12;
+  optional int64 end_time = 13;
+  optional int32 max_purchase_count = 14;
+  optional int32 /* enum */ category = 15;
+  optional int32 diamonds = 16;
+}
+
+message WebBankProto {
+  repeated WebBankItemProto items = 1;
+}

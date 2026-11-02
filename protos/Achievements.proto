@@ -1,0 +1,84 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Achievements";
+
+message AchievementGameEventProto {
+  optional string event_type = 1;
+  repeated AchievementParamProto params = 2;
+}
+
+message AchievementIdProto {
+  optional int32 base_id = 1;
+  optional int32 level = 2;
+  optional int32 base_car_id = 3;
+}
+
+message AchievementParamProto {
+  optional string key = 1;
+  optional BaseParamProto value = 2;
+}
+
+message AchievementProto {
+  optional AchievementIdProto id = 1;
+  optional ValueWrapperProto value = 2;
+  optional int64 time_of_achievement = 3;
+  optional bool user_took_points = 4;
+  optional bytes payload = 5;
+}
+
+message AchievementTopItemConteinerProto {
+  repeated AchievementTopItemProto achievement_top_item = 1;
+}
+
+message AchievementTopItemProto {
+  optional int32 place = 1;
+  optional int32 points = 2;
+  optional int64 user_id = 3;
+  optional string name = 4;
+  optional string clan_tag = 5;
+}
+
+message AchievementsPersentProto {
+  repeated string key = 1;
+  repeated float percent = 2;
+}
+
+message AchievementsProto {
+  repeated AchievementProto achievements = 1;
+  optional int32 points = 2;
+}
+
+message BaseAchievementDataProto {
+  optional int32 level = 1;
+  optional int32 points = 2;
+  optional ValueWrapperProto value = 3;
+  optional string icon = 4;
+  optional ValueWrapperProto payload = 5;
+}
+
+message BaseAchievementProto {
+  optional int32 id = 1;
+  optional bool hidden = 2;
+  optional int32 category_id = 3;
+  repeated BaseAchievementDataProto data = 4;
+  optional int32 min_level = 5;
+  optional int32 max_level = 6;
+  optional int32 comparison = 7;
+  optional int32 context_id = 8;
+  repeated int32 context_payload = 9;
+}
+
+message BaseAchievementsCategoryProto {
+  optional int32 id = 1;
+  optional string icon = 2;
+  optional string res_name = 3;
+}
+
+message ValueWrapperProto {
+  optional int32 type = 1;
+  optional int32 int_value = 2;
+  optional float float_value = 3;
+  optional string string_value = 4;
+}

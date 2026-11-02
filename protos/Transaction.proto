@@ -1,0 +1,66 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Transaction";
+
+message AddPendingTransactionEventProto {
+  optional int64 uid = 1;
+  optional PendingTransactionProto transaction = 2;
+}
+
+message PendingTransactionProto {
+  optional int64 id = 1;
+  optional int64 timestamp = 2;
+  optional int32 /* enum */ type = 3;
+  optional string description = 4;
+  optional MoneyProto money = 5;
+}
+
+message TransactionDataProto {
+  optional string product_id = 1;
+  optional string gpa = 2;
+  optional string status = 3;
+  optional int64 inner_id = 4;
+  optional int64 user_id = 5;
+}
+
+message TransactionFilterProto {
+  optional int64 from_date = 1;
+  optional int64 to_date = 2;
+  optional int64 mask = 3;
+  repeated int32 method_mask = 4;
+}
+
+message TransactionPremiumConversionProto {
+  optional int32 bit_field0 = 1;
+  optional int32 source_premium_lvl = 2;
+  optional int64 target_premium_lvl = 3;
+  optional int64 source_time = 4;
+  optional float target_time = 5;
+  repeated bytes /* message type unresolved */ coef = 6;
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_premium$_premium_state_proto; = 7;
+}
+
+message TransactionProto {
+  optional int64 id = 1;
+  optional int32 /* enum */ type = 2;
+  optional MoneyProto money_before = 3;
+  optional MoneyProto money_after = 4;
+  optional int32 method = 5;
+  optional string description = 6;
+  optional int64 time = 7;
+  optional int64 clanid = 8;
+  optional MoneyProto blocked_money_before = 9;
+  optional MoneyProto blocked_money_after = 10;
+  optional MoneyProto refund = 11;
+  optional DropboxProto purchased_things = 12;
+  optional PremiumStateProto premium_state = 13;
+  optional TransactionPremiumConversionProto premium_conversion = 14;
+}
+
+message WalletProto {
+  optional int64 bit_field0 = 1;
+  repeated bytes /* message type unresolved */ id = 2;
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_transaction$_transaction_proto; = 3;
+}

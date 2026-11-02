@@ -1,0 +1,43 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Inventory";
+
+message InventoryProto {
+  repeated CarUpgradeProto upgrades = 1;
+  repeated ItemProto items = 2;
+  repeated LootboxProto lootboxes = 3;
+  repeated CouponProto coupons = 4;
+  repeated OtherProto other = 5;
+}
+
+message OtherProto {
+  optional int32 /* enum */ type = 1;
+  optional bytes payload = 2;
+}
+
+message ThingKeyProto {
+  optional int32 /* enum */ type = 1;
+  optional int32 base_id = 2;
+  optional int64 unique_id = 3;
+}
+
+message ThingKeyWithCount {
+  optional ThingKeyProto key = 1;
+  optional int32 count = 2;
+}
+
+message ThingKeysWithCount {
+  repeated ThingKeyWithCount keys = 1;
+}
+
+message ThingProto {
+  optional ThingKeyProto key = 1;
+  optional int32 count = 2;
+  optional bool attached = 3;
+}
+
+message ThingsListProto {
+  repeated ThingProto things = 1;
+}

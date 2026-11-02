@@ -1,0 +1,127 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Tournament";
+
+message BossRaidInstanceEventProto {
+  optional int32 /* enum */ type = 1;
+  optional ClanBossRaidInstanceProto instance = 2;
+}
+
+message ClanBossInfoProto {
+  optional int64 tid = 1;
+  optional int32 region_id = 2;
+  optional float boss_time = 3;
+  optional EnemyProto enemy = 4;
+  optional int64 clan_master = 5;
+}
+
+message ClanBossRaidInstanceProto {
+  optional ClanBossInfoProto boss_info = 1;
+  optional int64 clan_id = 2;
+  optional int32 hp = 3;
+  optional int64 last_change_time = 4;
+}
+
+message ClanTournamentEventProto {
+  optional int32 /* enum */ type = 1;
+  optional ClanTournamentProto tournament = 2;
+}
+
+message ClanTournamentProto {
+  optional int64 id = 1;
+  optional BaseClanTournamentProto base_clan_tournament = 2;
+  optional string car_class = 3;
+  optional int32 sub_class = 4;
+  optional int64 finish_time = 5;
+  optional float best_user_time = 6;
+  optional int64 clan_id = 7;
+  optional int32 track_id = 8;
+  optional int64 participants = 9;
+}
+
+message ClanUserTournamentProto {
+  optional ClanTournamentProto clan_tournament = 1;
+  optional int32 count_attempts = 2;
+  optional float best_time = 3;
+  optional int64 current_car_id = 4;
+}
+
+message DamagerInfoListProto {
+  repeated DamagerInfoProto list = 1;
+}
+
+message DamagerInfoProto {
+  optional string bit_field0 = 1;
+  optional int32 name = 2;
+  repeated bytes /* message type unresolved */ damage = 4;
+  repeated bytes /* message type unresolved */ lmobi/sr/common/proto/compiled/_car_upgrade$_car_upgrade_proto; = 5;
+  optional int64 lmobi/sr/common/proto/compiled/_item$_item_proto; = 6;
+  optional bytes /* message type unresolved */ uid = 7;
+  repeated bytes /* message type unresolved */ award_money = 8;
+  repeated UserCarProto cars = 9;
+  repeated LootboxProto lootboxes = 10;
+  optional int32 avatar_id = 11;
+  optional int32 races = 12;
+}
+
+message RaceLoggerProto {
+  optional int64 enemy_id = 1;
+  optional int32 wins = 2;
+}
+
+message TournamentProto {
+  optional int64 id = 1;
+  optional int32 base_id = 2;
+  optional TournamentProtoEnum status = 3;
+  optional int64 task_time = 4;
+  repeated TournamentTopItemProto top = 5;
+  optional string name = 6;
+  optional int64 end_time = 7;
+  enum TournamentProtoEnum {
+    NONE = 0;
+    SCHEDULED = 1;
+    IN_PROGRESS = 2;
+    FINISHED = 3;
+  }
+}
+
+message TournamentTopItemProto {
+  optional int64 id = 1;
+  optional int32 place = 2;
+  optional int32 points = 3;
+  optional UserInfoProto info = 4;
+  optional CarSafeProto car_container = 5;
+  optional MoneyProto award = 6;
+  repeated CarUpgradeProto upgrades = 7;
+  repeated ItemProto items = 8;
+  optional int64 race_date = 9;
+  optional float time = 10;
+}
+
+message UserTournamentProto {
+  optional int64 tournament_id = 1;
+  optional int32 tryes_left = 2;
+  optional int32 points = 3;
+  optional EnemyProto enemy = 4;
+  optional bool is_lost = 5;
+  optional TournamentProto tournament = 6;
+  optional bool is_registered = 7;
+  repeated RaceLoggerProto race_logger = 8;
+  optional TournamentProtoEnum status = 9;
+  optional int32 base_tournament_id = 10;
+  optional int64 task_time = 11;
+  optional UserTournamentSeriesOfWinsProto series_of_wins = 12;
+}
+
+message UserTournamentSeriesOfWinsProto {
+  optional int32 current_chain = 1;
+  optional int32 max_series = 2;
+  repeated int32 available_reward_for_series = 3;
+}
+
+message UserTournamentsProto {
+  repeated UserTournamentProto active_tournaments = 1;
+  repeated TournamentProto finished_tournaments = 2;
+}

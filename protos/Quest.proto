@@ -1,0 +1,70 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Quest";
+
+message BaseQuestProto {
+  optional int32 id = 1;
+  optional int32 max_counter = 2;
+  optional string ico = 3;
+  optional int32 exp = 4;
+  optional BaseQuestProtoEnum type = 5;
+  optional MoneyProto money = 6;
+  repeated BaseQuestProtoEnum handlers = 7;
+  repeated BaseQuestProtoEnum postprocessors = 9;
+  optional int32 show_time = 10;
+  optional int32 hide_time = 11;
+  optional int32 loot_id = 12;
+  optional int32 level = 13;
+  enum BaseQuestProtoEnum {
+    NONE = 0;
+    RACE = 1;
+    TIME_RACE = 11;
+    RATING_RACE = 12;
+    WIN = 4;
+    WIN_IN_ROW = 5;
+    LOST = 6;
+    CHAT_RACE = 19;
+    TOURNAMENT_RACE = 20;
+    UPGRADE_ENGINE = 9;
+    LOGIN = 10;
+    CRAFT_UPGRADE = 16;
+    INAPP_PURCHASE = 17;
+    EXCHANGE = 21;
+    PURCHASE_9000 = 22;
+    PURCHASE_32000 = 15;
+    EVENING = 18;
+    TIME_7_9 = 18;
+    TIME_21_23 = 23;
+  }
+  enum BaseQuestProtoEnum {
+    FUEL = 1;
+  }
+  enum BaseQuestProtoEnum {
+    DAILY = 1;
+  }
+}
+
+message QuestAwardProto {
+  optional MoneyProto money = 1;
+  optional int32 exp = 2;
+  repeated CarUpgradeProto upgrades = 3;
+  repeated ItemProto items = 4;
+  repeated UserCarProto user_cars = 5;
+  repeated LootboxProto lootboxes = 6;
+  repeated CouponProto coupons = 7;
+}
+
+message QuestProto {
+  optional int32 base_id = 1;
+  optional bool is_finished = 2;
+  optional int32 counter = 3;
+  optional int64 save_time = 4;
+  optional string name = 5;
+  optional string desc = 6;
+}
+
+message UserQuestsProto {
+  repeated QuestProto quests = 1;
+}

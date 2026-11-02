@@ -1,0 +1,444 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "WorldDataContainer";
+
+message CarControlProto {
+  optional int64 car_id = 1;
+  optional CarControlProtoEnum type = 2;
+  optional float value = 3;
+  repeated float points = 4;
+  enum CarControlProtoEnum {
+    START_ENGINE = 0;
+    STOP_ENGINE = 1;
+    SHIFT_UP = 2;
+    SHIFT_DOWN = 3;
+    ACCELERATE = 4;
+    BRAKE = 5;
+    SET_NEUTRAL = 6;
+    SET_TRANSMISSON_MODE = 7;
+    SET_HEATTED = 8;
+    LOCK_TIRES_TEMP = 9;
+    SET_CLUTCH = 10;
+    SET_HAND_BRAKING = 11;
+    STOP = 12;
+    MOVE_FORWARD = 13;
+    MOVE_BACKWARD = 14;
+    TRANSLATE = 15;
+    SET_ODOMETER = 16;
+    SET_FRONT_WHEEL_TEMPERATURE = 17;
+    SET_FRONT_WHEEL_TEMPERATURE_LOCKED = 18;
+    SET_REAR_WHEEL_TEMPERATURE = 19;
+    SET_REAR_WHEEL_TEMPERATURE_LOCKED = 20;
+    UPDATE_CONFIG = 21;
+    SET_CURRENT_GEAR = 23;
+    CHANGE_ENGINE_STATE = 24;
+    POST_STARTED_EVENT = 25;
+    UPDATE_BEHAVIOR_RPM = 26;
+    SET_BEHAVIOR = 27;
+    START_BEHAVIOR_UPDATE = 28;
+    REFILL_STATIC_DATA = 29;
+    LOCK_DESTROY_TIRES = 30;
+    CREATE_RECORDER = 31;
+    UPDATE_BEHAVIOR_TIRES_HEAT = 32;
+    SET_CRUISE_CONTROL = 33;
+    SET_DRIVE = 34;
+    FLASHER_UP = 35;
+    FLASHER_DOWN = 36;
+    HEADLIGHT_UP = 37;
+    HEADLIGHT_DOWN = 38;
+    STROBOSCOPE_UP = 39;
+    STROBOSCOPE_DOWN = 40;
+    START_ECU_TEST = 41;
+    STOP_ECU_TEST = 42;
+    SET_NITRO_ENABLED = 43;
+    REFILL_NITRO = 44;
+  }
+}
+
+message CarDataProto {
+  optional float chassis_body_position_x = 1;
+  optional float chassis_body_position_y = 2;
+  optional float chassis_linear_velocity_x = 3;
+  optional float chassis_linear_velocity_y = 4;
+  optional float chassis_angular_velocity = 5;
+  optional float chassis_body_rotation = 6;
+  optional float chassis_speed = 7;
+  optional float front_brake_body_position_x = 8;
+  optional float front_brake_body_position_y = 9;
+  optional float front_brake_body_rotation = 10;
+  optional float front_brake_support_body_position_x = 11;
+  optional float front_brake_support_body_position_y = 12;
+  optional float front_brake_support_body_rotation = 13;
+  optional float rear_brake_body_position_x = 14;
+  optional float rear_brake_body_position_y = 15;
+  optional float rear_brake_body_rotation = 16;
+  optional float rear_brake_support_body_position_x = 17;
+  optional float rear_brake_support_body_position_y = 18;
+  optional float rear_brake_support_body_rotation = 19;
+  optional float front_suspension_cylinder_body_position_x = 20;
+  optional float front_suspension_cylinder_body_position_y = 21;
+  optional float front_suspension_cylinder_body_rotation = 22;
+  optional float front_suspension_piston_body_position_x = 23;
+  optional float front_suspension_piston_body_position_y = 24;
+  optional float front_suspension_piston_body_rotation = 25;
+  optional float front_suspension_hub_body_position_x = 26;
+  optional float front_suspension_hub_body_position_y = 27;
+  optional float front_suspension_hub_body_rotation = 28;
+  optional float rear_suspension_cylinder_body_position_x = 29;
+  optional float rear_suspension_cylinder_body_position_y = 30;
+  optional float rear_suspension_cylinder_body_rotation = 31;
+  optional float rear_suspension_piston_body_position_x = 32;
+  optional float rear_suspension_piston_body_position_y = 33;
+  optional float rear_suspension_piston_body_rotation = 34;
+  optional float rear_suspension_hub_body_position_x = 35;
+  optional float rear_suspension_hub_body_position_y = 36;
+  optional float rear_suspension_hub_body_rotation = 37;
+  optional float front_wheel_body_position_x = 38;
+  optional float front_wheel_body_position_y = 39;
+  optional float front_wheel_linear_velocity_x = 40;
+  optional float front_wheel_linear_velocity_y = 41;
+  optional float front_wheel_angular_velocity = 42;
+  optional float front_wheel_body_rotation = 43;
+  optional float rear_wheel_body_position_x = 44;
+  optional float rear_wheel_body_position_y = 45;
+  optional float rear_wheel_linear_velocity_x = 46;
+  optional float rear_wheel_linear_velocity_y = 47;
+  optional float rear_wheel_angular_velocity = 48;
+  optional float rear_wheel_body_rotation = 49;
+  optional float camera_body_position_x = 50;
+  optional float camera_body_position_y = 51;
+  optional float front_wheel_temperature = 52;
+  optional float rear_wheel_temperature = 53;
+  optional double engine_temperature = 54;
+  optional float front_brake_temperature = 55;
+  optional float rear_brake_temperature = 56;
+  optional double acceleration = 57;
+  optional bool clutch = 58;
+  optional bool neutral = 59;
+  optional bool accelerate = 60;
+  optional bool front_hand_braking = 61;
+  optional bool front_braking = 62;
+  optional bool rear_hand_braking = 63;
+  optional bool rear_braking = 64;
+  optional bool broken = 65;
+  optional bool front_wheel_broken = 66;
+  optional bool rear_wheel_broken = 67;
+  optional bool front_wheel_tires_destroyed = 68;
+  optional bool rear_wheel_tires_destroyed = 69;
+  optional bool turned_over = 70;
+  optional bool destroyed = 71;
+  optional bool burn_out = 72;
+  optional bool front_wheel_burn_out = 73;
+  optional bool rear_wheel_burn_out = 74;
+  optional int32 current_gear = 75;
+  optional bool cut_off = 76;
+  optional bool damaged = 77;
+  optional bool overheated = 78;
+  optional bool shifting = 79;
+  optional int32 rpm = 80;
+  optional int32 engine_rpm = 81;
+  optional int32 speed = 82;
+  optional float turbo_psi1 = 83;
+  optional float turbo_psi2 = 84;
+  optional float chassis_body_orientation_x = 85;
+  optional float chassis_body_orientation_y = 86;
+  optional float front_wheel_disk_alpha = 87;
+  optional float front_wheel_blur_alpha = 88;
+  optional float front_wheel_smoke_alpha = 89;
+  optional float rear_wheel_disk_alpha = 90;
+  optional float rear_wheel_blur_alpha = 91;
+  optional float rear_wheel_smoke_alpha = 92;
+  optional int64 car_id = 93;
+  optional CarStaticDataProto car_static_data = 94;
+  repeated CarEffectDataProto effects = 95;
+  repeated WorldEventProto events = 96;
+  optional float speed_from_front_wheel = 97;
+  optional float speed_from_rear_wheel = 98;
+  optional bool front_wheel_sliping = 99;
+  optional bool rear_wheel_sliping = 100;
+  optional bool esp = 101;
+  optional bool engine_started = 102;
+  optional double last_torque = 103;
+  optional bool on_rollers = 104;
+  optional float current_gear_length = 105;
+  optional bool on_ground = 106;
+  optional float max_tires_temperature = 107;
+  optional bool front_wheel_removed = 108;
+  optional bool rear_wheel_removed = 109;
+  optional float villy_bar_body_position_x = 110;
+  optional float villy_bar_body_position_y = 111;
+  optional float villy_bar_wheel_position_x = 112;
+  optional float villy_bar_wheel_position_y = 113;
+  optional float villy_bar_body_rotation = 114;
+  optional float villy_bar_wheel_rotation = 115;
+  optional float chassis_front_support_body_position_x = 116;
+  optional float chassis_front_support_body_position_y = 117;
+  optional float chassis_rear_support_body_position_x = 118;
+  optional float chassis_rear_support_body_position_y = 119;
+  optional float chassis_front_support_body_rotation = 120;
+  optional float chassis_rear_support_body_rotation = 121;
+  optional double half_clutch_timer = 122;
+  optional int32 aero_contacts = 123;
+  optional bool flipped = 124;
+  optional float charger_psi = 125;
+  optional bool headlight_on = 126;
+  optional bool flasher_on = 127;
+  optional bool stroboscope_on = 128;
+  optional bool ecu_error = 129;
+  optional EcuTestDataProto ecu_test = 130;
+  optional int32 detonation_count = 131;
+  optional float max_psi = 132;
+  optional float nitro_qunatity = 133;
+  optional float nitro_psi = 134;
+  optional bool is_nitro_enabled = 135;
+  optional bool is_nitro_inject = 136;
+  optional float max_chassis_body_rotation = 137;
+}
+
+message CarEffectDataProto {
+  optional int32 id = 1;
+  optional CarEffectDataProtoEnum type = 2;
+  optional float rotation = 3;
+  optional float position_x = 4;
+  optional float position_y = 5;
+  optional float denstity = 6;
+  optional float size = 7;
+  optional float time = 8;
+  optional float time_life = 9;
+  optional float temerature = 10;
+  optional int32 smoke_color = 11;
+  optional CarEffectDataProtoEnum layer = 12;
+  optional float speed_count = 13;
+  optional bool flipped = 14;
+  enum CarEffectDataProtoEnum {
+    NONE = 0;
+    WHEEL_SMOKE = 1;
+    WHEEL_DUST = 2;
+    WHEEL_DIRT = 3;
+    SPARK = 4;
+    ENGINE_SMOKE = 5;
+    THREAD_START = 6;
+    THREAD_END = 7;
+    POINT_SMOKE = 8;
+    WHEEL_SNOW = 9;
+    WHEEL_DIG = 10;
+    WHEEL_DIG_OUT = 11;
+  }
+  enum CarEffectDataProtoEnum {
+    BEHIND_CAR = 0;
+    IN_FRONT_OF_CAR = 1;
+    IN_FRONT_OF_FRONT_GROUND = 2;
+  }
+}
+
+message CarParamsProto {
+  optional int64 car_id = 1;
+  optional int32 base_id = 2;
+  optional int64 race_id = 3;
+  optional float pos_x = 4;
+  optional float pos_y = 5;
+  optional float z = 6;
+  optional int32 times_of_day = 7;
+  optional bool use_camera = 8;
+  optional bool flipped = 9;
+  optional bool need_to_write = 10;
+  optional bool use_predictor = 11;
+  optional bool enable_headlight = 12;
+  optional bool vibrates = 13;
+  optional bool use_roo_borders = 14;
+  optional int32 request_id = 15;
+  optional bool disable_villy_bar = 16;
+  optional UserCarProto user_car = 17;
+  optional bool cruise_control = 18;
+  optional int32 drive_state = 19;
+}
+
+message CarStaticDataProto {
+  optional float chassis_width = 1;
+  optional float front_wheel_disk_size = 2;
+  optional int32 front_wheel_disk_radius = 3;
+  optional float front_wheel_tires_height = 4;
+  optional float front_wheel_rim_size = 5;
+  optional float front_wheel_razval = 6;
+  optional float front_wheel_totol_wheel_radius = 7;
+  optional bool front_wheel_is_tires = 8;
+  optional float rear_wheel_disk_size = 9;
+  optional int32 rear_wheel_disk_radius = 10;
+  optional float rear_wheel_tires_height = 11;
+  optional float rear_wheel_rim_size = 12;
+  optional float rear_wheel_razval = 13;
+  optional float rear_wheel_totol_wheel_radius = 14;
+  optional bool rear_wheel_is_tires = 15;
+  optional float front_suspention_cylinder_width = 16;
+  optional float front_suspention_cylinder_height = 17;
+  optional float front_suspention_piston_width = 18;
+  optional float front_suspention_piston_height = 19;
+  optional float front_suspention_hub_radius = 20;
+  optional float rear_suspention_cylinder_width = 21;
+  optional float rear_suspention_cylinder_height = 22;
+  optional float rear_suspention_piston_width = 23;
+  optional float rear_suspention_piston_height = 24;
+  optional float rear_suspention_hub_radius = 25;
+  optional float front_brake_radius = 26;
+  optional float front_brake_support_width = 27;
+  optional int32 front_brake_type = 28;
+  optional int32 front_brake_support_align = 29;
+  optional float rear_brake_radius = 30;
+  optional float rear_brake_support_width = 31;
+  optional int32 rear_brake_type = 32;
+  optional int32 rear_brake_support_align = 33;
+  optional bool turbo_active1 = 34;
+  optional bool turbo_active2 = 35;
+  optional float cut_off_down_rpm = 36;
+  optional float cut_off_rpm = 37;
+  optional float max_psi1 = 38;
+  optional float max_psi2 = 39;
+  optional int32 idle_rpm = 40;
+  optional float max_hp = 41;
+  optional float max_temperature = 42;
+  optional int32 gears_count = 43;
+  optional float yellow_zone = 44;
+  optional float green_zone = 45;
+  optional float red_zone = 46;
+  optional float front_traction = 47;
+  optional float rear_traction = 48;
+  optional float wheel_size = 49;
+  optional float villy_bar_width = 50;
+  optional bool is_villy_bar = 51;
+  optional bool charger_active = 52;
+  optional float charger_psi = 53;
+  optional bool update_render = 54;
+  optional float blue_zone = 55;
+}
+
+message CreateWorldObjectEventProto {
+  optional int32 id = 1;
+}
+
+message DestroyWorldObjectEventProto {
+  optional int32 id = 1;
+}
+
+message EnterLimitZoneEventProto {
+  optional BaseLimitZoneProto base_limit_zone = 1;
+}
+
+message LimitZoneStopEventProto {
+  optional BaseLimitZoneProtoEnum zone_type = 1;
+}
+
+message LookToCarEventProto {
+  optional int64 online_member_id = 1;
+  optional int64 look_car_id = 2;
+}
+
+message TrafficLightEventProto {
+  optional int32 int_traffic_light_state = 1;
+}
+
+message ViolationStateEventProto {
+  optional bool violating = 1;
+  optional BaseLimitZoneProtoEnum zone_type = 2;
+  optional int32 violation_size = 3;
+  optional float multiple_award = 4;
+}
+
+message WorldDataObjectProto {
+  optional int64 id = 1;
+  optional int32 /* enum */ type = 2;
+  optional bytes data = 3;
+}
+
+message WorldEventContainerProto {
+  repeated WorldEventProto events = 1;
+}
+
+message WorldEventProto {
+  optional int64 id = 1;
+  optional WorldEventProtoEnum event_class = 2;
+  optional WorldEventProtoEnum event_type = 3;
+  optional float value = 4;
+  optional int64 car_id = 5;
+  optional WorldParamsProto world_params = 6;
+  optional bytes extends_payload = 7;
+  enum WorldEventProtoEnum {
+    CAR = 0;
+    RACE = 1;
+    CREATE_OBJECT = 2;
+    DESTROY_OBJECT = 3;
+    WORLD_EXCEPTION = 4;
+  }
+  enum WorldEventProtoEnum {
+    SLOW_MOTION_START = 0;
+    SLOW_MOTION_END = 1;
+    START_COUNTDOWN = 21;
+    GO = 23;
+    REAR_WHEEL_BROKE = 4;
+    FRONT_WHEEL_BROKE = 5;
+    SHIFT = 6;
+    SHIFT_UP = 7;
+    SHIFT_DOWN = 8;
+    CUTOFF = 9;
+    BROKEN = 10;
+    SHIFT_FINISH = 11;
+    ENGINE_START = 12;
+    ENGINE_STARTED = 13;
+    ENGINE_STOP = 14;
+    TRACE_TREAD_START = 15;
+    TRACE_TREAD_END = 16;
+    WHEEL_SMOKE_BEGIN = 17;
+    WHEEL_SMOKE_END = 18;
+    SHIFT_FAILED = 19;
+    BLOW_OFF = 20;
+    READY_TO_START = 22;
+    DISQUALIFIED = 22;
+    PLAYER_FINISHED = 24;
+    FINISH = 25;
+    WHEEL_BUMP = 26;
+    OBJECT = 27;
+    START_ENGINE_VIBRATE = 28;
+    LIMIT_ZONE_VIOLATION = 29;
+    LIMIT_ZONE_ENTER = 30;
+    TRAFFIC_LIGHT = 31;
+    LIMIT_ZONE_STOP = 32;
+    TRANSMISSION_TYPE = 33;
+    EXCEPTION = 34;
+    CHASSIS_STOPPED = 35;
+    CAR_UPSIDE_DOWN = 36;
+    CAR_ON_WHEELS = 37;
+    FULL_DRIVE = 38;
+    REAR_WHEEL_DRIVE = 39;
+    FRONT_WHEEL_DRIVE = 40;
+    CAR_STATIC_DATA_UPDATED = 41;
+    LOOK_TO_CAR = 42;
+    DELAY_RUN = 43;
+    TIME_LEFT = 44;
+    NITRO_INJECT_STATUS = 45;
+  }
+}
+
+message WorldNetEventProto {
+  optional int32 order = 1;
+  optional int64 online_race_id = 2;
+  optional WorldNetEventProtoEnum type = 3;
+  optional int64 timestamp = 4;
+  optional float time = 5;
+  optional CarControlProto control = 6;
+  repeated CarDataProto data = 7;
+  optional WorldEventProto event = 8;
+  repeated WorldDataObjectProto objects = 9;
+  optional CreateWorldObjectEventProto create_event = 10;
+  optional DestroyWorldObjectEventProto destroy_event = 11;
+  enum WorldNetEventProtoEnum {
+    CONTROL = 0;
+    DATA = 1;
+    EVENT = 2;
+  }
+}
+
+message WorldParamsProto {
+  optional int32 /* enum */ type = 1;
+  optional bytes data = 2;
+}

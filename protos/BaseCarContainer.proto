@@ -1,0 +1,502 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "BaseCarContainer";
+
+message BaseBrakePadProto {
+  optional BaseUpgradeProto base = 1;
+  optional float coefficient = 2;
+}
+
+message BaseBrakeProto {
+  optional BaseUpgradeProto base = 1;
+  optional float radius = 2;
+  optional float support_width = 3;
+  optional string type = 4;
+  optional string image = 5;
+  optional string support_image = 6;
+}
+
+message BaseCamshaftProto {
+  optional BaseUpgradeProto base = 1;
+  repeated BaseCamshaftProto.CamshaftPointProto camshaft_points = 2;
+  repeated BaseCamshaftProto.CamshaftSwapPointProto camshaft_swap_points = 3;
+  optional float rpm = 4;
+  message CamshaftPointProto {
+    optional int32 index = 1;
+    optional float torque = 2;
+  }
+  message CamshaftSwapPointProto {
+    optional int32 index1 = 1;
+    optional int32 index2 = 2;
+  }
+}
+
+message BaseCarProto {
+  optional float chassis_width = 1;
+  optional float arc_radius = 2;
+  optional float car_mass = 3;
+  optional float mass_clirence = 4;
+  optional float mass_balance = 5;
+  optional float clirence = 6;
+  optional float brake_traction = 7;
+  optional float drive_traction = 8;
+  optional int32 disk_base_id = 13;
+  optional int32 tires_base_id = 14;
+  optional int32 front_suspension_base_id = 15;
+  optional int32 front_spring_base_id = 16;
+  optional int32 front_brake_base_id = 17;
+  optional int32 rear_suspension_base_id = 18;
+  optional int32 rear_spring_base_id = 19;
+  optional int32 rear_brake_base_id = 20;
+  optional string image = 21;
+  optional int32 base_id = 27;
+  optional MoneyProto price = 28;
+  optional int32 level = 29;
+  optional string car_class = 30;
+  optional int32 shop_index = 31;
+  optional int32 base_color = 32;
+  optional int32 rear_bumper_base_id = 34;
+  optional int32 center_bumper_base_id = 35;
+  optional int32 front_bumper_base_id = 36;
+  optional int32 engine_base_id = 37;
+  optional float cx = 38;
+  optional float square = 39;
+  optional int32 /* enum */ front_support_align = 40;
+  optional int32 /* enum */ rear_support_align = 41;
+  optional int32 transmission_base_id = 42;
+  optional int32 max_disk_size = 43;
+  optional float car_mass_delta = 44;
+  optional float grip_bonus = 45;
+  optional bool is_swap = 46;
+  optional bool is_front_engine = 47;
+  optional bool is_forbidden_to_swap = 49;
+  optional bool is_roll = 50;
+  optional bool is_cant_install_spoiler = 51;
+  optional int64 appearance_time = 52;
+  optional CarPhysicsPointsProto car_physics_points = 53;
+  optional bool is_cant_install_flasher = 54;
+  optional float base_cx = 56;
+  optional float base_hp = 57;
+  optional float base_car_mass = 58;
+  optional int32 front_disk_base_id = 59;
+  optional int32 disk_base_color_id = 60;
+  optional int32 front_disk_base_color_id = 61;
+  optional int32 front_tires_base_id = 62;
+  optional int32 front_disk_part_base_id = 63;
+  optional int32 back_disk_part_base_id = 64;
+  optional int32 front_disk_part_color_id = 65;
+  optional int32 back_disk_part_color_id = 66;
+  optional int32 flash_id = 67;
+  optional int32 spoiler_id = 68;
+  optional string nitro_blow_particle = 69;
+  optional int32 rear_disk_skin_base_id = 70;
+  optional int32 front_disk_skin_base_id = 71;
+  optional bytes special_places_for_found = 72;
+  optional int32 stroboscope_id = 73;
+  optional MoneyProto alt_price = 74;
+}
+
+message BaseColorProto {
+  optional int32 base_id = 1;
+  optional MoneyProto price = 2;
+  optional BaseColorProtoEnum type = 4;
+  optional int32 shop_index = 5;
+  repeated BaseColorProto.ColorItemProto colors = 7;
+  message ColorItemProto {
+    optional int32 color = 1;
+    optional float delta = 2;
+  }
+  enum BaseColorProtoEnum {
+    COLOR = 0;
+    TINT = 1;
+  }
+}
+
+message BaseDecalProto {
+  optional int32 base_id = 1;
+  optional bool is_painted = 2;
+  optional bool is_scaling = 3;
+  optional MoneyProto price = 4;
+  optional string image = 5;
+  optional string icon = 6;
+  optional float min_scale = 7;
+  optional float max_scale = 8;
+  optional int32 shop_index = 9;
+  optional bool is_mirror = 10;
+  optional int32 type = 11;
+}
+
+message BaseDifferentialProto {
+  optional BaseUpgradeProto base = 1;
+  optional float drive_traction = 2;
+  optional bool drive_change = 3;
+}
+
+message BaseDiskImageProto {
+  optional BaseUpgradeProto base = 1;
+  optional string image = 2;
+}
+
+message BaseDiskProto {
+  optional BaseUpgradeProto base = 1;
+  optional float radius = 2;
+  optional string image = 3;
+}
+
+message BaseECUProto {
+  optional BaseUpgradeProto base = 1;
+  optional bool antilag = 2;
+  optional bool fuel_config = 3;
+  optional float rpm = 4;
+}
+
+message BaseEngineLiquidPartProto {
+  optional BaseEnginePartProto base_engine_part = 1;
+  optional int32 base_quantity = 2;
+  optional float quantity = 3;
+  optional float quantity_coefficient = 4;
+}
+
+message BaseEnginePartProto {
+  optional BaseEngineProtoEnum engine_type = 1;
+  optional BaseEnginePartProtoEnum engine_part_type = 2;
+  optional int32 base_hp = 3;
+  optional float current_hp = 4;
+  optional int32 base_repair_price = 5;
+  optional float wear_coefficient = 6;
+  optional float extra_wear_coefficient = 7;
+  enum BaseEnginePartProtoEnum {
+    PISTON = 1;
+    VALVE = 2;
+    CANDLE = 3;
+    ROD = 4;
+    OIL_RING = 5;
+    CRANKSHAFT = 6;
+    ANTIFREEZE = 7;
+    OIL = 8;
+  }
+}
+
+message BaseEngineProto {
+  optional BaseUpgradeProto base = 1;
+  optional float volume = 2;
+  optional float cut_off_rpm = 3;
+  repeated BaseEngineProto.EnginePointProto dyno_points = 4;
+  repeated string classes = 5;
+  optional BaseEngineProtoEnum type = 6;
+  optional int32 hidden_full_upgrade_bonus = 7;
+  optional float base_hp = 8;
+  optional int32 cylinder_count = 9;
+  optional float cylinder_diameter = 10;
+  optional float piston_stroke_length = 11;
+  optional float compression_ratio = 12;
+  optional bool diesel = 13;
+  optional EnginePartsSetProto base_engine_parts_set = 14;
+  optional int32 default_turbo1_id = 15;
+  optional int32 default_turbo2_id = 16;
+  optional int32 default_west_gate_id = 17;
+  optional int32 default_rotor_id = 18;
+  optional int32 default_gear_units_id = 19;
+  optional int64 appearance_time = 20;
+  message EnginePointProto {
+    optional float rpm = 1;
+    optional float torque = 2;
+  }
+  enum BaseEngineProtoEnum {
+    W12 = 0;
+    V12 = 1;
+    V10 = 2;
+    V8 = 3;
+    V6 = 4;
+    V4 = 5;
+    L6 = 6;
+    L5 = 7;
+    L4 = 8;
+    L2 = 9;
+    B4 = 10;
+    B6 = 11;
+    RPD2 = 12;
+    RPD3 = 13;
+    RPD4 = 14;
+    RPD5 = 15;
+    L1 = 16;
+    L3 = 17;
+  }
+}
+
+message BaseExhaustProto {
+  optional BaseUpgradeProto base = 1;
+  optional string type = 2;
+  optional float torque = 3;
+  repeated BaseExhaustProto.ExhaustPointProto exhaust_points = 4;
+  optional string image = 5;
+  optional int32 muffler_id = 6;
+  optional BaseExhaustProtoEnum sound_type_enum = 7;
+  message ExhaustPointProto {
+    optional int32 index = 1;
+    optional float torque = 2;
+  }
+  enum BaseExhaustProtoEnum {
+    STOCK = 0;
+    STAGE_1 = 1;
+    STAGE_2 = 2;
+    STAGE_3 = 3;
+  }
+}
+
+message BaseFlashersProto {
+  optional BaseUpgradeProto base = 1;
+  optional string image_for_preview = 4;
+  optional string spine = 5;
+}
+
+message BaseIntakeProto {
+  optional BaseUpgradeProto base = 1;
+  optional string type = 2;
+  optional float boost_multiplier = 3;
+  optional float start_intake_rpm = 4;
+  optional string image = 5;
+  optional BaseIntakeProtoEnum westgate_type = 6;
+  optional float end_intake_rpm = 7;
+  enum BaseIntakeProtoEnum {
+    WG_DEFAULT = 0;
+    WG_TURBO = 1;
+    WG_CHARGER = 2;
+  }
+}
+
+message BaseMassBalance {
+  optional BaseUpgradeProto base = 1;
+  optional float mass_balance = 2;
+}
+
+message BaseNitroProto {
+  optional BaseUpgradeProto base = 1;
+  optional float balloon_volume = 2;
+  optional int32 refueling_price = 3;
+  optional float max_psi = 4;
+  optional float max_torque = 5;
+}
+
+message BaseOilCooler {
+  optional BaseUpgradeProto base = 1;
+  optional float cooling_ratio = 2;
+}
+
+message BaseOilInjectors {
+  optional BaseUpgradeProto base = 1;
+  optional float cooling_ratio = 2;
+}
+
+message BasePartsProto {
+  optional BaseUpgradeProto base = 1;
+  optional string type = 2;
+  optional float rim_size = 3;
+  optional float rim_razval = 4;
+  optional float weight_delta = 5;
+}
+
+message BasePneumoProto {
+  optional BaseUpgradeProto base = 1;
+  optional float clirence = 2;
+}
+
+message BasePneumoShifter {
+  optional BaseUpgradeProto base = 1;
+  optional bool is_clutch = 2;
+  optional bool is_config = 3;
+}
+
+message BaseProjectorProto {
+  optional BaseUpgradeProto base = 1;
+  optional string image = 2;
+}
+
+message BaseRadiator {
+  optional BaseUpgradeProto base = 1;
+  optional float cooling_ratio = 2;
+}
+
+message BaseSafetyCage {
+  optional BaseUpgradeProto base = 1;
+  optional float mass = 2;
+  optional string car_class = 3;
+  optional float cx = 4;
+}
+
+message BaseSpringProto {
+  optional BaseUpgradeProto base = 1;
+  optional float frequency = 2;
+  optional string image = 3;
+}
+
+message BaseStroboscopeProto {
+  optional BaseUpgradeProto base = 1;
+  optional string spine_back = 3;
+  optional string spine_front = 4;
+}
+
+message BaseStylingProto {
+  optional BaseUpgradeProto base = 1;
+  optional string type = 2;
+  optional string image = 3;
+}
+
+message BaseSuspensionProto {
+  optional BaseUpgradeProto base = 1;
+  optional float damping = 2;
+  optional string cylinder_image = 3;
+  optional string piston_image = 4;
+}
+
+message BaseSwapParts {
+  optional BaseUpgradeProto base = 1;
+  optional string type = 2;
+  optional float drive_traction = 3;
+}
+
+message BaseTimingGearProto {
+  optional BaseUpgradeProto base = 1;
+}
+
+message BaseTiresProto {
+  optional BaseUpgradeProto base = 1;
+  optional float radius = 2;
+  optional float width = 3;
+  optional float side = 4;
+  optional float friction = 5;
+  optional string image = 6;
+  optional float friction_coefficient = 7;
+  optional float temperature_coefficient = 8;
+  optional int32 color = 9;
+}
+
+message BaseTransmissionProto {
+  optional BaseUpgradeProto base = 1;
+  repeated BaseTransmissionProto.GearPointProto gears = 2;
+  optional float main_gear = 3;
+  optional float shift_speed = 4;
+  optional bytes data = 5;
+  message GearPointProto {
+    optional int32 gear_number = 1;
+    optional float gear_value = 2;
+  }
+}
+
+message BaseTuningProto {
+  optional BaseUpgradeProto base = 1;
+  optional string type = 2;
+  optional int32 base_car_id = 3;
+  optional string image = 4;
+  optional bool is_painting = 5;
+  optional float tuning_clirence = 6;
+  optional bool is_show_intercooler = 7;
+  optional float mass = 8;
+  optional float cx_delta = 9;
+  optional Vector2Proto clearance_point = 10;
+  optional Vector2Proto rear_clearance_point = 11;
+  optional Vector2Proto roobar_point = 12;
+}
+
+message BaseTurbo1Proto {
+  optional BaseUpgradeProto base = 1;
+  optional float psi = 2;
+  optional float start_rpm = 3;
+  optional float end_rpm = 4;
+  optional int32 /* enum */ type = 5;
+  optional float volume = 6;
+}
+
+message BaseTurbo2Proto {
+  optional BaseUpgradeProto base = 1;
+  optional float psi = 2;
+  optional float start_rpm = 3;
+  optional float end_rpm = 4;
+  optional int32 /* enum */ type = 5;
+  optional float volume = 6;
+}
+
+message BaseUpgradePositionParametersProto {
+  optional int32 type = 1;
+  optional PositionParametersProto position_parameters = 2;
+  repeated int32 exclude_base_cars = 3;
+  optional string icon = 4;
+  optional string description = 5;
+  repeated int32 only_upgrade_ids = 6;
+}
+
+message BaseUpgradeProto {
+  optional int32 base_id = 1;
+  optional float weight = 2;
+  optional float min = 3;
+  optional float max = 4;
+  optional MoneyProto price = 5;
+  optional string icon = 6;
+  optional int32 shop_index = 7;
+  optional int32 /* enum */ grade = 8;
+  optional float control = 9;
+  optional int32 level = 10;
+  optional int32 base_set_id = 11;
+  repeated string car_classes = 12;
+  optional string key_name = 13;
+  optional string watermark_icon_name = 14;
+  optional bool is_traded_in_market = 15;
+}
+
+message BaseVillyBar {
+  optional BaseUpgradeProto base = 1;
+  optional float mass = 2;
+  optional float width = 3;
+  optional string image = 4;
+  optional bool is_strut = 5;
+}
+
+message EnginePartsSetProto {
+  optional BaseEngineProtoEnum engine_type = 1;
+  optional BaseEnginePartProto piston = 2;
+  optional BaseEnginePartProto valve = 3;
+  optional BaseEnginePartProto candle = 4;
+  optional BaseEnginePartProto rod = 5;
+  optional BaseEnginePartProto oil_ring = 6;
+  optional BaseEnginePartProto crankshaft = 7;
+  optional BaseEngineLiquidPartProto antifreeze = 8;
+  optional BaseEngineLiquidPartProto oil = 9;
+}
+
+message EngineServiceEventProto {
+  repeated EngineServiceProto engine_service = 1;
+  optional BaseEngineProtoEnum engine_type = 2;
+}
+
+message EngineServiceProto {
+  optional BaseEnginePartProtoEnum type = 1;
+  optional int32 /* enum */ command = 2;
+}
+
+message PositionParametersProto {
+  optional UpgradePositionLimitProto defaults = 1;
+  repeated int64 keys = 2;
+  repeated UpgradePositionLimitProto custom = 3;
+}
+
+message UpgradePositionLimitProto {
+  optional float left = 1;
+  optional float right = 2;
+  optional float up = 3;
+  optional float down = 4;
+  optional float step = 7;
+}
+
+message UpgradePositionOffsetProto {
+  optional int32 type = 1;
+  optional float x = 2;
+  optional float y = 3;
+  optional int32 upgrade_bse_id = 4;
+}
+
+message UpgradePositionRepositoryProto {
+  repeated UpgradePositionOffsetProto position_offset = 1;
+  optional int64 hash = 2;
+}

@@ -1,0 +1,24 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "NeuronContainer";
+
+message NeuralNetworkProto {
+  repeated NeuronLayerProto layers = 1;
+  optional bytes nested = 2;
+}
+
+message NeuronLayerProto {
+  optional int32 bit_field0 = 1;
+  optional int32 activation = 2;
+  optional NeuronLayerProtoEnum neurons = 3;
+  optional int32 type = 4;
+  optional int32 columns = 5;
+  repeated bytes /* message type unresolved */ rows = 6;
+  enum NeuronLayerProtoEnum {
+    INPUT = 0;
+    HIDDEN = 1;
+    OUTPUT = 2;
+  }
+}

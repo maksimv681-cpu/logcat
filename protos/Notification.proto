@@ -1,0 +1,34 @@
+// Recovered from the client's protobuf-lite descriptors. Not recoverable: field names inside
+// oneof groups, map key/value types; enum type names may be shortened by obfuscation.
+syntax = "proto2";
+
+option java_outer_classname = "Notification";
+
+message ClanNotificationProto {
+  optional UserInfoProto info = 2;
+}
+
+message Dummy {
+}
+
+message NotificationEventProto {
+  optional int32 /* enum */ type = 1;
+  optional string message = 2;
+  repeated int64 users = 3;
+  oneof oneof_0 {
+    Dummy field_4 = 4;
+    OnlineRaceNotificationProto field_5 = 5;
+    ClanNotificationProto field_6 = 6;
+  }
+  enum NotificationEventProtoEnum {
+    DUMMY = 0;
+    RACEDATA = 5;
+    CLANDATA = 6;
+    DATA_NOT_SET = 3;
+  }
+}
+
+message OnlineRaceNotificationProto {
+  optional int32 /* enum */ type = 1;
+  optional string username = 2;
+}
