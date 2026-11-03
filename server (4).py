@@ -1609,14 +1609,20 @@ class GameConnection(threading.Thread):
             if self.state.db_response is not None:
                 response_body = self.state.db_response
                 response_mode = "custom db-response override"
-            else:
-                # Return all 85 map categories explicitly. Note these type IDs
-                # differ from the outer DatabaseProto protobuf field numbers.
+            elif request_types:
+                # Return the requested map categories. The current bootstrap
+                # request contains all 85 known categories.
                 response_body = BOOTSTRAP_DATABASE_MAP_RESPONSE
                 response_mode = (
                     "85 sections with settings, championship leagues 1..8, "
                     "avatar base/frame ID 1, and initialized vinyl-market blocks (default + bestsellers)"
                 )
+            else:
+                # An empty HashDataProto requests no categories. Do not replay
+                # the full database: the client sends this as a separate
+                # follow-up and expects an empty count-prefixed map response.
+                response_body = struct.pack(">I", 0)
+                response_mode = "empty response (client requested 0 categories)"
 
             self.send_packet(50015, sequence, response_body, encrypt=True)
             req_count = len(request_types)
