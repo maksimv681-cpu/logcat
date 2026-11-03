@@ -1348,6 +1348,7 @@ class GameConnection(threading.Thread):
                 _protobuf_int32_field(1, 1),  # UserCarProto.id
                 _protobuf_int32_field(2, base_id),
                 _protobuf_bytes_field(34, car_number_proto),  # number
+                _protobuf_bytes_field(35, build_tutorial_car_settings_proto()),  # settings
             ))
             response_body = struct.pack(">I", len(user_car_proto)) + user_car_proto
             self.send_packet(206, sequence, response_body, encrypt=True)
