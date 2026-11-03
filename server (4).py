@@ -1334,11 +1334,15 @@ class GameConnection(threading.Thread):
                 self.send_packet(206, sequence, b"", encrypt=True, status=1)
                 return
             base_id = struct.unpack(">i", body)[0]
-            self.send_packet(206, sequence, b"", encrypt=True, status=1)
+            # The 206 callback always reads a length-prefixed protobuf via
+            # fB1.r(). Even an empty protobuf must therefore carry uint32(0);
+            # a zero-byte body triggers readerIndex + length(4) overflow.
+            empty_user_car_response = struct.pack(">I", 0)
+            self.send_packet(206, sequence, empty_user_car_response, encrypt=True)
             self.state.log(
-                f"TCP {self.port} {self.remote} packet 206 rejected safely "
-                f"for base_id={base_id}: no complete car catalog is loaded; "
-                "empty-garage profile remains active"
+                f"TCP {self.port} {self.remote} packet 206 answered with "
+                f"empty length-prefixed UserCarProto for base_id={base_id}; "
+                "no fabricated car/catalog data sent"
             )
             return
 
