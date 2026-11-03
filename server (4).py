@@ -99,7 +99,7 @@ AVATAR_FRAME_ICON = AVATAR_BASE_ICON  # Reuse the confirmed existing atlas regio
 # AU.c compares this version with dbcache.protobin and skips packet 50015
 # when they match. Bumping it forces the client to request and apply the
 # corrected database instead of reusing its stale local cache.
-TARGET_DATABASE_CRC32 = 0xA17C4D2B
+TARGET_DATABASE_CRC32 = 0xA17C4D2C
 
 
 def _protobuf_varint(value: int) -> bytes:
