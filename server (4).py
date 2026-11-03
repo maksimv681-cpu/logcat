@@ -298,7 +298,22 @@ def _protobuf_bool_field(field_id: int, value: bool) -> bytes:
 
 
 def _db_items(filename: str, root_key: str) -> list[dict]:
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "db", filename)
+    # The user may launch this script from a nested custom-server folder.
+    # Walk upward to the repository root instead of assuming __file__/db.
+    here = os.path.dirname(os.path.abspath(__file__))
+    candidates = []
+    current = here
+    for _ in range(10):
+        candidates.append(os.path.join(current, "db", filename))
+        parent = os.path.dirname(current)
+        if parent == current:
+            break
+        current = parent
+    path = next((candidate for candidate in candidates if os.path.isfile(candidate)), None)
+    if path is None:
+        raise FileNotFoundError(
+            f"cannot find db/{filename} next to server.py or in its parent directories"
+        )
     with open(path, "r", encoding="utf-8") as fh:
         root = json.load(fh)
     items = root.get(root_key, {}).get("items")
