@@ -114,6 +114,11 @@ def _protobuf_varint(value: int) -> bytes:
 
 
 def _protobuf_int32_field(field_id: int, value: int) -> bytes:
+    # protobuf int32 encodes negative values as a sign-extended 10-byte varint.
+    # Several source catalogs contain negative color IDs and sentinel values.
+    value = int(value)
+    if value < 0:
+        value = (1 << 64) + value
     return _protobuf_varint(field_id << 3) + _protobuf_varint(value)
 
 
