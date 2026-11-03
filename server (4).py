@@ -276,19 +276,14 @@ def build_vinyl_market_blocks_database_proto() -> bytes:
 
 VINYL_MARKET_BLOCKS_DATABASE_PROTO = build_vinyl_market_blocks_database_proto()
 
-# Packet 206 requests a tutorial car by BaseCarProto.base_id. No runtime car
-# rows were supplied, so expose one minimal synthetic row for observed base_id 147.
+# Packet 206 is the optional tutorial-car lookup. Do not publish a fabricated
+# BaseCarProto: the client dereferences its engine/parts/component catalog IDs
+# during C0259Mn initialization, so a base_id-only row causes a client NPE.
+# The local profile deliberately has an empty garage; packet 206 is rejected
+# cleanly until a complete, matching game car catalog is loaded.
 TUTORIAL_CAR_BASE_ID = 147
 TUTORIAL_USER_CAR_ID = 1
-
-
-def build_tutorial_car_database_proto() -> bytes:
-    # BaseCarProto.base_id is field 27; CarDatabaseProto.items is field 1.
-    base_car = _protobuf_int32_field(27, TUTORIAL_CAR_BASE_ID)
-    return _protobuf_bytes_field(1, base_car)
-
-
-TUTORIAL_CAR_DATABASE_PROTO = build_tutorial_car_database_proto()
+TUTORIAL_CAR_DATABASE_PROTO = b""
 
 
 def build_tutorial_car_settings_proto() -> bytes:
@@ -355,8 +350,6 @@ def _build_database_proto_with_crc(target_crc32: int) -> tuple[bytes, bytes, byt
                 value = VINYL_MARKET_BLOCKS_DATABASE_PROTO
             elif field_id == AVATARS_DATABASE_FIELD_ID:
                 value = avatar_proto
-            elif field_id == 1:
-                value = TUTORIAL_CAR_DATABASE_PROTO
             else:
                 value = b""
             chunks.append(_protobuf_bytes_field(field_id, value))
@@ -420,8 +413,6 @@ def build_bootstrap_database_proto() -> bytes:
             value = VINYL_MARKET_BLOCKS_DATABASE_PROTO
         elif field_id == AVATARS_DATABASE_FIELD_ID:
             value = AVATARS_DATABASE_PROTO
-        elif field_id == 1:
-            value = TUTORIAL_CAR_DATABASE_PROTO
         else:
             value = b""
         out.extend(_protobuf_bytes_field(field_id, value))
@@ -1139,8 +1130,8 @@ class GameConnection(threading.Thread):
         self.database_request_types: list[int] = []
 
     def send_packet(self, packet_id: int, sequence: int, body: bytes,
-                    encrypt: bool) -> None:
-        frame = make_frame(packet_id, 0, sequence, body, self.key, encrypt)
+                    encrypt: bool, status: int = 0) -> None:
+        frame = make_frame(packet_id, status, sequence, body, self.key, encrypt)
         self.conn.sendall(frame)
 
     def run(self) -> None:
@@ -1300,28 +1291,24 @@ class GameConnection(threading.Thread):
             return
 
         if packet_id == 206:  # get tutorial UserCarProto by base car ID
+            # The profile sent by this server has an empty garage. Returning a
+            # fabricated UserCarProto here is unsafe: OG2.r1() resolves its
+            # base_id through VD.a(base_id), then C0259Mn.D1() dereferences
+            # multiple component catalogs. A base_id-only catalog entry is
+            # not a valid car and crashes the Android client.
             if len(body) != 4:
                 self.state.log(
                     f"TCP {self.port} {self.remote} packet 206 invalid request "
                     f"length={len(body)}; expected 4-byte base_id"
                 )
+                self.send_packet(206, sequence, b"", encrypt=True, status=1)
                 return
             base_id = struct.unpack(">i", body)[0]
-            if base_id != TUTORIAL_CAR_BASE_ID:
-                self.state.log(
-                    f"TCP {self.port} {self.remote} packet 206 unsupported base_id={base_id}; "
-                    f"only synthetic tutorial car {TUTORIAL_CAR_BASE_ID} is available"
-                )
-                return
-            response_proto = build_tutorial_user_car_proto(base_id)
-            # Client callback reads this with fB1.r(): uint32 length + protobuf.
-            response_body = struct.pack(">I", len(response_proto)) + response_proto
-            self.send_packet(206, sequence, response_body, encrypt=True)
+            self.send_packet(206, sequence, b"", encrypt=True, status=1)
             self.state.log(
-                f"TCP {self.port} {self.remote} packet 206 answered with synthetic "
-                f"UserCarProto id={TUTORIAL_USER_CAR_ID} base_id={base_id} "
-                "car_number=(car_id=1,country=RU,region=1,number=1) "
-                f"(length-prefixed body={response_body.hex(' ')})"
+                f"TCP {self.port} {self.remote} packet 206 rejected safely "
+                f"for base_id={base_id}: no complete car catalog is loaded; "
+                "empty-garage profile remains active"
             )
             return
 
