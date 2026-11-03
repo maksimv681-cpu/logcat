@@ -281,9 +281,10 @@ def build_vinyl_market_blocks_database_proto() -> bytes:
 
 VINYL_MARKET_BLOCKS_DATABASE_PROTO = build_vinyl_market_blocks_database_proto()
 
-# The tutorial user-car response must point at a car that exists in the catalog.
-# Base ID 147 is not present in the supplied client database; use the real Lada 2101.
-TUTORIAL_CAR_BASE_ID = 1
+# The tutorial requests base car ID 147. Build that catalog entry from the
+# real Lada 2101 record (source baseId=1), retaining its valid component IDs.
+TUTORIAL_CAR_BASE_ID = 147
+TUTORIAL_CAR_SOURCE_BASE_ID = 1
 TUTORIAL_USER_CAR_ID = 1
 
 
@@ -556,17 +557,23 @@ def _catalog_proto(items: list[dict], serializer) -> bytes:
 
 
 def build_tutorial_car_catalogs() -> dict[int, bytes]:
-    car = next(
+    source_car = next(
         (item for item in _db_items("carDatabase.json", "carDatabase")
-         if int(item.get("baseId", -1)) == TUTORIAL_CAR_BASE_ID),
+         if int(item.get("baseId", -1)) == TUTORIAL_CAR_SOURCE_BASE_ID),
         None,
     )
-    if car is None:
-        raise RuntimeError(f"db/carDatabase.json has no base_id={TUTORIAL_CAR_BASE_ID}")
+    if source_car is None:
+        raise RuntimeError(
+            f"db/carDatabase.json has no source base_id={TUTORIAL_CAR_SOURCE_BASE_ID}"
+        )
+    # Clone the complete Lada 2101 record under the ID requested by the
+    # tutorial. Keep all component IDs unchanged so every referenced catalog
+    # record resolves normally on the client.
+    car = dict(source_car)
+    car["baseId"] = TUTORIAL_CAR_BASE_ID
     # The client resolves both rear and front wheel catalogs while building
     # C0259Mn. The JSON omits the front IDs for this starter, so explicitly
     # reuse the matching rear disk/tires instead of leaving IDs at zero.
-    car = dict(car)
     car["frontDiskBaseId"] = int(car.get("frontDiskBaseId") or car["diskBaseId"])
     car["frontTiresBaseId"] = int(car.get("frontTiresBaseId") or car["tiresBaseId"])
 
@@ -661,7 +668,7 @@ def build_tutorial_user_car_proto(base_id: int) -> bytes:
     car_settings = build_tutorial_car_settings_proto()
     return b"".join((
         _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),
-        _protobuf_int32_field(2, TUTORIAL_CAR_BASE_ID),
+        _protobuf_int32_field(2, int(base_id)),
         _protobuf_bytes_field(34, car_number),
         _protobuf_bytes_field(35, car_settings),
     ))
@@ -1692,7 +1699,7 @@ class GameConnection(threading.Thread):
             self.state.log(
                 f"TCP {self.port} {self.remote} packet 206 answered with "
                 f"valid length-prefixed UserCarProto for requested_base_id={base_id}; "
-                f"fallback_base_id={TUTORIAL_CAR_BASE_ID}, car_id=1, RU region=1, plate_number=1"
+                f"catalog_base_id={TUTORIAL_CAR_BASE_ID}, car_id=1, RU region=1, plate_number=1"
             )
             return
 
