@@ -1,18 +1,5 @@
 11-03 19:27:10.810  1438  1438 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-03 19:27:11.790  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
-11-03 19:27:13.782  1905  1944 D RilRequest: [3649]< GET_HARDWARE_CONFIG error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret= 
-11-03 19:27:13.782  1905  1944 D RilRequest: [3650]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-11-03 19:27:13.782  1905  1944 D RilRequest: [3651]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-11-03 19:27:13.809  1905  1944 D RilRequest: [3652]< RIL_REQUEST_START_LCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=[0, 0]
-11-03 19:27:13.995  1905  1944 D RilRequest: [3653]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=SignalStrength: 0 0 0 0 0 0 0 0 0 0 0 0 0 2147483647 99 2147483647 2147483527 gsm|lte use_rsrp_and_rssnr_for_lte_level  [-128, -118, -108, -98] [-115, -105, -95, -85]
-11-03 19:27:14.289  1905  1944 D RilRequest: [3654]< RIL_REQUEST_SET_TTY_MODE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-11-03 19:27:14.320  1905  1905 E RadioConfig: getRadioConfigProxy: RadioConfigProxy getService/setResponseFunctions: java.util.NoSuchElementException
-11-03 19:27:14.320  1905  1905 D Phone   : config LCE service failed: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
-11-03 19:27:14.340  1905  1944 D RilRequest: [3656]< BASEBAND_VERSION error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-11-03 19:27:14.364  1905  1944 D RilRequest: [3657]< RIL_REQUEST_DEVICE_IDENTITY error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret={, , , }
-11-03 19:27:14.375  1905  1944 D RilRequest: [3658]< RIL_REQUEST_GET_RADIO_CAPABILITY error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret={mPhoneId = 0 mVersion=1 mSession=0 mPhase=0 mRadioAccessFamily=0 mLogicModemId= mStatus=0}
-11-03 19:27:14.385  1905  1944 D RilRequest: [3659]< RIL_REQUEST_START_LCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=[0, 0]
-11-03 19:27:14.496  1905  1905 D SST     : [0] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
 11-03 19:27:15.579  1905  1944 D RilRequest: [3665]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
 11-03 19:27:15.607  1905  1944 D RilRequest: [3667]< RIL_REQUEST_SEND_DEVICE_STATE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
 11-03 19:27:15.614  1905  1944 D RilRequest: [3668]< RIL_REQUEST_SET_UNSOLICITED_RESPONSE_FILTER error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
@@ -45,30 +32,31 @@
 11-03 19:27:29.946  1905  1992 D DC-1    : setLinkProperties: UnknownHostException java.net.UnknownHostException: no address for ifname=rmnet0
 11-03 19:27:46.235  1905  1905 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
 11-03 19:28:30.255  1905  1905 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
-11-03 19:32:45.625  2145  5115 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
-11-03 19:32:45.694  2145  5115 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
-11-03 19:32:47.460  5172  5172 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-03 19:32:47.648  5172  5196 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-03 19:32:49.653  5172  5172 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-03 19:32:50.320  5172  5208 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-03 19:32:55.535  5172  5208 I SRLAB-PERF: screen=pj1 frames=977 gapMaxMs=41 workMaxMs=40 slow33=2 slow100=0 assetMs=4 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
-11-03 19:32:57.537  5172  5327 D DS-MODULE: Background update check deferred: ConnectException
-11-03 19:32:59.175  1608  1621 W android.os.Debug: failed to get memory consumption info: -1
-11-03 19:32:59.187  2547  2547 W Finsky  : [2] adiv.b(94): STU: Failed to get storage stats for package 'com.google.ar.core' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
-11-03 19:33:00.540  5172  5208 I SRLAB-PERF: screen=Hz0 frames=470 gapMaxMs=511 workMaxMs=503 slow33=29 slow100=4 assetMs=3 previews=0 previewMs=0 previewMaxMs=0 javaMB=15
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: Client exception
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: java.lang.NullPointerException: Attempt to invoke virtual method 'mobi.square.sr.android.Mn mobi.square.sr.android.Mn.K()' on a null object reference
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.o.D(SourceFile:11)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.D2(SourceFile:16)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.r1(SourceFile:806)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.L(SourceFile:2)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.j8(SourceFile:7)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.Q8(SourceFile:9)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.aG0.G6(SourceFile:5)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.Jz0$a.f(SourceFile:9)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.kK0.k(SourceFile:20)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.mK0$a.run(SourceFile:17)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:191)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
-11-03 19:33:02.264  5172  5208 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
-11-03 19:33:05.557  5172  5208 I SRLAB-PERF: screen=pj1 frames=704 gapMaxMs=119 workMaxMs=118 slow33=25 slow100=3 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
+11-03 20:11:52.245  6426  6426 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-03 20:11:52.461  6426  6449 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-03 20:11:54.469  6426  6426 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-03 20:12:01.959  6426  6462 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-03 20:12:04.313  1608  1621 W android.os.Debug: failed to get memory consumption info: -1
+11-03 20:12:07.196  6426  6462 I SRLAB-PERF: screen=pj1 frames=930 gapMaxMs=45 workMaxMs=41 slow33=2 slow100=0 assetMs=11 previews=0 previewMs=0 previewMaxMs=0 javaMB=11
+11-03 20:12:09.202  6426  6580 D DS-MODULE: Background update check deferred: ConnectException
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: Client exception
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: java.lang.ArrayIndexOutOfBoundsException: length=99; index=-1
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.r22.d(SourceFile:4)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.r22.c(SourceFile:4)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.uI1.g(SourceFile:5)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.uI1.c(SourceFile:1)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.uI1.d(SourceFile:1)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.ME.d(SourceFile:74)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.r1(SourceFile:19)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.L(SourceFile:2)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.j8(SourceFile:7)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.OG2.Q8(SourceFile:9)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.aG0.G6(SourceFile:5)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.Jz0$a.f(SourceFile:9)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.kK0.k(SourceFile:20)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at mobi.square.sr.android.mK0$a.run(SourceFile:17)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:191)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
+11-03 20:12:11.738  6426  6462 E SRLAB-EXCEPTION: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
+11-03 20:12:12.204  6426  6462 I SRLAB-PERF: screen=Hz0 frames=286 gapMaxMs=510 workMaxMs=503 slow33=37 slow100=8 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=16
+11-03 20:12:14.885  2077  3225 W AlarmManager: java.lang.IllegalArgumentException: alarm "NetworkLocationActivityDetection" has short window length
