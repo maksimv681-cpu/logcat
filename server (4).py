@@ -606,8 +606,21 @@ def build_tutorial_car_catalogs() -> dict[int, bytes]:
     }
 
 
-TUTORIAL_CAR_DATABASE_PROTOS = build_tutorial_car_catalogs()
-TUTORIAL_CAR_DATABASE_PROTO = TUTORIAL_CAR_DATABASE_PROTOS[1]
+try:
+    TUTORIAL_CAR_DATABASE_PROTOS = build_tutorial_car_catalogs()
+    TUTORIAL_CAR_DATABASE_PROTO = TUTORIAL_CAR_DATABASE_PROTOS[1]
+except Exception:
+    # When started by double-click on Windows, keep the console visible so
+    # a missing JSON file or malformed catalog is not hidden by instant exit.
+    import traceback
+    print("\\nERROR: failed to build the starter-car database catalogs.", file=sys.stderr, flush=True)
+    traceback.print_exc()
+    if __name__ == "__main__":
+        try:
+            input("\\nPress Enter to close...")
+        except EOFError:
+            pass
+    raise
 
 
 def build_tutorial_car_settings_proto() -> bytes:
