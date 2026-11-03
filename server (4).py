@@ -558,6 +558,12 @@ def build_tutorial_car_catalogs() -> dict[int, bytes]:
     )
     if car is None:
         raise RuntimeError(f"db/carDatabase.json has no base_id={TUTORIAL_CAR_BASE_ID}")
+    # The client resolves both rear and front wheel catalogs while building
+    # C0259Mn. The JSON omits the front IDs for this starter, so explicitly
+    # reuse the matching rear disk/tires instead of leaving IDs at zero.
+    car = dict(car)
+    car["frontDiskBaseId"] = int(car.get("frontDiskBaseId") or car["diskBaseId"])
+    car["frontTiresBaseId"] = int(car.get("frontTiresBaseId") or car["tiresBaseId"])
 
     disk = _db_record("diskDatabase.json", "diskDatabase", int(car["diskBaseId"]))
     tires = _db_record("tiresDatabase.json", "tiresDatabase", int(car["tiresBaseId"]))
