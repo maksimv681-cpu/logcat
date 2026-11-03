@@ -291,24 +291,47 @@ def build_tutorial_car_database_proto() -> bytes:
 TUTORIAL_CAR_DATABASE_PROTO = build_tutorial_car_database_proto()
 
 
+def build_tutorial_car_settings_proto() -> bytes:
+    # jG.f6(CarSettingsProto) reads the packed data buffer directly.
+    # It consumes 39 fixed bytes, then four versioned manager blocks:
+    # GearSetManager, IgnitionTimeSetManager, TiresPSISetManager,
+    # SuspensionSetManager. Each empty manager is: uint16 version=1,
+    # int32 current_page=0, int32 item_count=0.
+    fixed = struct.pack(
+        ">ffiiiiBfffBB",
+        0.0, 0.0,       # muffler offsets
+        1, 3, 2, 2,     # RPM settings: e, g, f, h
+        0,              # launch control
+        0.0, 0.0, 0.0,  # i, j, p
+        0, 0,           # nitro enabled, visible spoiler
+    )
+    empty_manager = struct.pack(">Hii", 1, 0, 0)
+    packed_data = fixed + empty_manager * 4
+    assert len(fixed) == 39 and len(packed_data) == 79
+    # CarSettingsProto.data is field 24 (bytes).
+    return _protobuf_bytes_field(24, packed_data)
+
+
 def build_tutorial_user_car_proto(base_id: int) -> bytes:
-    # UserCarProto: id=field 1 (int64), base_id=field 2 (int32),
-    # number=field 34 (CarNumberProto).
+    # UserCarProto: id=field 1, base_id=field 2,
+    # number=field 34, settings=field 35.
     #
-    # Do not omit CarNumberProto: OG2.r1() always passes getNumber() to ME.f6().
-    # An absent message defaults to RU/region=0/number=0; ME.f6() then calls
-    # C1797uI1.d(...), and r22.d(0) indexes its region array at -1.
-    # RU country enum=0; region=1 resolves to the first supported RU region ("01").
+    # OG2.r1() unconditionally calls ME.f6(getSettings()). jG.f6() then
+    # reads three floats immediately from CarSettingsProto.data; an absent
+    # settings message yields an empty buffer and BufferUnderflowException
+    # at ByteBuffer.getFloat() (jG.q7, called from OG2.r1).
     car_number = b"".join((
-        _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),  # car_id (int64)
+        _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),  # car_id
         _protobuf_int32_field(2, 1),                     # region
         _protobuf_int32_field(3, 1),                     # number
         _protobuf_int32_field(5, 0),                     # country=RU
     ))
+    car_settings = build_tutorial_car_settings_proto()
     return b"".join((
         _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),
         _protobuf_int32_field(2, base_id),
         _protobuf_bytes_field(34, car_number),
+        _protobuf_bytes_field(35, car_settings),
     ))
 
 
