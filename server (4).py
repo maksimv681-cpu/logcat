@@ -1334,15 +1334,27 @@ class GameConnection(threading.Thread):
                 self.send_packet(206, sequence, b"", encrypt=True, status=1)
                 return
             base_id = struct.unpack(">i", body)[0]
-            # The 206 callback always reads a length-prefixed protobuf via
-            # fB1.r(). Even an empty protobuf must therefore carry uint32(0);
-            # a zero-byte body triggers readerIndex + length(4) overflow.
-            empty_user_car_response = struct.pack(">I", 0)
-            self.send_packet(206, sequence, empty_user_car_response, encrypt=True)
+            # OG2.r1() unconditionally parses UserCarProto.number (field 34).
+            # An empty UserCarProto gives a default CarNumberProto with region=0;
+            # the RU plate formatter indexes region-1 and crashes at r22.d().
+            # Supply a structurally valid local plate (RU, region 1, number 1)
+            # and a non-zero car ID instead of returning an empty message.
+            car_number_proto = b"".join((
+                _protobuf_int32_field(1, 1),  # car_id
+                _protobuf_int32_field(2, 1),  # region: RU table starts at 1
+                _protobuf_int32_field(3, 1),  # number
+            ))
+            user_car_proto = b"".join((
+                _protobuf_int32_field(1, 1),  # UserCarProto.id
+                _protobuf_int32_field(2, base_id),
+                _protobuf_bytes_field(34, car_number_proto),  # number
+            ))
+            response_body = struct.pack(">I", len(user_car_proto)) + user_car_proto
+            self.send_packet(206, sequence, response_body, encrypt=True)
             self.state.log(
                 f"TCP {self.port} {self.remote} packet 206 answered with "
-                f"empty length-prefixed UserCarProto for base_id={base_id}; "
-                "no fabricated car/catalog data sent"
+                f"valid length-prefixed UserCarProto for base_id={base_id}; "
+                "car_id=1, RU region=1, plate_number=1"
             )
             return
 
