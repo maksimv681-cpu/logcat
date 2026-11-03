@@ -276,14 +276,312 @@ def build_vinyl_market_blocks_database_proto() -> bytes:
 
 VINYL_MARKET_BLOCKS_DATABASE_PROTO = build_vinyl_market_blocks_database_proto()
 
-# Packet 206 is the optional tutorial-car lookup. Do not publish a fabricated
-# BaseCarProto: the client dereferences its engine/parts/component catalog IDs
-# during C0259Mn initialization, so a base_id-only row causes a client NPE.
-# The local profile deliberately has an empty garage; packet 206 is rejected
-# cleanly until a complete, matching game car catalog is loaded.
-TUTORIAL_CAR_BASE_ID = 147
+# The tutorial user-car response must point at a car that exists in the catalog.
+# Base ID 147 is not present in the supplied client database; use the real Lada 2101.
+TUTORIAL_CAR_BASE_ID = 1
 TUTORIAL_USER_CAR_ID = 1
-TUTORIAL_CAR_DATABASE_PROTO = b""
+
+
+def _protobuf_float_field(field_id: int, value: float) -> bytes:
+    return _protobuf_varint((field_id << 3) | 5) + struct.pack("<f", float(value))
+
+
+def _protobuf_signed_int32_field(field_id: int, value: int) -> bytes:
+    value = int(value)
+    if value < 0:
+        value = (1 << 64) + value
+    return _protobuf_varint(field_id << 3) + _protobuf_varint(value)
+
+
+def _protobuf_bool_field(field_id: int, value: bool) -> bytes:
+    return _protobuf_int32_field(field_id, 1 if value else 0)
+
+
+def _db_items(filename: str, root_key: str) -> list[dict]:
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "db", filename)
+    with open(path, "r", encoding="utf-8") as fh:
+        root = json.load(fh)
+    items = root.get(root_key, {}).get("items")
+    if not isinstance(items, list):
+        raise RuntimeError(f"{path}: missing {root_key}.items")
+    return items
+
+
+def _db_record(filename: str, root_key: str, wanted_id: int,
+               nested_base: bool = True) -> dict:
+    items = _db_items(filename, root_key)
+    for item in items:
+        base = item.get("base") if nested_base else item
+        if isinstance(base, dict) and int(base.get("baseId", -1)) == int(wanted_id):
+            return item
+    raise RuntimeError(f"{filename}: base_id={wanted_id} not found")
+
+
+def _money_proto(value: dict | None) -> bytes:
+    value = value or {}
+    fields = (
+        (1, "money"), (2, "gold"), (3, "tournamentPoints"),
+        (4, "topPoints"), (6, "upgradePoints"),
+    )
+    return b"".join(
+        _protobuf_int32_field(field, int(value.get(key, 0) or 0))
+        for field, key in fields if value.get(key, 0)
+    )
+
+
+def _upgrade_base_proto(base: dict) -> bytes:
+    out = bytearray()
+    int_fields = ((1, "baseId"), (7, "shopIndex"), (10, "level"),
+                  (11, "baseSetId"))
+    float_fields = ((2, "weight"), (3, "min"), (4, "max"), (9, "control"))
+    string_fields = ((6, "icon"), (13, "keyName"),
+                     (14, "watermarkIconName"))
+    for field, key in int_fields:
+        if base.get(key) is not None:
+            out += _protobuf_int32_field(field, int(base[key]))
+    for field, key in float_fields:
+        if base.get(key) is not None:
+            out += _protobuf_float_field(field, float(base[key]))
+    if base.get("price"):
+        out += _protobuf_bytes_field(5, _money_proto(base["price"]))
+    for field, key in string_fields:
+        if base.get(key):
+            out += _protobuf_string_field(field, str(base[key]))
+    for value in base.get("carClasses", []) or []:
+        out += _protobuf_string_field(12, str(value))
+    if base.get("isTradedInMarket") is not None:
+        out += _protobuf_bool_field(15, bool(base["isTradedInMarket"]))
+    # grade is an enum with a client-specific numeric mapping; omit it and
+    # retain the protobuf default instead of guessing an enum value.
+    return bytes(out)
+
+
+def _serialize_car_record(car: dict) -> bytes:
+    out = bytearray()
+    int_fields = {
+        "diskBaseId": 13, "tiresBaseId": 14,
+        "frontSuspensionBaseId": 15, "frontSpringBaseId": 16,
+        "frontBrakeBaseId": 17, "rearSuspensionBaseId": 18,
+        "rearSpringBaseId": 19, "rearBrakeBaseId": 20,
+        "baseId": 27, "level": 29, "shopIndex": 31, "baseColor": 32,
+        "rearBumperBaseId": 34, "centerBumperBaseId": 35,
+        "frontBumperBaseId": 36, "engineBaseId": 37,
+        "transmissionBaseId": 42, "maxDiskSize": 43,
+        "frontDiskBaseId": 59, "diskBaseColorId": 60,
+        "frontDiskBaseColorId": 61, "frontTiresBaseId": 62,
+        "frontDiskPartBaseId": 63, "backDiskPartBaseId": 64,
+        "frontDiskPartColorId": 65, "backDiskPartColorId": 66,
+        "flashId": 67, "spoilerId": 68, "rearDiskSkinBaseId": 70,
+        "frontDiskSkinBaseId": 71, "stroboscopeId": 73,
+    }
+    float_fields = {
+        "chassisWidth": 1, "arcRadius": 2, "carMass": 3,
+        "massClierence": 4, "massBalance": 5, "clirence": 6,
+        "brakeTraction": 7, "driveTraction": 8, "cx": 38,
+        "square": 39, "carMassDelta": 44, "gripBonus": 45,
+        "baseCx": 56, "baseHp": 57, "baseCarMass": 58,
+    }
+    bool_fields = {
+        "isSwap": 46, "isFrontEngine": 47, "isForbiddenToSwap": 49,
+        "isRoll": 50, "isCantInstallSpoiler": 51,
+        "isCantInstallFlasher": 54,
+    }
+    for key, field in int_fields.items():
+        if car.get(key) is not None:
+            out += _protobuf_int32_field(field, int(car[key]))
+    for key, field in float_fields.items():
+        if car.get(key) is not None:
+            out += _protobuf_float_field(field, float(car[key]))
+    for key, field in bool_fields.items():
+        if car.get(key) is not None:
+            out += _protobuf_bool_field(field, bool(car[key]))
+    if car.get("image"):
+        out += _protobuf_string_field(21, str(car["image"]))
+    if car.get("carClass"):
+        out += _protobuf_string_field(30, str(car["carClass"]))
+    if car.get("nitroBlowParticle"):
+        out += _protobuf_string_field(69, str(car["nitroBlowParticle"]))
+    if car.get("price"):
+        out += _protobuf_bytes_field(28, _money_proto(car["price"]))
+    align = {"LEFT": 0, "CENTER": 1, "RIGHT": 2}
+    for key, field in (("frontSupportAlign", 40), ("rearSupportAlign", 41)):
+        if car.get(key) is not None:
+            name = str(car[key]).upper()
+            if name not in align:
+                raise RuntimeError(f"unknown {key} enum value: {name}")
+            if align[name]:
+                out += _protobuf_int32_field(field, align[name])
+    return bytes(out)
+
+
+def _serialize_disk_record(item: dict) -> bytes:
+    return b"".join((
+        _protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))),
+        _protobuf_float_field(2, item.get("radius", 0)),
+        _protobuf_string_field(3, item.get("image", "")),
+    ))
+
+
+def _serialize_tires_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    for field, key in ((2, "radius"), (3, "width"), (4, "side"),
+                       (5, "friction"), (7, "frictionCoefficient"),
+                       (8, "temperatureCoefficient")):
+        if item.get(key) is not None:
+            out += _protobuf_float_field(field, float(item[key]))
+    if item.get("image"):
+        out += _protobuf_string_field(6, str(item["image"]))
+    if item.get("color") is not None:
+        out += _protobuf_int32_field(9, int(item["color"]))
+    return bytes(out)
+
+
+def _serialize_spring_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    if item.get("frequency") is not None:
+        out += _protobuf_float_field(2, float(item["frequency"]))
+    if item.get("image"):
+        out += _protobuf_string_field(3, str(item["image"]))
+    return bytes(out)
+
+
+def _serialize_suspension_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    if item.get("damping") is not None:
+        out += _protobuf_float_field(2, float(item["damping"]))
+    for field, key in ((3, "cylinderImage"), (4, "pistonImage")):
+        if item.get(key):
+            out += _protobuf_string_field(field, str(item[key]))
+    return bytes(out)
+
+
+def _serialize_brake_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    if item.get("radius") is not None:
+        out += _protobuf_float_field(2, float(item["radius"]))
+    if item.get("supportWidth") is not None:
+        out += _protobuf_float_field(3, float(item["supportWidth"]))
+    for field, key in ((4, "type"), (5, "image"), (6, "supportImage")):
+        if item.get(key):
+            out += _protobuf_string_field(field, str(item[key]))
+    return bytes(out)
+
+
+def _serialize_parts_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    if item.get("type"):
+        out += _protobuf_string_field(2, str(item["type"]))
+    for field, key in ((3, "rimSize"), (4, "rimRazval"), (5, "weightDelta")):
+        if item.get(key) is not None:
+            out += _protobuf_float_field(field, float(item[key]))
+    return bytes(out)
+
+
+def _serialize_engine_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    if item.get("volume") is not None:
+        out += _protobuf_float_field(2, float(item["volume"]))
+    if item.get("cutOffRpm") is not None:
+        out += _protobuf_float_field(3, float(item["cutOffRpm"]))
+    for point in item.get("dynoPoints", []) or []:
+        point_proto = b"".join((
+            _protobuf_float_field(1, float(point.get("rpm", 0))),
+            _protobuf_float_field(2, float(point.get("torque", 0))),
+        ))
+        out += _protobuf_bytes_field(4, point_proto)
+    for value in item.get("classes", []) or []:
+        out += _protobuf_string_field(5, str(value))
+    # The source JSON omits the engine-type enum. Keep its protobuf default.
+    return bytes(out)
+
+
+def _serialize_transmission_record(item: dict) -> bytes:
+    out = bytearray(_protobuf_bytes_field(1, _upgrade_base_proto(item.get("base", {}))))
+    for gear in item.get("gears", []) or []:
+        gear_proto = (
+            _protobuf_signed_int32_field(1, int(gear.get("gearNumber", 0)))
+            + _protobuf_float_field(2, float(gear.get("gearValue", 0)))
+        )
+        out += _protobuf_bytes_field(2, gear_proto)
+    if item.get("mainGear") is not None:
+        out += _protobuf_float_field(3, float(item["mainGear"]))
+    if item.get("shiftSpeed") is not None:
+        out += _protobuf_float_field(4, float(item["shiftSpeed"]))
+    return bytes(out)
+
+
+def _serialize_color_record(item: dict) -> bytes:
+    out = bytearray()
+    if item.get("baseId") is not None:
+        out += _protobuf_int32_field(1, int(item["baseId"]))
+    if item.get("price"):
+        out += _protobuf_bytes_field(2, _money_proto(item["price"]))
+    color_type = {"COLOR": 0, "TINT": 1}.get(str(item.get("type", "COLOR")).upper(), 0)
+    if color_type:
+        out += _protobuf_int32_field(4, color_type)
+    if item.get("shopIndex") is not None:
+        out += _protobuf_int32_field(5, int(item["shopIndex"]))
+    for color in item.get("colors", []) or []:
+        color_proto = b""
+        if color.get("color") is not None:
+            color_proto += _protobuf_int32_field(1, int(color["color"]))
+        if color.get("delta") is not None:
+            color_proto += _protobuf_float_field(2, float(color["delta"]))
+        out += _protobuf_bytes_field(7, color_proto)
+    return bytes(out)
+
+
+def _catalog_proto(items: list[dict], serializer) -> bytes:
+    return b"".join(_protobuf_bytes_field(1, serializer(item)) for item in items)
+
+
+def build_tutorial_car_catalogs() -> dict[int, bytes]:
+    car = next(
+        (item for item in _db_items("carDatabase.json", "carDatabase")
+         if int(item.get("baseId", -1)) == TUTORIAL_CAR_BASE_ID),
+        None,
+    )
+    if car is None:
+        raise RuntimeError(f"db/carDatabase.json has no base_id={TUTORIAL_CAR_BASE_ID}")
+
+    disk = _db_record("diskDatabase.json", "diskDatabase", int(car["diskBaseId"]))
+    tires = _db_record("tiresDatabase.json", "tiresDatabase", int(car["tiresBaseId"]))
+    springs = [
+        _db_record("springDatabase.json", "springDatabase", int(car[key]))
+        for key in ("frontSpringBaseId", "rearSpringBaseId")
+    ]
+    suspension = _db_record("suspensionDatabase.json", "suspensionDatabase",
+                            int(car["frontSuspensionBaseId"]))
+    brakes = [
+        _db_record("brakeDatabase.json", "brakeDatabase", int(car[key]))
+        for key in ("frontBrakeBaseId", "rearBrakeBaseId")
+    ]
+    parts = [
+        _db_record("partsDatabase.json", "partsDatabase", int(car[key]))
+        for key in ("frontBumperBaseId", "centerBumperBaseId", "rearBumperBaseId")
+    ]
+    engine = _db_record("engineDatabase.json", "engineDatabase", int(car["engineBaseId"]))
+    transmission = _db_record("transmissionDatabase.json", "transmissionDatabase",
+                              int(car["transmissionBaseId"]))
+    color = _db_record("colorDatabase.json", "colorDatabase", int(car["baseColor"]),
+                       nested_base=False)
+
+    return {
+        1: _protobuf_bytes_field(1, _serialize_car_record(car)),
+        2: _catalog_proto([disk], _serialize_disk_record),
+        3: _catalog_proto([tires], _serialize_tires_record),
+        4: _catalog_proto(springs, _serialize_spring_record),
+        5: _catalog_proto([suspension], _serialize_suspension_record),
+        7: _catalog_proto(brakes, _serialize_brake_record),
+        9: _catalog_proto(parts, _serialize_parts_record),
+        15: _catalog_proto([transmission], _serialize_transmission_record),
+        16: _catalog_proto([color], _serialize_color_record),
+        26: _catalog_proto([engine], _serialize_engine_record),
+    }
+
+
+TUTORIAL_CAR_DATABASE_PROTOS = build_tutorial_car_catalogs()
+TUTORIAL_CAR_DATABASE_PROTO = TUTORIAL_CAR_DATABASE_PROTOS[1]
 
 
 def build_tutorial_car_settings_proto() -> bytes:
@@ -324,7 +622,7 @@ def build_tutorial_user_car_proto(base_id: int) -> bytes:
     car_settings = build_tutorial_car_settings_proto()
     return b"".join((
         _protobuf_int32_field(1, TUTORIAL_USER_CAR_ID),
-        _protobuf_int32_field(2, base_id),
+        _protobuf_int32_field(2, TUTORIAL_CAR_BASE_ID),
         _protobuf_bytes_field(34, car_number),
         _protobuf_bytes_field(35, car_settings),
     ))
@@ -351,7 +649,7 @@ def _build_database_proto_with_crc(target_crc32: int) -> tuple[bytes, bytes, byt
             elif field_id == AVATARS_DATABASE_FIELD_ID:
                 value = avatar_proto
             else:
-                value = b""
+                value = TUTORIAL_CAR_DATABASE_PROTOS.get(field_id, b"")
             chunks.append(_protobuf_bytes_field(field_id, value))
         return b"".join(chunks)
 
@@ -414,7 +712,7 @@ def build_bootstrap_database_proto() -> bytes:
         elif field_id == AVATARS_DATABASE_FIELD_ID:
             value = AVATARS_DATABASE_PROTO
         else:
-            value = b""
+            value = TUTORIAL_CAR_DATABASE_PROTOS.get(field_id, b"")
         out.extend(_protobuf_bytes_field(field_id, value))
     return bytes(out)
 
@@ -726,10 +1024,10 @@ def build_bootstrap_database_response() -> bytes:
             payload = championship_zip
         elif type_id == AVATARS_DATABASE_TYPE_ID:
             payload = avatars_zip
-        elif type_id == 1:
-            payload = car_database_zip
         elif type_id == VINYL_MARKET_BLOCK_DATABASE_TYPE_ID:
             payload = vinyl_market_blocks_zip
+        elif type_id in TUTORIAL_CAR_DATABASE_PROTOS:
+            payload = _zip_database_proto(TUTORIAL_CAR_DATABASE_PROTOS[type_id])
         else:
             payload = b""
         out.extend(struct.pack(">I", type_id))
@@ -1354,8 +1652,8 @@ class GameConnection(threading.Thread):
             self.send_packet(206, sequence, response_body, encrypt=True)
             self.state.log(
                 f"TCP {self.port} {self.remote} packet 206 answered with "
-                f"valid length-prefixed UserCarProto for base_id={base_id}; "
-                "car_id=1, RU region=1, plate_number=1"
+                f"valid length-prefixed UserCarProto for requested_base_id={base_id}; "
+                f"fallback_base_id={TUTORIAL_CAR_BASE_ID}, car_id=1, RU region=1, plate_number=1"
             )
             return
 
