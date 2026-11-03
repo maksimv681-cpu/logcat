@@ -1290,6 +1290,36 @@ class GameConnection(threading.Thread):
             )
             return
 
+        if packet_id == 535:  # client/server clock synchronization
+            # ct2.h(fB1) reads one 64-bit server timestamp via fB1.u().
+            server_time_ms = int(time.time() * 1000)
+            response_body = struct.pack(">Q", server_time_ms)
+            self.send_packet(535, sequence, response_body, encrypt=True)
+            self.state.log(
+                f"TCP {self.port} {self.remote} time sync answered: "
+                f"server_time_ms={server_time_ms}"
+            )
+            return
+
+        if packet_id == 1408:  # tutorial progress/state update
+            # The client sends a single 32-bit tutorial step. Its response
+            # parser reads a 32-bit value; never leave this request unanswered.
+            if len(body) == 4:
+                tutorial_step = struct.unpack(">i", body)[0]
+                response_body = struct.pack(">i", tutorial_step)
+                self.send_packet(1408, sequence, response_body, encrypt=True)
+                self.state.log(
+                    f"TCP {self.port} {self.remote} tutorial packet 1408 "
+                    f"answered: step={tutorial_step}"
+                )
+            else:
+                self.send_packet(1408, sequence, struct.pack(">i", 0), encrypt=True)
+                self.state.log(
+                    f"TCP {self.port} {self.remote} tutorial packet 1408 "
+                    f"invalid length={len(body)}; returned default step=0"
+                )
+            return
+
         if packet_id == 206:  # get tutorial UserCarProto by base car ID
             # The profile sent by this server has an empty garage. Returning a
             # fabricated UserCarProto here is unsafe: OG2.r1() resolves its
