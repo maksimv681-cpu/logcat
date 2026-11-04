@@ -557,8 +557,17 @@ def _catalog_proto(items: list[dict], serializer) -> bytes:
 
 
 def build_tutorial_car_catalogs() -> dict[int, bytes]:
+    """Build complete catalogs needed by the tutorial car and normal garage UI.
+
+    The previous bootstrap sent only one record per component catalog. That
+    made the tutorial car fragile: OG2 resolves the requested base car through
+    VD and then resolves its component IDs through the corresponding catalogs.
+    Send the complete source catalogs, plus the tutorial-only baseId 147 clone,
+    so every referenced ID is present and subsequent garage screens have data.
+    """
+    cars = list(_db_items("carDatabase.json", "carDatabase"))
     source_car = next(
-        (item for item in _db_items("carDatabase.json", "carDatabase")
+        (item for item in cars
          if int(item.get("baseId", -1)) == TUTORIAL_CAR_SOURCE_BASE_ID),
         None,
     )
@@ -566,52 +575,36 @@ def build_tutorial_car_catalogs() -> dict[int, bytes]:
         raise RuntimeError(
             f"db/carDatabase.json has no source base_id={TUTORIAL_CAR_SOURCE_BASE_ID}"
         )
-    # Clone the complete Lada 2101 record under the ID requested by the
-    # tutorial. Keep all component IDs unchanged so every referenced catalog
-    # record resolves normally on the client.
-    car = dict(source_car)
-    car["baseId"] = TUTORIAL_CAR_BASE_ID
-    # The client resolves both rear and front wheel catalogs while building
-    # C0259Mn. The JSON omits the front IDs for this starter, so explicitly
-    # reuse the matching rear disk/tires instead of leaving IDs at zero.
-    car["frontDiskBaseId"] = int(car.get("frontDiskBaseId") or car["diskBaseId"])
-    car["frontTiresBaseId"] = int(car.get("frontTiresBaseId") or car["tiresBaseId"])
 
-    disk = _db_record("diskDatabase.json", "diskDatabase", int(car["diskBaseId"]))
-    tires = _db_record("tiresDatabase.json", "tiresDatabase", int(car["tiresBaseId"]))
-    springs = [
-        _db_record("springDatabase.json", "springDatabase", int(car[key]))
-        for key in ("frontSpringBaseId", "rearSpringBaseId")
-    ]
-    suspension = _db_record("suspensionDatabase.json", "suspensionDatabase",
-                            int(car["frontSuspensionBaseId"]))
-    brakes = [
-        _db_record("brakeDatabase.json", "brakeDatabase", int(car[key]))
-        for key in ("frontBrakeBaseId", "rearBrakeBaseId")
-    ]
-    parts = [
-        _db_record("partsDatabase.json", "partsDatabase", int(car[key]))
-        for key in ("frontBumperBaseId", "centerBumperBaseId", "rearBumperBaseId")
-    ]
-    engine = _db_record("engineDatabase.json", "engineDatabase", int(car["engineBaseId"]))
-    transmission = _db_record("transmissionDatabase.json", "transmissionDatabase",
-                              int(car["transmissionBaseId"]))
-    color = _db_record("colorDatabase.json", "colorDatabase", int(car["baseColor"]),
-                       nested_base=False)
+    if not any(int(item.get("baseId", -1)) == TUTORIAL_CAR_BASE_ID for item in cars):
+        tutorial_car = dict(source_car)
+        tutorial_car["baseId"] = TUTORIAL_CAR_BASE_ID
+        # The client resolves both front and rear wheel catalogs while
+        # constructing C0259Mn. Reuse the matching rear IDs when the source
+        # record does not define separate front IDs.
+        tutorial_car["frontDiskBaseId"] = int(
+            tutorial_car.get("frontDiskBaseId") or tutorial_car["diskBaseId"]
+        )
+        tutorial_car["frontTiresBaseId"] = int(
+            tutorial_car.get("frontTiresBaseId") or tutorial_car["tiresBaseId"]
+        )
+        cars.append(tutorial_car)
 
+    # Keep all source records. A full car database is still small after ZIP
+    # compression and prevents VD.a(baseId) from returning null for any
+    # tutorial/garage car requested by the client.
     return {
-        1: _protobuf_bytes_field(1, _serialize_car_record(car)),
-        2: _catalog_proto([disk], _serialize_disk_record),
-        3: _catalog_proto([tires], _serialize_tires_record),
-        4: _catalog_proto(springs, _serialize_spring_record),
-        5: _catalog_proto([suspension], _serialize_suspension_record),
-        7: _catalog_proto(brakes, _serialize_brake_record),
-        9: _catalog_proto(parts, _serialize_parts_record),
-        15: _catalog_proto([transmission], _serialize_transmission_record),
-        16: _catalog_proto([color], _serialize_color_record),
-        26: _catalog_proto([engine], _serialize_engine_record),
+        1: _catalog_proto(cars, _serialize_car_record),
+        2: _catalog_proto(_db_items("diskDatabase.json", "diskDatabase"), _serialize_disk_record),
+        3: _catalog_proto(_db_items("tiresDatabase.json", "tiresDatabase"), _serialize_tires_record),
+        4: _catalog_proto(_db_items("springDatabase.json", "springDatabase"), _serialize_spring_record),
+        5: _catalog_proto(_db_items("suspensionDatabase.json", "suspensionDatabase"), _serialize_suspension_record),
+        7: _catalog_proto(_db_items("brakeDatabase.json", "brakeDatabase"), _serialize_brake_record),
+        9: _catalog_proto(_db_items("partsDatabase.json", "partsDatabase"), _serialize_parts_record),
+        15: _catalog_proto(_db_items("transmissionDatabase.json", "transmissionDatabase"), _serialize_transmission_record),
+        16: _catalog_proto(_db_items("colorDatabase.json", "colorDatabase"), _serialize_color_record),
+        26: _catalog_proto(_db_items("engineDatabase.json", "engineDatabase"), _serialize_engine_record),
     }
-
 
 try:
     TUTORIAL_CAR_DATABASE_PROTOS = build_tutorial_car_catalogs()
