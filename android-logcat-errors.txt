@@ -1,96 +1,19 @@
 11-04 17:28:39.733  1439  1439 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-04 17:28:40.675  1440  1440 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-04 18:18:11.485  1896  1896 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
-11-04 20:29:10.135 12075 12075 E ts.game:restar: Not starting debugger since process cannot load the jdwp agent.
-11-04 20:29:10.283 12075 12075 W System.err: java.lang.Exception: call killProcess callstack! pid=11817
-11-04 20:29:10.348  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.354  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.354  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.355  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.355  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.355  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.356  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.361  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.361  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.361  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.363  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.364  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.373  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.393  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.394  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.394  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.396  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.400  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.401  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.402  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.403  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.404  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.405  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.405  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.407  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.407  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.408  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.415  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.420  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.420  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.421  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.421  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.422  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.422  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.422  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.426  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.427  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.428  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.434  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.435  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.437  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.438  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.438  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.438  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.438  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.438  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.438  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.441  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.448  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.448  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.450  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.452  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.454  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.458  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.460  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.462  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.463  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.464  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.464  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.466  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.468  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.471  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.471  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.478  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.482  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.488  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.502  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.511  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.511 12075 12075 W System.err: java.lang.Exception: call killProcess callstack! pid=12075
-11-04 20:29:10.518  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.525  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.567  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.574  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.579  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.585  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.589 12098 12098 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-04 20:29:10.590  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.594  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.599  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.604  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.611  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.620  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.637  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.643  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:10.747 12098 12115 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-04 20:29:12.753 12098 12098 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-04 20:29:13.912 12098 12127 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-04 20:29:19.136 12098 12127 I SRLAB-PERF: screen=pj1 frames=832 gapMaxMs=192 workMaxMs=40 slow33=3 slow100=2 assetMs=9 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
-11-04 20:29:21.149 12098 12246 D DS-MODULE: Background update check deferred: ConnectException
-11-04 20:29:22.230  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
-11-04 20:29:24.136 12098 12127 I SRLAB-PERF: screen=Hz0 frames=377 gapMaxMs=511 workMaxMs=504 slow33=25 slow100=9 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=29
+11-04 20:32:55.554 12374 12374 E ts.game:restar: Not starting debugger since process cannot load the jdwp agent.
+11-04 20:32:55.679 12374 12374 W System.err: java.lang.Exception: call killProcess callstack! pid=12098
+11-04 20:32:55.896 12374 12374 W System.err: java.lang.Exception: call killProcess callstack! pid=12374
+11-04 20:32:55.966 12396 12396 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-04 20:32:56.138 12396 12414 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-04 20:32:58.144 12396 12396 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-04 20:32:58.887 12396 12425 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-04 20:33:04.224 12396 12425 I SRLAB-PERF: screen=pj1 frames=917 gapMaxMs=262 workMaxMs=44 slow33=2 slow100=1 assetMs=6 previews=0 previewMs=0 previewMaxMs=0 javaMB=22
+11-04 20:33:05.032 12396 12504 E SRLAB-CRC-ACTUAL: c600d9f6
+11-04 20:33:05.032 12396 12504 E SRLAB-CRC-EXPECTED: c600d9f6
+11-04 20:33:05.032 12396 12504 E SRLAB-DB: Applying database
+11-04 20:33:05.095 12396 12504 E SRLAB-DB: Database applied
+11-04 20:33:06.235 12396 12543 D DS-MODULE: Background update check deferred: ConnectException
+11-04 20:33:07.578  1598  1611 W android.os.Debug: failed to get memory consumption info: -1
+11-04 20:33:09.226 12396 12425 I SRLAB-PERF: screen=Hz0 frames=493 gapMaxMs=512 workMaxMs=504 slow33=22 slow100=6 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=21
+11-04 20:33:14.227 12396 12425 I SRLAB-PERF: screen=Fh1 frames=876 gapMaxMs=500 workMaxMs=493 slow33=12 slow100=1 assetMs=5 previews=0 previewMs=0 previewMaxMs=0 javaMB=24
