@@ -1,10 +1,5 @@
 11-05 18:43:04.884  1440  1440 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
 11-05 18:43:06.815  1441  1441 D TelephonyManager: No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline (Permission denied)
-11-05 18:44:16.144  1902  1902 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
-11-05 18:44:55.583  1902  1902 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
-11-05 18:45:26.135  1902  1902 E SIMFileHandler: exception caught from EVENT_GET_RECORD_SIZE
-11-05 18:45:31.086  1600  2216 I am_crash: [4846,0,com.dragstreets.game,949501508,java.lang.IllegalStateException,Ground must always exist,SourceFile,763]
-11-05 18:46:23.851  1600  2214 I am_crash: [5123,0,com.dragstreets.game,949501508,java.lang.IllegalStateException,Ground must always exist,SourceFile,763]
 11-05 18:50:38.524  1600  2284 I am_crash: [5550,0,com.dragstreets.game,949501508,java.lang.IllegalStateException,Ground must always exist,SourceFile,763]
 11-05 18:57:04.520  1600  3008 I am_crash: [5826,0,com.dragstreets.game,951598660,java.lang.IndexOutOfBoundsException,index can't be >= size: 0 >= 0,SourceFile,39]
 11-05 18:58:22.323  1600  2132 I am_crash: [6145,0,com.dragstreets.game,949501508,java.lang.IndexOutOfBoundsException,index can't be >= size: 0 >= 0,SourceFile,39]
@@ -17,39 +12,42 @@
 11-05 20:25:16.557  1600  2284 I am_crash: [8805,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'java.lang.Integer mobi.square.sr.android.Oq.h()' on a null object reference,SourceFile,75]
 11-05 20:25:51.247  1600  2980 I am_crash: [9018,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'java.lang.Integer mobi.square.sr.android.Oq.h()' on a null object reference,SourceFile,75]
 11-05 20:27:53.689  1600  2980 I am_crash: [9219,0,com.dragstreets.game,949501508,java.lang.IndexOutOfBoundsException,index can't be >= size: 0 >= 0,SourceFile,39]
-11-05 20:30:39.068  9526  9526 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
-11-05 20:30:39.301  9526  9548 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
-11-05 20:30:41.309  9526  9526 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
-11-05 20:30:41.884  9526  9564 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
-11-05 20:30:47.107  9526  9564 I SRLAB-PERF: screen=pj1 frames=847 gapMaxMs=166 workMaxMs=39 slow33=2 slow100=1 assetMs=8 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
-11-05 20:30:49.110  9526  9683 D DS-MODULE: Background update check deferred: ConnectException
-11-05 20:30:51.190  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
-11-05 20:30:52.106  9526  9564 I SRLAB-PERF: screen=Hz0 frames=435 gapMaxMs=512 workMaxMs=504 slow33=27 slow100=5 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=36
-11-05 20:30:57.108  9526  9564 I SRLAB-PERF: screen=fS1 frames=832 gapMaxMs=511 workMaxMs=502 slow33=12 slow100=2 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=32
-11-05 20:31:02.108  9526  9564 I SRLAB-PERF: screen=fS1 frames=1200 gapMaxMs=9 workMaxMs=6 slow33=0 slow100=0 assetMs=1 previews=0 previewMs=0 previewMaxMs=0 javaMB=33
-11-05 20:31:07.109  9526  9564 I SRLAB-PERF: screen=mG frames=1014 gapMaxMs=510 workMaxMs=503 slow33=3 slow100=2 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=24
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: FATAL EXCEPTION: GLThread 261
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: Process: com.dragstreets.game, PID: 9526
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: java.lang.ArrayIndexOutOfBoundsException: length=16; index=-1
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at com.badlogic.gdx.utils.Array.get(SourceFile:6)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.wG$b.R(SourceFile:19)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.sz0.H5(SourceFile:4)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.rz0.y1(SourceFile:1)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.I01.a(SourceFile:3)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.rz0.p4(SourceFile:1)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.ix1.A2(SourceFile:18)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.ow.A2(SourceFile:2)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.ow.M4(SourceFile:1)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.ow$a.clicked(SourceFile:56)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.utils.ClickListener.touchUp(SourceFile:55)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.j32.touchUp(SourceFile:16)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at mobi.square.sr.android.ow$a.touchUp(SourceFile:19)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.InputListener.handle(SourceFile:144)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Stage.touchUp(SourceFile:113)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.DefaultAndroidInput.processEvents(SourceFile:184)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:204)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
-11-05 20:31:08.922  9526  9564 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
-11-05 20:31:08.922  9526  9564 E DS-MODULE: Recorded startup exception for module 7
 11-05 20:31:08.923  1600  2289 I am_crash: [9526,0,com.dragstreets.game,949501508,java.lang.ArrayIndexOutOfBoundsException,length=16; index=-1,SourceFile,6]
-11-05 20:31:08.950  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-05 20:39:56.722  1600  3008 I am_crash: [9876,0,com.dragstreets.game,949501508,java.lang.NullPointerException,Attempt to invoke virtual method 'java.lang.Integer mobi.square.sr.android.Oq.h()' on a null object reference,SourceFile,75]
+11-05 20:49:55.685  1600  2989 I am_crash: [10166,0,com.dragstreets.game,949501508,java.lang.IndexOutOfBoundsException,index can't be >= size: 0 >= 0,SourceFile,39]
+11-05 20:53:31.020 10482 10482 E ragstreets.gam: Not starting debugger since process cannot load the jdwp agent.
+11-05 20:53:31.237 10482 10515 D NetworkSecurityConfig: Using Network Security Config from resource drag_streets_network_security debugBuild: false
+11-05 20:53:33.243 10482 10482 E DS-MODULE: java.net.ConnectException: Failed to connect to /192.168.31.55:8081
+11-05 20:53:33.979 10482 10529 I AndroidGraphics: OGL extensions: GL_EXT_robustness GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_robustness GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_draw_buffers_indexed EGL_ANDROID_native_fence_sync ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_vulkan_queue_submit_with_commands ANDROID_EMU_vulkan_batched_descriptor_set_update ANDROID_EMU_vulkan_async_qsri GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_EXT_copy_image GL_EXT_texture_buffer GL_EXT_draw_buffers_indexed GL_OES_texture_storage_multisample_2d_array GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_image_atomic GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_EXT_texture_border_clamp GL_EXT_primitive_bounding_box GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_EXT_shader_io_blocks GL_EXT_texture_cube_map_array GL_KHR_debug GL_ANDROID_extension_pack_es31a GL_EXT_shader_non_constant_global_initializers GL_EXT_clip_cull_distance GL_EXT_blend_func_extended GL_NV_shader_noperspective_interpolation GL_EXT_texture_norm16 GL_EXT_shader_texture_lod GL_EXT_texture_filter_anisotropic GL_OES_standard_derivatives GL_EXT_blend_minmax GL_EXT_debug_marker GL_OES_surfaceless_context GL_EXT_texture_type_2_10_10_10_REV GL_EXT_read_format_bgra GL_EXT_sRGB GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_EXT_EGL_image_external_wrap_modes GL_EXT_sRGB_write_control 
+11-05 20:53:39.215 10482 10529 I SRLAB-PERF: screen=pj1 frames=858 gapMaxMs=165 workMaxMs=47 slow33=3 slow100=1 assetMs=10 previews=0 previewMs=0 previewMaxMs=0 javaMB=18
+11-05 20:53:41.219 10482 10649 D DS-MODULE: Background update check deferred: ConnectException
+11-05 20:53:43.140  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-05 20:53:44.219 10482 10529 I SRLAB-PERF: screen=fS1 frames=435 gapMaxMs=510 workMaxMs=503 slow33=27 slow100=7 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=28
+11-05 20:53:49.221 10482 10529 I SRLAB-PERF: screen=fS1 frames=1198 gapMaxMs=11 workMaxMs=5 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=28
+11-05 20:53:54.222 10482 10529 I SRLAB-PERF: screen=fS1 frames=1195 gapMaxMs=14 workMaxMs=4 slow33=0 slow100=0 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=29
+11-05 20:53:59.224 10482 10529 I SRLAB-PERF: screen=Fh1 frames=1042 gapMaxMs=509 workMaxMs=503 slow33=2 slow100=2 assetMs=2 previews=0 previewMs=0 previewMaxMs=0 javaMB=49
+11-05 20:54:00.001  1600  1613 W android.os.Debug: failed to get memory consumption info: -1
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: FATAL EXCEPTION: GLThread 273
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: Process: com.dragstreets.game, PID: 10482
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: java.lang.IndexOutOfBoundsException: index can't be >= size: 0 >= 0
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at com.badlogic.gdx.utils.Array.get(SourceFile:39)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.wG$b.d(SourceFile:48)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.sz0.G5(SourceFile:4)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.pz0.y1(SourceFile:1)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.I01.a(SourceFile:3)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.pz0.p4(SourceFile:1)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.ix1.A2(SourceFile:18)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.ow.A2(SourceFile:2)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.ow.M4(SourceFile:1)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.ow$a.clicked(SourceFile:56)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.utils.ClickListener.touchUp(SourceFile:55)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.j32.touchUp(SourceFile:16)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at mobi.square.sr.android.ow$a.touchUp(SourceFile:19)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.InputListener.handle(SourceFile:144)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at com.badlogic.gdx.scenes.scene2d.Stage.touchUp(SourceFile:113)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.DefaultAndroidInput.processEvents(SourceFile:184)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at com.badlogic.gdx.backends.android.AndroidGraphics.onDrawFrame(SourceFile:204)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.guardedRun(GLSurfaceView.java:1580)
+11-05 20:54:02.180 10482 10529 E AndroidRuntime: 	at android.opengl.GLSurfaceView$GLThread.run(GLSurfaceView.java:1279)
+11-05 20:54:02.180 10482 10529 E DS-MODULE: Recorded startup exception for module 7
+11-05 20:54:02.182  1600  3009 I am_crash: [10482,0,com.dragstreets.game,949501508,java.lang.IndexOutOfBoundsException,index can't be >= size: 0 >= 0,SourceFile,39]
